@@ -1,4 +1,5 @@
 import React from "react";
+import reactLogo from './assets/react.svg'
 
 const CGOM15 = () => {
   return (
@@ -8,8 +9,8 @@ const CGOM15 = () => {
         <aside className="bg-white shadow-md w-full lg:w-1/4 min-h-screen">
           <div className="p-4">
             <img
-              src="/logo.png" // Replace with the logo path
-              alt="CGOM15 Logo"
+              src={reactLogo} // Replace with the logo path
+              alt="CGOM16 Logo"
               className="w-24 h-24 mx-auto"
             />
           </div>
@@ -25,6 +26,7 @@ const CGOM15 = () => {
               <li className="cursor-pointer">SPEAKERS</li>
               <li className="cursor-pointer">PRESENTATION GUIDELINES</li>
               <li className="cursor-pointer">SPONSORS AND EXHIBITIONS</li>
+              <li className="cursor-pointer">CONTACT</li>
             </ul>
           </nav>
         </aside>
@@ -35,10 +37,10 @@ const CGOM15 = () => {
           <section className="bg-white shadow-md py-6">
             <div className="text-center">
               <h1 className="text-2xl lg:text-3xl font-bold text-blue-900">
-                15<sup>th</sup> International Workshop on Crystal Growth of Organic Materials (CGOM15)
+                15<sup>th</sup> International Workshop on Crystal Growth of Organic Materials (CGOM16)
               </h1>
               <p className="text-gray-700 mt-2">
-                July 23<sup>rd</sup> – 26<sup>th</sup>, 2024 - PHUKET, THAILAND
+                July 23<sup>rd</sup> – 26<sup>th</sup>, 2025 - TAMIL NADU, INDIA
               </p>
             </div>
           </section>
@@ -46,19 +48,19 @@ const CGOM15 = () => {
           {/* Hero Images */}
           <section className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-6 px-4">
             <img
-              src="/image1.jpg" // Replace with actual image paths
+              src={reactLogo}
               alt="Phuket Scenery 1"
-              className="w-full h-48 object-cover rounded-lg"
+              className="w-50 h-48 object-cover rounded-lg"
             />
             <img
-              src="/image2.jpg"
+              src={reactLogo}
               alt="Phuket Scenery 2"
-              className="w-full h-48 object-cover rounded-lg"
+              className="w-50 h-48 object-cover rounded-lg"
             />
             <img
-              src="/image3.jpg"
+              src={reactLogo}
               alt="Phuket Scenery 3"
-              className="w-full h-48 object-cover rounded-lg"
+              className="w-50 h-48 object-cover rounded-lg"
             />
           </section>
 
