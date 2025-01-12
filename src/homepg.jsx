@@ -71,17 +71,60 @@ const CGOM16 = () => {
             </p>
           </section>
 
-          {/* Description Section */}
-          <section className="p-6 text-gray-700">
+          <section className="p-6 text-gray-700 w-[800px]" style={{ fontFamily: "'League Gothic', sans-serif", fontSize: "2rem", lineHeight: "3rem", letterSpacing: "0.02em",transform: "scaleX(1.2)",display: "inline-block",}} >
             <p>
               On behalf of the organizing committee, we cordially invite you to
               the 15th International Workshop on Crystal Growth of Organic
               Materials (CGOM16), which will be held in Phuket, Thailand, from
               23 to 26 July 2024. The aim of this CGOM16 is to provide a forum
               for academic researchers, scientists, and industry experts to
-              share and discuss their insights on crystal growth research.
+              share and discuss recent advances in crystallization and crystal growth sciences and process technology. The program will include plenary lectures, invited lectures, oral presentations and poster presentations. You will be greatly welcome to join us..
             </p>
+            <p className="p-10">Looking forward to seeing you in Phuket, Thailand.</p>
+            <p className="p-10">Organizing Chairs</p>
           </section>
+
+          <section className="p-8 font-sans w-[800px] inline-block text-center">
+            <h2 className="text-2xl font-bold uppercase">
+              Topics <span className="text-[#D34310]">for the Conference</span>
+            </h2>
+
+            <ul className="list-none mt-4 mx-auto">
+              <li className="flex items-start mb-4 justify-center">
+                <p className="m-0">
+                  <span className="text-[#D34310] mr-2 text-xl">🔺</span><strong>Crystallization and crystal growth fundamentals:</strong> crystal nucleation, crystal growth,
+                  agglomeration, thermodynamics, solution structure, transport phenomena in crystal growth etc.
+                </p>
+              </li>
+
+              <li className="flex items-start mb-4 justify-center">
+                <p className="m-0">
+                  <span className="text-[#D34310] mr-2 text-xl">🔺</span><strong>Crystal engineering and crystals in pharmaceutical:</strong> crystal structure characterization,
+                  polymorphism, solvates, amorphous, salts, nano-crystals, co-crystals, chiral separation, surface
+                  crystallization, protein crystallization etc.
+                </p>
+              </li>
+
+              <li className="flex items-start mb-4 justify-center">
+                <p className="m-0">
+                  <span className="text-[#D34310] mr-2 text-xl">🔺</span><strong>Crystallization process and crystal growth modelling, design, control and digital design</strong>
+                </p>
+              </li>
+
+              <li className="flex items-start mb-4 justify-center">
+                <p className="m-0">
+                  <span className="text-[#D34310] mr-2 text-xl">🔺</span><strong>New materials and products</strong>
+                </p>
+              </li>
+
+              <li className="flex items-start mb-4 justify-center">
+                <p className="m-0">
+                  <span className="text-[#D34310] mr-2 text-xl">🔺</span><strong>Sustainable crystallization technologies</strong>
+                </p>
+              </li>
+            </ul>
+          </section>
+
         </main>
       </div>
     </div>
