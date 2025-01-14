@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Home from "./home";
 import Committee from "./commitee";
 import ImportantDates from "./importantdates";
 
 const CGOM16 = () => {
-  let currentIndex = 1;
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleIndex = (ind) => {
+    setCurrentIndex(ind);
+  }
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Sidebar Navigation */}
@@ -19,9 +23,9 @@ const CGOM16 = () => {
           </div>
           <nav>
             <ul className="space-y-4 px-4">
-              <li  className={`${currentIndex === 0 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>HOME</li>
-              <li className={`${currentIndex === 1 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>COMMITTEES</li>
-              <li className={`${currentIndex === 2 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>IMPORTANT DATES</li>
+              <li  className={`${currentIndex === 0 ? 'text-red-600 font-bold' : ''} cursor-pointer`}><button onClick={()=>handleIndex(0)}>HOME</button></li>
+              <li className={`${currentIndex === 1 ? 'text-red-600 font-bold' : ''} cursor-pointer`}><button onClick={()=>handleIndex(1)}>COMMITTEES</button></li>
+              <li className={`${currentIndex === 2 ? 'text-red-600 font-bold' : ''} cursor-pointer`}><button onClick={()=>handleIndex(2)}>IMPORTANT DATES</button></li>
               <li className={`${currentIndex === 3 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>PROGRAM</li>
               <li className={`${currentIndex === 4 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>SUBMISSION</li>
               <li className={`${currentIndex === 5 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>REGISTRATION</li>
@@ -53,12 +57,14 @@ const CGOM16 = () => {
             <img src="src/assets/ssn2.JPG" alt="Phuket Scenery 2" className="w-full h-48 object-cover rounded-lg" />
             <img src="src/assets/ssn3.JPG" alt="Phuket Scenery 3" className="w-full h-48 object-cover rounded-lg" />
           </section>
-
-          <Home/>
-
-          <Committee/>
-
-          <ImportantDates/>
+          
+          {currentIndex === 0 ? (
+            <Home />
+          ) : currentIndex === 1 ? (
+            <Committee />
+          ) : (
+            <ImportantDates />
+          )}
 
           {/* Footer Section */}
           <footer className="mt-auto bg-gray-100 py-10">
