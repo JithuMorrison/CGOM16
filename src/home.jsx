@@ -11,7 +11,7 @@ const Home = () => {
             </p>
         </section>
 
-        <section className="p-6 text-gray-700 w-[800px]" style={{ fontFamily: "'League Gothic', sans-serif", fontSize: "2rem", lineHeight: "3rem", letterSpacing: "0.02em",transform: "scaleX(1.2)",display: "inline-block",}} >
+        <section className="p-6 text-gray-500 w-[800px]" style={{ fontFamily: "'League Gothic', sans-serif", fontSize: "1.7rem", lineHeight: "2.5rem", letterSpacing: "0.02em",transform: "scaleX(1.3)",display: "inline-block",}} >
             <p>
                 On behalf of the organizing committee, we cordially invite you to
                 the 15th International Workshop on Crystal Growth of Organic

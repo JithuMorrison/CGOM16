@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./home";
 import Committee from "./commitee";
+import ImportantDates from "./importantdates";
 
 const CGOM16 = () => {
   return (
@@ -55,6 +56,8 @@ const CGOM16 = () => {
           <Home/>
 
           <Committee/>
+
+          <ImportantDates/>
 
           {/* Footer Section */}
           <footer className="mt-auto bg-gray-100 py-10">
