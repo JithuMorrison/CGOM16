@@ -1,12 +1,13 @@
 import React from "react";
 import Home from "./home";
+import Committee from "./commitee";
 
 const CGOM16 = () => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Sidebar Navigation */}
       <div className="flex flex-col lg:flex-row">
-        <aside className="bg-white shadow-md w-full lg:w-1/4 min-h-screen fixed lg:static">
+        <aside className="absolute inset-y-0 left-0 w-full lg:w-1/4 bg-white shadow-md z-10">
           <div className="p-4">
             <img
               src="src/assets/cgomlogo.png" // Replace with the logo path
@@ -31,7 +32,7 @@ const CGOM16 = () => {
           </nav>
         </aside>
 
-        <main className="flex-1 bg-gray-50">
+        <main className="flex-1 bg-gray-50 overflow-y-auto max-h-screen ml-96">
           {/* Header Section */}
           <section className="bg-white shadow-md py-6">
             <div className="text-center">
@@ -46,24 +47,14 @@ const CGOM16 = () => {
 
           {/* Hero Images */}
           <section className="grid grid-cols-1 md:grid-cols-3 gap-2 mt-6 px-4">
-            <img
-              src="src/assets/ssn1.JPG" // Replace with actual image paths
-              alt="Phuket Scenery 1"
-              className="w-full h-48 object-cover rounded-lg"
-            />
-            <img
-              src="src/assets/ssn2.JPG" // Replace with actual image paths
-              alt="Phuket Scenery 2"
-              className="w-full h-48 object-cover rounded-lg"
-            />
-            <img
-              src="src/assets/ssn3.JPG" // Replace with actual image paths
-              alt="Phuket Scenery 3"
-              className="w-full h-48 object-cover rounded-lg"
-            />
+            <img src="src/assets/ssn1.JPG" alt="Phuket Scenery 1" className="w-full h-48 object-cover rounded-lg" />
+            <img src="src/assets/ssn2.JPG" alt="Phuket Scenery 2" className="w-full h-48 object-cover rounded-lg" />
+            <img src="src/assets/ssn3.JPG" alt="Phuket Scenery 3" className="w-full h-48 object-cover rounded-lg" />
           </section>
 
           <Home/>
+
+          <Committee/>
 
           {/* Footer Section */}
           <footer className="mt-auto bg-gray-100 py-10">
