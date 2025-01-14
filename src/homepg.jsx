@@ -5,7 +5,7 @@ const CGOM16 = () => {
     <div className="min-h-screen bg-gray-100">
       {/* Sidebar Navigation */}
       <div className="flex flex-col lg:flex-row">
-        <aside className="bg-white shadow-md w-full lg:w-1/4 min-h-screen">
+        <aside className="bg-white shadow-md w-full lg:w-1/4 min-h-screen fixed lg:static">
           <div className="p-4">
             <img
               src="src/assets/cgomlogo.png" // Replace with the logo path
@@ -124,7 +124,72 @@ const CGOM16 = () => {
               </li>
             </ul>
           </section>
+          <div className="flex flex-col items-center justify-center py-10">
+            <h2 className="text-3xl font-bold text-orange-600">Co-organizers</h2>
+            <div className="flex justify-center items-center gap-10 mt-6">
+              <img
+                src="path-to-sut-logo.png"
+                alt="SUT Logo"
+                className="h-24"
+              />
+              <img
+                src="path-to-vistec-logo.png"
+                alt="Vistec Logo"
+                className="h-24"
+              />
+              <img
+                src="path-to-tiche-logo.png"
+                alt="TICHE Logo"
+                className="h-24"
+              />
+            </div>
+          </div>
 
+          {/* Footer Section */}
+          <footer className="mt-auto bg-gray-100 py-10">
+            <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Workshop Info */}
+              <div className="flex items-center space-x-4">
+                <div>
+                  <img
+                    src="src/assets/cgomlogo.png"
+                    alt="CGOM Logo"
+                    className="h-16 w-32"
+                  />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-blue-900">
+                    15th International Workshop on Crystal Growth of Organic Materials (CGOM15)
+                  </h3>
+                  <p className="text-sm text-gray-700">
+                    July 23rd – 26th, 2024 · PHUKET, THAILAND
+                  </p>
+                </div>
+              </div>
+
+              {/* Contact Info */}
+              <div>
+                <address className="not-italic text-gray-700 text-sm">
+                  <p className="flex items-center space-x-2">
+                    <span className="font-bold">Address:</span>
+                    <span>111 University Avenue, Muang District, Nakhon Ratchasima 30000, Thailand</span>
+                  </p>
+                  <p className="flex items-center space-x-2">
+                    <span className="font-bold">Email:</span>
+                    <span>cgom15@g.sut.ac.th, lekwa@g.sut.ac.th</span>
+                  </p>
+                  <p className="flex items-center space-x-2">
+                    <span className="font-bold">Phone:</span>
+                    <span>(+66)0-4422-3552</span>
+                  </p>
+                  <p className="flex items-center space-x-2">
+                    <span className="font-bold">Mobile:</span>
+                    <span>(+66)086 256 3865</span>
+                  </p>
+                </address>
+              </div>
+            </div>
+          </footer>
         </main>
       </div>
     </div>
