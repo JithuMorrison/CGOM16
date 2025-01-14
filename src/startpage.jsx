@@ -4,6 +4,7 @@ import Committee from "./commitee";
 import ImportantDates from "./importantdates";
 
 const CGOM16 = () => {
+  let currentIndex = 1;
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Sidebar Navigation */}
@@ -18,17 +19,17 @@ const CGOM16 = () => {
           </div>
           <nav>
             <ul className="space-y-4 px-4">
-              <li className="text-red-600 font-bold cursor-pointer">HOME</li>
-              <li className="cursor-pointer">COMMITTEES</li>
-              <li className="cursor-pointer">IMPORTANT DATES</li>
-              <li className="cursor-pointer">PROGRAM</li>
-              <li className="cursor-pointer">SUBMISSION</li>
-              <li className="cursor-pointer">REGISTRATION</li>
-              <li className="cursor-pointer">VENUE AND VISA</li>
-              <li className="cursor-pointer">SPEAKERS</li>
-              <li className="cursor-pointer">PRESENTATION GUIDELINES</li>
-              <li className="cursor-pointer">SPONSORS AND EXHIBITIONS</li>
-              <li className="cursor-pointer">CONTACT</li>
+              <li  className={`${currentIndex === 0 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>HOME</li>
+              <li className={`${currentIndex === 1 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>COMMITTEES</li>
+              <li className={`${currentIndex === 2 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>IMPORTANT DATES</li>
+              <li className={`${currentIndex === 3 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>PROGRAM</li>
+              <li className={`${currentIndex === 4 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>SUBMISSION</li>
+              <li className={`${currentIndex === 5 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>REGISTRATION</li>
+              <li className={`${currentIndex === 6 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>VENUE AND VISA</li>
+              <li className={`${currentIndex === 7 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>SPEAKERS</li>
+              <li className={`${currentIndex === 8 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>PRESENTATION GUIDELINES</li>
+              <li className={`${currentIndex === 9 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>SPONSORS AND EXHIBITIONS</li>
+              <li className={`${currentIndex === 10 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>CONTACT</li>
             </ul>
           </nav>
         </aside>
