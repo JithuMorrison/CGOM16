@@ -5,6 +5,7 @@ import ImportantDates from "./importantdates";
 import Program from "./program";
 import RegistrationForm from "./registration";
 import Pricing from "./pricing";
+import AbstractSubmission from "./submission";
 
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -70,7 +71,7 @@ const CGOM16 = () => {
           ) : (currentIndex === 3 ? (
             <Program/>
           ) : (currentIndex === 4 ? (
-            <RegistrationForm/>
+            <AbstractSubmission/>
           ) : ( currentIndex === 5 ? (
             <Pricing handleIndex={handleIndex}/>
           ) : (
