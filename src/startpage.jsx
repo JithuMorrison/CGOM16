@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import Home from "./home";
 import Committee from "./commitee";
 import ImportantDates from "./importantdates";
+import Program from "./program";
+import RegistrationForm from "./registration";
 
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -26,9 +28,9 @@ const CGOM16 = () => {
               <li  className={`${currentIndex === 0 ? 'text-red-600 font-bold' : ''} cursor-pointer`}><button onClick={()=>handleIndex(0)}>HOME</button></li>
               <li className={`${currentIndex === 1 ? 'text-red-600 font-bold' : ''} cursor-pointer`}><button onClick={()=>handleIndex(1)}>COMMITTEES</button></li>
               <li className={`${currentIndex === 2 ? 'text-red-600 font-bold' : ''} cursor-pointer`}><button onClick={()=>handleIndex(2)}>IMPORTANT DATES</button></li>
-              <li className={`${currentIndex === 3 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>PROGRAM</li>
+              <li className={`${currentIndex === 3 ? 'text-red-600 font-bold' : ''} cursor-pointer`}><button onClick={()=>handleIndex(3)}>PROGRAM</button></li>
               <li className={`${currentIndex === 4 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>SUBMISSION</li>
-              <li className={`${currentIndex === 5 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>REGISTRATION</li>
+              <li className={`${currentIndex === 5 ? 'text-red-600 font-bold' : ''} cursor-pointer`}><button onClick={()=>handleIndex(4)}>REGISTRATION</button></li>
               <li className={`${currentIndex === 6 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>VENUE AND VISA</li>
               <li className={`${currentIndex === 7 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>SPEAKERS</li>
               <li className={`${currentIndex === 8 ? 'text-red-600 font-bold' : ''} cursor-pointer`}>PRESENTATION GUIDELINES</li>
@@ -60,11 +62,17 @@ const CGOM16 = () => {
           
           {currentIndex === 0 ? (
             <Home />
-          ) : currentIndex === 1 ? (
+          ) : (currentIndex === 1 ? (
             <Committee />
-          ) : (
+          ) : (currentIndex === 2 ? (
             <ImportantDates />
-          )}
+          ) : (currentIndex === 3 ? (
+            <Program/>
+          ) : (currentIndex === 4 ? (
+            <RegistrationForm/>
+          ) : (
+            <Program/>
+          )))))}
 
           {/* Footer Section */}
           <footer className="mt-auto bg-gray-100 py-10">
