@@ -16,8 +16,13 @@ const CGOM16 = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleIndex = (ind) => {
-    setCurrentIndex(ind);
-    setMenuOpen(false);
+    if(ind === 0 || ind === 10){
+      setCurrentIndex(ind);
+      setMenuOpen(false);
+    }
+    else{
+      alert("Pages will be added soon!! Thanks for visiting");
+    }
   };
 
   return (
@@ -126,9 +131,9 @@ const CGOM16 = () => {
             <div className="flex items-center space-x-4">
               <div>
                 <img
-                  src="public/cgomlogo.png"
+                  src="/cgomlogo.png"
                   alt="CGOM Logo"
-                  className="h-12 w-20"
+                  className="h-12 w-[100px]"
                 />
               </div>
               <div>

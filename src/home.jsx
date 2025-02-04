@@ -27,9 +27,9 @@ const Home = () => {
       <section className="p-8 text-gray-600 mx-auto max-w-4xl font-sans text-lg leading-relaxed">
         <p>
           On behalf of the organizing committee, we cordially invite you to the
-          15th International Workshop on Crystal Growth of Organic Materials
-          (CGOM16), which will be held in Phuket, Thailand, from 23 to 26 July
-          2024. The aim of this CGOM16 is to provide a forum for academic
+          16th International Workshop on Crystal Growth of Organic Materials
+          (CGOM16), which will be held in SSN College of Engineering, Chennai, India, from 23 to 26 July
+          2026. The aim of this CGOM16 is to provide a forum for academic
           researchers, scientists, and industry experts to share and discuss
           recent advances in crystallization and crystal growth sciences and
           process technology. The program will include plenary lectures, invited
