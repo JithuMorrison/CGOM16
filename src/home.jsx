@@ -10,7 +10,7 @@ const Home = () => {
           Materials (CGOM16)
         </h1>
         <p className="mt-2 text-lg text-gray-600">
-          July 23<sup>rd</sup> – 26<sup>th</sup>, 2026 – CHENNAI, INDIA
+          July 23<sup>rd</sup> – 26<sup>th</sup>, 2026 – Chennai, India
         </p>
       </header>
 
@@ -37,9 +37,9 @@ const Home = () => {
           greatly welcome to join us.
         </p>
         <p className="mt-6 text-center">
-          Looking forward to seeing you in Phuket, Thailand.
+          Looking forward to seeing you in Chennai, India.
         </p>
-        <p className="text-center font-medium mt-4">Organizing Chairs</p>
+        <p className="text-center font-medium mt-4"> - Organizing Chairs</p>
       </section>
 
       {/* Topics Section */}
@@ -100,17 +100,17 @@ const Home = () => {
         <div className="flex justify-center items-center gap-10 mt-6">
           <img
             src="path-to-sut-logo.png"
-            alt="SUT Logo"
+            alt="Logo"
             className="h-24"
           />
           <img
             src="path-to-vistec-logo.png"
-            alt="Vistec Logo"
+            alt="Logo"
             className="h-24"
           />
           <img
             src="path-to-tiche-logo.png"
-            alt="TICHE Logo"
+            alt="Logo"
             className="h-24"
           />
         </div>

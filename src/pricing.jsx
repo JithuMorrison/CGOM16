@@ -56,7 +56,7 @@ const Pricing = ({handleIndex}) => {
         <h2 className="text-2xl font-bold text-gray-700">
           Online Registration <span className="text-orange-600">and Payment</span>
         </h2>
-        <button className="mt-4 bg-orange-600 text-white px-8 py-3 rounded-lg shadow hover:bg-orange-700" onClick={() => handleIndex(6)}>
+        <button className="mt-4 bg-orange-600 text-white px-8 py-3 rounded-lg shadow hover:bg-orange-700" onClick={() => handleIndex(11)}>
           REGISTRATION CLICK
         </button>
       </div>

@@ -28,14 +28,14 @@ const CGOM16 = () => {
       >
         {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
       </button>
-      
+
       <aside
-        className={`fixed top-0 left-0 z-10 h-screen w-64 bg-gray-700 text-white transform ${
+        className={`fixed top-0 left-0 z-10 h-screen w-96 bg-gray-700 text-white transform ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out`}
       >
         <div className="p-6 flex flex-col items-center">
-          <img src="/cgomlogo.png" alt="CGOM16 Logo" className="w-20 h-20 mb-4" />
+          <img src="/cgomlogo.png" alt="CGOM16 Logo" className="w-30 h-20 mb-4" />
           <h2 className="text-center text-sm font-semibold leading-tight">
             16<sup>th</sup> International Workshop on Crystal Growth of Organic Materials
           </h2>
@@ -44,7 +44,7 @@ const CGOM16 = () => {
         </div>
         <nav>
           <ul className="space-y-3 px-6 text-sm">
-            {["HOME", "COMMITTEES", "IMPORTANT DATES", "PROGRAM", "SUBMISSION", "REGISTRATION", "SPEAKERS", "PRESENTATION GUIDELINES", "CONTACT US"].map(
+            {["HOME", "COMMITTEES", "IMPORTANT DATES", "PROGRAM", "SUBMISSION", "REGISTRATION", "VENUE AND VISA", "SPEAKERS", "PRESENTATION GUIDELINES", "SPONSORS" , "CONTACT US"].map(
               (item, index) => (
                 <li
                   key={index}
@@ -59,7 +59,7 @@ const CGOM16 = () => {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 ml-64 bg-gray-50">
+      <main className="flex-1 bg-gray-50">
         {/* Header Section */}
         <section className="bg-white shadow-md py-6 mb-6 border-b">
           <div className="text-center">
@@ -68,7 +68,7 @@ const CGOM16 = () => {
               Organic Materials (CGOM16)
             </h1>
             <p className="text-gray-700 mt-2">
-              July 23<sup>rd</sup> – 26<sup>th</sup>, 2026 - CHENNAI, INDIA
+              July 23<sup>rd</sup> – 26<sup>th</sup>, 2026 - Chennai, India
             </p>
           </div>
         </section>
@@ -105,11 +105,15 @@ const CGOM16 = () => {
           <AbstractSubmission />
         ) : currentIndex === 5 ? (
           <Pricing handleIndex={handleIndex} />
+        ) : currentIndex === 6 ? (
+          <div>VENUE</div>
         ) : currentIndex === 7 ? (
           <Speakers />
         ) : currentIndex === 8 ? (
           <PresentationGuidelines />
-        ) : currentIndex === 10 ? (
+        ) : currentIndex === 9 ? (
+          <div>NotNow</div>
+        ): currentIndex === 10 ? (
           <ContactUs />
         ) : (
           <RegistrationForm />
@@ -133,7 +137,7 @@ const CGOM16 = () => {
                   Materials (CGOM16)
                 </h3>
                 <p className="text-sm text-gray-700">
-                  July 23rd – 26th, 2026 · Chennai, TamilNadu
+                  July 23rd – 26th, 2026 · Chennai, India
                 </p>
               </div>
             </div>
