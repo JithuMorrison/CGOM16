@@ -22,7 +22,7 @@ const Pricing = ({handleIndex}) => {
         <div className="bg-white shadow-md rounded-lg p-4 text-center border-t-4 border-orange-600">
           <h3 className="text-orange-600 font-bold text-lg">EARLY BIRD</h3>
           <p className="text-gray-500 font-medium mt-2">Student</p>
-          <p className="text-3xl font-bold text-orange-600 mt-4">13,500 THB</p>
+          <p className="text-3xl font-bold text-orange-600 mt-4">350 USD</p>
           <p className="text-sm text-gray-500 mt-2">Deadline May 4</p>
         </div>
 
@@ -30,7 +30,7 @@ const Pricing = ({handleIndex}) => {
         <div className="bg-white shadow-md rounded-lg p-4 text-center border-t-4 border-orange-600">
           <h3 className="text-orange-600 font-bold text-lg">EARLY BIRD</h3>
           <p className="text-gray-500 font-medium mt-2">Regular</p>
-          <p className="text-3xl font-bold text-orange-600 mt-4">17,600 THB</p>
+          <p className="text-3xl font-bold text-orange-600 mt-4">400 USD</p>
           <p className="text-sm text-gray-500 mt-2">Deadline May 4</p>
         </div>
 
@@ -38,7 +38,7 @@ const Pricing = ({handleIndex}) => {
         <div className="bg-white shadow-md rounded-lg p-4 text-center border-t-4 border-gray-400">
           <h3 className="text-gray-700 font-bold text-lg">STANDARD</h3>
           <p className="text-gray-500 font-medium mt-2">Student</p>
-          <p className="text-3xl font-bold text-gray-700 mt-4">15,700 THB</p>
+          <p className="text-3xl font-bold text-gray-700 mt-4">450 USD</p>
           <p className="text-sm text-gray-500 mt-2">Deadline June 20</p>
         </div>
 
@@ -46,7 +46,7 @@ const Pricing = ({handleIndex}) => {
         <div className="bg-white shadow-md rounded-lg p-4 text-center border-t-4 border-gray-400">
           <h3 className="text-gray-700 font-bold text-lg">STANDARD</h3>
           <p className="text-gray-500 font-medium mt-2">Regular</p>
-          <p className="text-3xl font-bold text-gray-700 mt-4">19,700 THB</p>
+          <p className="text-3xl font-bold text-gray-700 mt-4">500 USD</p>
           <p className="text-sm text-gray-500 mt-2">Deadline June 20</p>
         </div>
       </div>
