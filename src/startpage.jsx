@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { FiMenu, FiX } from "react-icons/fi";
 import Home from "./home";
 import Committee from "./commitee";
 import ImportantDates from "./importantdates";
@@ -12,64 +13,49 @@ import ContactUs from "./ContactUs";
 
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleIndex = (ind) => {
     setCurrentIndex(ind);
+    setMenuOpen(false);
   };
 
   return (
     <div className="min-h-screen bg-gray-100 flex">
-      {/* Fixed Sidebar */}
+      <button
+        className="fixed top-4 left-4 z-20 bg-gray-800 text-white p-2 rounded-md"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+      </button>
+      
       <aside
-        className="w-64 h-screen bg-gray-700 text-black fixed top-0 left-0 z-10 overflow-y-auto"
-        style={{
-          backgroundColor: "rgba(1, 1, 1, 0.3)", // Lighter shade of gray
-        }}
+        className={`fixed top-0 left-0 z-10 h-screen w-64 bg-gray-700 text-white transform ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        } transition-transform duration-300 ease-in-out`}
       >
         <div className="p-6 flex flex-col items-center">
-          <img
-            src="src/assets/cgomlogo.png"
-            alt="CGOM16 Logo"
-            className="w-20 h-20 mb-4"
-          />
+          <img src="/cgomlogo.png" alt="CGOM16 Logo" className="w-20 h-20 mb-4" />
           <h2 className="text-center text-sm font-semibold leading-tight">
-            16<sup>th</sup> International Workshop on Crystal Growth of
-            Organic Materials
+            16<sup>th</sup> International Workshop on Crystal Growth of Organic Materials
           </h2>
-          <p className="text-center text-xs mt-2">
-            July 23<sup>rd</sup> - 26<sup>th</sup>, 2026
-          </p>
+          <p className="text-center text-xs mt-2">July 23<sup>rd</sup> - 26<sup>th</sup>, 2026</p>
           <p className="text-center text-xs">Chennai, India</p>
         </div>
         <nav>
           <ul className="space-y-3 px-6 text-sm">
-            {[
-              "HOME",
-              "COMMITTEES",
-              "IMPORTANT DATES",
-              "PROGRAM",
-              "SUBMISSION",
-              "REGISTRATION",
-              "VENUE AND VISA",
-              "SPEAKERS",
-              "PRESENTATION GUIDELINES",
-              "SPONSORS AND EXHIBITIONS",
-              "CONTACT US",
-            ].map((item, index) => (
-              <li
-                key={index}
-                className={`${
-                  currentIndex === index ? "text-orange-700 font-bold" : ""
-                } cursor-pointer`}
-              >
-                <button onClick={() => handleIndex(index)}>{item}</button>
-              </li>
-            ))}
+            {["HOME", "COMMITTEES", "IMPORTANT DATES", "PROGRAM", "SUBMISSION", "REGISTRATION", "SPEAKERS", "PRESENTATION GUIDELINES", "CONTACT US"].map(
+              (item, index) => (
+                <li
+                  key={index}
+                  className={`${currentIndex === index ? "text-orange-700 font-bold" : ""} cursor-pointer`}
+                >
+                  <button onClick={() => handleIndex(index)}>{item}</button>
+                </li>
+              )
+            )}
           </ul>
         </nav>
-        <footer className="absolute bottom-4 w-full text-center text-xs text-gray-400">
-          <p>© Copyrights CGOM16 2026. All rights reserved.</p>
-        </footer>
       </aside>
 
       {/* Main Content */}
@@ -90,17 +76,17 @@ const CGOM16 = () => {
         {/* Hero Images */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-4 px-4 mb-6">
           <img
-            src="src/assets/ssn1.JPG"
+            src="/ssn1.JPG"
             alt="Image 1"
             className="w-full h-48 object-cover rounded-lg"
           />
           <img
-            src="src/assets/ssn2.JPG"
+            src="/ssn2.jpg"
             alt="Image 2"
             className="w-full h-48 object-cover rounded-lg"
           />
           <img
-            src="src/assets/ssn3.JPG"
+            src="/ssn3.jpg"
             alt="Image 3"
             className="w-full h-48 object-cover rounded-lg"
           />
@@ -136,7 +122,7 @@ const CGOM16 = () => {
             <div className="flex items-center space-x-4">
               <div>
                 <img
-                  src="src/assets/cgomlogo.png"
+                  src="public/cgomlogo.png"
                   alt="CGOM Logo"
                   className="h-12 w-20"
                 />
