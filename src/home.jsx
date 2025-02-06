@@ -24,17 +24,30 @@ const Home = () => {
       </section>
 
       {/* Introduction Section */}
-      <section className="p-8 text-gray-600 mx-auto max-w-4xl font-sans text-lg leading-relaxed">
+      <section className="p-8 text-gray-600 mx-auto max-w-5xl font-sans text-lg leading-relaxed text-justify">
         <p>
-          On behalf of the organizing committee, we cordially invite you to the
-          16th International Workshop on Crystal Growth of Organic Materials
-          (CGOM16), which will be held in SSN College of Engineering, Chennai, India, from 20 to 23 July
-          2026. The aim of this CGOM16 is to provide a forum for academic
-          researchers, scientists, and industry experts to share and discuss
-          recent advances in crystallization and crystal growth sciences and
-          process technology. The program will include plenary lectures, invited
-          lectures, oral presentations, and poster presentations. You will be
-          greatly welcome to join us.
+        We are very pleased to be able to invite you to attend and participate in the 16th International Workshop
+on Crystal Growth of Organic Materials (CGOM 16) which will be held in Chennai, India in 2026 at the SSN
+College of Engineering which will be organised in association with the Indian Association for Crystal
+Growth. This flagship event will provide access to the most recent advancements in crystal growth of
+organic materials, with a dynamic program that will include plenary lectures, invited lectures, oral
+presentations, and poster sessions. The workshop traditionally promotes, highlights, and debates new
+developments in research covering areas such as the nucleation, crystal growth, morphology, crystal
+chemistry, polymorphism, and solid-solid transitions of organic materials covering systems ranging
+from small molecules to macromolecules such as proteins. 
+<br />
+<br />
+The conference followed previous CGOM meetings in Japan 1990 and 2014, UK 1992, 1999, 2003 and 2016,
+Germany 1994 and 1996, France 2006, The Netherlands 2008, Singapore 2010, Ireland 2012, Korea 2018,
+Belgium 2022 and Thailand 2024. Join us for a unique opportunity to network, create, and contribute to
+the area. <br /><br />
+The journal Crystal Engineering Communications from the Royal Society of Chemistry has agreed to
+publish a special, broader-themed collection dedicated to the topic of Crystal Growth of Organic
+Materials. This collection will showcase cutting-edge research and advances in this field, and it will
+include contributions from all of the speakers at the upcoming conference, alongside other prominent
+researchers and experts in the area. The collection aims to highlight the latest methodologies,
+discoveries, and innovations in organic crystal growth, emphasizing their importance in a variety of
+applications, including materials science, pharmaceutical development, and nanotechnology.
         </p>
         <p className="mt-6 text-center">
           Looking forward to seeing you in Chennai, India.
