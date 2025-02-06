@@ -60,6 +60,7 @@ const ContactUs = () => {
             />
             <h3 className="text-lg font-bold text-gray-800">Phone</h3>
             <p className="text-gray-600 mt-2">
+              <br />
               Mobile: +91 9445434893
             </p>
           </div>
