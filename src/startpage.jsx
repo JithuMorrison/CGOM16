@@ -70,9 +70,9 @@ const CGOM16 = () => {
                 key={index}
                 className={`${
                   currentIndex === index
-                    ? "text-orange-700 font-bold bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
+                    ? "font-bold bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
                     : ""
-                } cursor-pointer items-center py-2 px-3 -my-2 font-medium rounded-md flex gap-2`}
+                } cursor-pointer items-center py-2 px-3 -my-2 font-medium rounded-md flex gap-2 flex flex-col items-center`}
               >
                 <button onClick={() => handleIndex(index)} className="flex items-center gap-2">
                   {item.icon}
