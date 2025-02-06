@@ -132,7 +132,7 @@ const CGOM16 = () => {
                   <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                     <h2 className="text-xl font-bold">Alert!</h2>
                     <p className="mt-2 text-gray-700">
-                      Pages Will be Added Soon! Thanks for visit!!
+                      Pages Will be Added Soon! Thanks for visiting!!
                     </p>
                     <button
                       className="mt-4 px-4 py-2 bg-[#255aa8] text-white rounded-lg hover:bg-[#377bdf] transition"
