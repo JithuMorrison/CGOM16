@@ -82,15 +82,15 @@ applications, including materials science, pharmaceutical development, and nanot
 
 
       {/* Co-organizers Section */}
-      {/*<div className="flex flex-col items-center justify-center py-12 bg-white">
+      <div className="flex flex-col items-center justify-center py-12 bg-white">
         <h2 className="text-3xl font-bold text-orange-600">Co-organizers</h2>
         <div className="flex justify-center items-center gap-10 mt-6">
           <img
-            src="path-to-sut-logo.png"
+            src="/bu-logo.png"
             alt="Logo"
-            className="h-24"
+            className="h-36 -mt-4"
           />
-          <img
+          {/*<img
             src="path-to-vistec-logo.png"
             alt="Logo"
             className="h-24"
@@ -99,9 +99,9 @@ applications, including materials science, pharmaceutical development, and nanot
             src="path-to-tiche-logo.png"
             alt="Logo"
             className="h-24"
-          />
+          />*/}
         </div>
-      </div>*/}
+      </div>
     </div>
   );
 };

@@ -29,7 +29,7 @@ const CGOM16 = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex">
       <button
-        className="fixed top-4 left-4 z-20 bg-gray-800 text-white p-2 rounded-md"
+        className="fixed top-8 left-4 z-20 bg-gray-800 text-white p-2 rounded-md"
         onClick={() => setMenuOpen(!menuOpen)}
       >
         {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
@@ -63,6 +63,8 @@ const CGOM16 = () => {
           </ul>
         </nav>
       </aside>
+
+      <img src="/ssn-logo.png" alt="Corner Image" className="absolute top-8 right-4 w-16 h-8" />
 
       {/* Main Content */}
       <main className="flex-1 bg-gray-50">
@@ -130,10 +132,10 @@ const CGOM16 = () => {
                   <div className="bg-white p-6 rounded-lg shadow-lg text-center">
                     <h2 className="text-xl font-bold">Alert!</h2>
                     <p className="mt-2 text-gray-700">
-                      This is a custom alert in the center of the page.
+                      Pages Will be Added Soon! Thanks for visit!!
                     </p>
                     <button
-                      className="mt-4 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+                      className="mt-4 px-4 py-2 bg-[#255aa8] text-white rounded-lg hover:bg-[#377bdf] transition"
                       onClick={() => setShowAlert(false)}
                     >
                       OK
