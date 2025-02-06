@@ -24,17 +24,30 @@ const Home = () => {
       </section>
 
       {/* Introduction Section */}
-      <section className="p-8 text-gray-600 mx-auto max-w-4xl font-sans text-lg leading-relaxed">
+      <section className="p-8 text-gray-600 mx-auto max-w-5xl font-sans text-lg leading-relaxed text-justify">
         <p>
-          On behalf of the organizing committee, we cordially invite you to the
-          16th International Workshop on Crystal Growth of Organic Materials
-          (CGOM16), which will be held in SSN College of Engineering, Chennai, India, from 20 to 23 July
-          2026. The aim of this CGOM16 is to provide a forum for academic
-          researchers, scientists, and industry experts to share and discuss
-          recent advances in crystallization and crystal growth sciences and
-          process technology. The program will include plenary lectures, invited
-          lectures, oral presentations, and poster presentations. You will be
-          greatly welcome to join us.
+        We are very pleased to be able to invite you to attend and participate in the 16th International Workshop
+on Crystal Growth of Organic Materials (CGOM 16) which will be held in Chennai, India in 2026 at the SSN
+College of Engineering which will be organised in association with the Indian Association for Crystal
+Growth. This flagship event will provide access to the most recent advancements in crystal growth of
+organic materials, with a dynamic program that will include plenary lectures, invited lectures, oral
+presentations, and poster sessions. The workshop traditionally promotes, highlights, and debates new
+developments in research covering areas such as the nucleation, crystal growth, morphology, crystal
+chemistry, polymorphism, and solid-solid transitions of organic materials covering systems ranging
+from small molecules to macromolecules such as proteins. 
+<br />
+<br />
+The conference followed previous CGOM meetings in Japan 1990 and 2014, UK 1992, 1999, 2003 and 2016,
+Germany 1994 and 1996, France 2006, The Netherlands 2008, Singapore 2010, Ireland 2012, Korea 2018,
+Belgium 2022 and Thailand 2024. Join us for a unique opportunity to network, create, and contribute to
+the area. <br /><br />
+The journal Crystal Engineering Communications from the Royal Society of Chemistry has agreed to
+publish a special, broader-themed collection dedicated to the topic of Crystal Growth of Organic
+Materials. This collection will showcase cutting-edge research and advances in this field, and it will
+include contributions from all of the speakers at the upcoming conference, alongside other prominent
+researchers and experts in the area. The collection aims to highlight the latest methodologies,
+discoveries, and innovations in organic crystal growth, emphasizing their importance in a variety of
+applications, including materials science, pharmaceutical development, and nanotechnology.
         </p>
         <p className="mt-6 text-center">
           Looking forward to seeing you in Chennai, India.
@@ -42,57 +55,31 @@ const Home = () => {
         <p className="text-center font-medium mt-4"> - Organizing Chairs</p>
       </section>
 
-      {/* Topics Section */}
-      <section className="p-8 font-sans text-center bg-gray-100">
-        <h2 className="text-2xl font-bold uppercase">
-          Topics <span className="text-[#D34310]">for the Conference</span>
-        </h2>
+     {/* Topics Section */}
+<section className="p-8 font-sans bg-[#255aa8] text-white text-justify">
+  <h2 className="text-2xl font-bold uppercase text-center">Workshop Topics:</h2>
+  <div className="grid grid-cols-2 gap-8 mt-8 mx-auto ml-[220px] max-w-5xl">
+    <ul className="space-y-2">
+      <li>▶ Crystal engineering and crystals in drugs & pharmaceuticals</li>
+      <li>▶ Crystallization of organic & biological systems</li>
+      <li>▶ Fundamentals of nucleation & crystal growth</li>
+      <li>▶ Growth at the nanoscale: nanocrystals, nanowires, nanomaterials</li>
+      <li>▶ 2D Materials</li>
+      <li>▶ Advances in observation & characterization methods</li>
+      <li>▶ Surfaces and Interfaces</li>
+    </ul>
+    <ul className="space-y-2">
+      <li>▶ Bulk crystal growth</li>
+      <li>▶ Composite and hybrid crystals</li>
+      <li>▶ Industrial crystal growth technology & equipment</li>
+      <li>▶ Modelling and artificial intelligence of crystal growth processes</li>
+      <li>▶ New methods and techniques for crystal growth</li>
+      <li>▶ Structural defects and impurities in crystalline materials</li>
+      <li>▶ Topological quantum materials</li>
+    </ul>
+  </div>
+</section>
 
-        <ul className="list-none mt-6 space-y-4">
-          <li className="flex items-start justify-center">
-            <p>
-              <span className="text-[#D34310] mr-2 text-xl">🔺</span>
-              <strong>
-                Crystallization and crystal growth fundamentals:
-              </strong>{" "}
-              crystal nucleation, crystal growth, agglomeration, thermodynamics,
-              solution structure, transport phenomena in crystal growth, etc.
-            </p>
-          </li>
-          <li className="flex items-start justify-center">
-            <p>
-              <span className="text-[#D34310] mr-2 text-xl">🔺</span>
-              <strong>
-                Crystal engineering and crystals in pharmaceuticals:
-              </strong>{" "}
-              crystal structure characterization, polymorphism, solvates,
-              amorphous, salts, nano-crystals, co-crystals, chiral separation,
-              surface crystallization, protein crystallization, etc.
-            </p>
-          </li>
-          <li className="flex items-start justify-center">
-            <p>
-              <span className="text-[#D34310] mr-2 text-xl">🔺</span>
-              <strong>
-                Crystallization process and crystal growth modeling, design,
-                control, and digital design
-              </strong>
-            </p>
-          </li>
-          <li className="flex items-start justify-center">
-            <p>
-              <span className="text-[#D34310] mr-2 text-xl">🔺</span>
-              <strong>New materials and products</strong>
-            </p>
-          </li>
-          <li className="flex items-start justify-center">
-            <p>
-              <span className="text-[#D34310] mr-2 text-xl">🔺</span>
-              <strong>Sustainable crystallization technologies</strong>
-            </p>
-          </li>
-        </ul>
-      </section>
 
       {/* Co-organizers Section */}
       {/*<div className="flex flex-col items-center justify-center py-12 bg-white">
