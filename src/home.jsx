@@ -10,7 +10,7 @@ const Home = () => {
           Materials (CGOM16)
         </h1>
         <p className="mt-2 text-lg text-gray-600">
-          July 23<sup>rd</sup> – 26<sup>th</sup>, 2026 – Chennai, India
+          July 20<sup>th</sup> – 23<sup>rd</sup>, 2026 – Chennai, India
         </p>
       </header>
 
@@ -28,7 +28,7 @@ const Home = () => {
         <p>
           On behalf of the organizing committee, we cordially invite you to the
           16th International Workshop on Crystal Growth of Organic Materials
-          (CGOM16), which will be held in SSN College of Engineering, Chennai, India, from 23 to 26 July
+          (CGOM16), which will be held in SSN College of Engineering, Chennai, India, from 20 to 23 July
           2026. The aim of this CGOM16 is to provide a forum for academic
           researchers, scientists, and industry experts to share and discuss
           recent advances in crystallization and crystal growth sciences and
@@ -95,7 +95,7 @@ const Home = () => {
       </section>
 
       {/* Co-organizers Section */}
-      <div className="flex flex-col items-center justify-center py-12 bg-white">
+      {/*<div className="flex flex-col items-center justify-center py-12 bg-white">
         <h2 className="text-3xl font-bold text-orange-600">Co-organizers</h2>
         <div className="flex justify-center items-center gap-10 mt-6">
           <img
@@ -114,7 +114,7 @@ const Home = () => {
             className="h-24"
           />
         </div>
-      </div>
+      </div>*/}
     </div>
   );
 };

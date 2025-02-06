@@ -44,7 +44,7 @@ const CGOM16 = () => {
           <h2 className="text-center text-sm font-semibold leading-tight">
             16<sup>th</sup> International Workshop on Crystal Growth of Organic Materials
           </h2>
-          <p className="text-center text-xs mt-2">July 23<sup>rd</sup> - 26<sup>th</sup>, 2026</p>
+          <p className="text-center text-xs mt-2">July 20<sup>th</sup> - 23<sup>rd</sup>, 2026</p>
           <p className="text-center text-xs">Chennai, India</p>
         </div>
         <nav>
@@ -73,7 +73,7 @@ const CGOM16 = () => {
               Organic Materials (CGOM16)
             </h1>
             <p className="text-gray-700 mt-2">
-              July 23<sup>rd</sup> – 26<sup>th</sup>, 2026 - Chennai, India
+              July 20<sup>th</sup> – 23<sup>rd</sup>, 2026 - Chennai, India
             </p>
           </div>
         </section>
@@ -142,7 +142,7 @@ const CGOM16 = () => {
                   Materials (CGOM16)
                 </h3>
                 <p className="text-sm text-gray-700">
-                  July 23rd – 26th, 2026 · Chennai, India
+                  July 20th – 23rd, 2026 · Chennai, India
                 </p>
               </div>
             </div>
