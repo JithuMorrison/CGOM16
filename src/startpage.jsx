@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiHome, FiUsers, FiCalendar, FiList, FiFileText, FiDollarSign, FiMapPin, FiMic, FiBookOpen, FiStar, FiMail } from "react-icons/fi";
 import Home from "./home";
 import Committee from "./commitee";
 import ImportantDates from "./importantdates";
@@ -19,12 +19,26 @@ const CGOM16 = () => {
   const handleIndex = (ind) => {
     if(ind === 0 || ind === 1 || ind === 10){
       setCurrentIndex(ind);
-      setMenuOpen(false);
+      //setMenuOpen(false);
     }
     else{
       setShowAlert(true)
     }
   };
+
+  const menuItems = [
+    { name: "HOME", icon: <FiHome /> },
+    { name: "COMMITTEES", icon: <FiUsers /> },
+    { name: "IMPORTANT DATES", icon: <FiCalendar /> },
+    { name: "PROGRAM", icon: <FiList /> },
+    { name: "SUBMISSION", icon: <FiFileText /> },
+    { name: "REGISTRATION", icon: <FiDollarSign /> },
+    { name: "VENUE AND VISA", icon: <FiMapPin /> },
+    { name: "SPEAKERS", icon: <FiMic /> },
+    { name: "PRESENTATION GUIDELINES", icon: <FiBookOpen /> },
+    { name: "SPONSORS", icon: <FiStar /> },
+    { name: "CONTACT US", icon: <FiMail /> },
+  ];
 
   return (
     <div className="min-h-screen bg-gray-100 flex">
@@ -36,7 +50,7 @@ const CGOM16 = () => {
       </button>
 
       <aside
-        className={`fixed top-0 left-0 z-10 h-screen w-96 bg-gray-700 text-white transform ${
+        className={`fixed top-0 left-0 z-10 h-screen w-96 bg-gray-700 text-white transform rounded-md ${
           menuOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out`}
       >
@@ -48,18 +62,24 @@ const CGOM16 = () => {
           <p className="text-center text-xs mt-2">July 20<sup>th</sup> - 23<sup>rd</sup>, 2026</p>
           <p className="text-center text-xs">Chennai, India</p>
         </div>
+        <hr className="-mt-4 mb-6"/>
         <nav>
           <ul className="space-y-3 px-6 text-sm">
-            {["HOME", "COMMITTEES", "IMPORTANT DATES", "PROGRAM", "SUBMISSION", "REGISTRATION", "VENUE AND VISA", "SPEAKERS", "PRESENTATION GUIDELINES", "SPONSORS" , "CONTACT US"].map(
-              (item, index) => (
-                <li
-                  key={index}
-                  className={`${currentIndex === index ? "text-orange-700 font-bold" : ""} cursor-pointer`}
-                >
-                  <button onClick={() => handleIndex(index)}>{item}</button>
-                </li>
-              )
-            )}
+            {menuItems.map((item, index) => (
+              <li
+                key={index}
+                className={`${
+                  currentIndex === index
+                    ? "text-orange-700 font-bold bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
+                    : ""
+                } cursor-pointer items-center py-2 px-3 -my-2 font-medium rounded-md flex gap-2`}
+              >
+                <button onClick={() => handleIndex(index)} className="flex items-center gap-2">
+                  {item.icon}
+                  {item.name}
+                </button>
+              </li>
+            ))}
           </ul>
         </nav>
       </aside>
