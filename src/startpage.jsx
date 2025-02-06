@@ -14,6 +14,7 @@ import ContactUs from "./ContactUs";
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleIndex = (ind) => {
     if(ind === 0 || ind === 1 || ind === 10){
@@ -21,7 +22,7 @@ const CGOM16 = () => {
       setMenuOpen(false);
     }
     else{
-      alert("Pages will be added soon!! Thanks for visiting");
+      setShowAlert(true)
     }
   };
 
@@ -123,6 +124,23 @@ const CGOM16 = () => {
         ) : (
           <RegistrationForm />
         )}
+
+        {showAlert && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+                  <div className="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h2 className="text-xl font-bold">Alert!</h2>
+                    <p className="mt-2 text-gray-700">
+                      This is a custom alert in the center of the page.
+                    </p>
+                    <button
+                      className="mt-4 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition"
+                      onClick={() => setShowAlert(false)}
+                    >
+                      OK
+                    </button>
+                  </div>
+                </div>
+              )}
 
         {/* Footer Section */}
         <footer className="mt-auto bg-gray-100 py-10">
