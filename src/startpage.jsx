@@ -16,7 +16,7 @@ const CGOM16 = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleIndex = (ind) => {
-    if(ind === 0 || ind === 10){
+    if(ind === 0 || ind === 1 || ind === 10){
       setCurrentIndex(ind);
       setMenuOpen(false);
     }
