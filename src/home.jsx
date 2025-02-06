@@ -55,57 +55,31 @@ applications, including materials science, pharmaceutical development, and nanot
         <p className="text-center font-medium mt-4"> - Organizing Chairs</p>
       </section>
 
-      {/* Topics Section */}
-      <section className="p-8 font-sans text-center bg-gray-100">
-        <h2 className="text-2xl font-bold uppercase">
-          Topics <span className="text-[#D34310]">for the Conference</span>
-        </h2>
+     {/* Topics Section */}
+<section className="p-8 font-sans bg-[#255aa8] text-white text-justify">
+  <h2 className="text-2xl font-bold uppercase text-center">Workshop Topics:</h2>
+  <div className="grid grid-cols-2 gap-8 mt-8 mx-auto ml-[220px] max-w-5xl">
+    <ul className="space-y-2">
+      <li>▶ Crystal engineering and crystals in drugs & pharmaceuticals</li>
+      <li>▶ Crystallization of organic & biological systems</li>
+      <li>▶ Fundamentals of nucleation & crystal growth</li>
+      <li>▶ Growth at the nanoscale: nanocrystals, nanowires, nanomaterials</li>
+      <li>▶ 2D Materials</li>
+      <li>▶ Advances in observation & characterization methods</li>
+      <li>▶ Surfaces and Interfaces</li>
+    </ul>
+    <ul className="space-y-2">
+      <li>▶ Bulk crystal growth</li>
+      <li>▶ Composite and hybrid crystals</li>
+      <li>▶ Industrial crystal growth technology & equipment</li>
+      <li>▶ Modelling and artificial intelligence of crystal growth processes</li>
+      <li>▶ New methods and techniques for crystal growth</li>
+      <li>▶ Structural defects and impurities in crystalline materials</li>
+      <li>▶ Topological quantum materials</li>
+    </ul>
+  </div>
+</section>
 
-        <ul className="list-none mt-6 space-y-4">
-          <li className="flex items-start justify-center">
-            <p>
-              <span className="text-[#D34310] mr-2 text-xl">🔺</span>
-              <strong>
-                Crystallization and crystal growth fundamentals:
-              </strong>{" "}
-              crystal nucleation, crystal growth, agglomeration, thermodynamics,
-              solution structure, transport phenomena in crystal growth, etc.
-            </p>
-          </li>
-          <li className="flex items-start justify-center">
-            <p>
-              <span className="text-[#D34310] mr-2 text-xl">🔺</span>
-              <strong>
-                Crystal engineering and crystals in pharmaceuticals:
-              </strong>{" "}
-              crystal structure characterization, polymorphism, solvates,
-              amorphous, salts, nano-crystals, co-crystals, chiral separation,
-              surface crystallization, protein crystallization, etc.
-            </p>
-          </li>
-          <li className="flex items-start justify-center">
-            <p>
-              <span className="text-[#D34310] mr-2 text-xl">🔺</span>
-              <strong>
-                Crystallization process and crystal growth modeling, design,
-                control, and digital design
-              </strong>
-            </p>
-          </li>
-          <li className="flex items-start justify-center">
-            <p>
-              <span className="text-[#D34310] mr-2 text-xl">🔺</span>
-              <strong>New materials and products</strong>
-            </p>
-          </li>
-          <li className="flex items-start justify-center">
-            <p>
-              <span className="text-[#D34310] mr-2 text-xl">🔺</span>
-              <strong>Sustainable crystallization technologies</strong>
-            </p>
-          </li>
-        </ul>
-      </section>
 
       {/* Co-organizers Section */}
       {/*<div className="flex flex-col items-center justify-center py-12 bg-white">
