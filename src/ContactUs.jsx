@@ -60,10 +60,6 @@ const ContactUs = () => {
             />
             <h3 className="text-lg font-bold text-gray-800">Phone</h3>
             <p className="text-gray-600 mt-2">
-              Phone: +91 44 2746 9700
-              <br />
-              Working hours: 8am to 3:30pm
-              <br />
               Mobile: +91 9445434893
             </p>
           </div>
