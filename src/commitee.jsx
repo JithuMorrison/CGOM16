@@ -128,7 +128,7 @@ const Committee = () => {
         </ul>
       </div>
         <div className="font-sans p-6 bg-gray-50 text-gray-800">
-        <h1 className="text-2xl font-bold text-red-600 mb-6"><span className="mr-2 text-2xl">⦿</span>Committee Members</h1>
+        <h1 className="text-2xl font-bold text-red-600 mb-6"><span className="mr-2 text-2xl">⦿</span>Advisory Committee Members</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {members.map((member, index) => (
             <div
