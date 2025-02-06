@@ -133,7 +133,7 @@ const Committee = () => {
             {members.map((member, index) => (
             <div
                 key={index}
-                className="bg-white shadow-md rounded-lg p-4 border border-gray-200 hover:shadow-lg transition-shadow duration-300"
+                className="bg-white shadow-md rounded-lg p-4 border border-gray-200 hover:shadow-xl transition-shadow duration-500 ease-in-out"
             >
                 <h3 className="text-lg font-semibold text-gray-900">{member.name}</h3>
                 <p className="text-sm text-gray-600">{member.institution}</p>
