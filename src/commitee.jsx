@@ -47,8 +47,8 @@ const Committee = () => {
         <hr className="my-3 border-t border-gray-300" />
         <ul className="space-y-4">
             <li className="flex justify-between items-center">
-            <span className="font-semibold text-gray-800 text-base">Rajesh Paulraj</span>
-            <span className="text-gray-500 text-sm italic">
+            <span className="font-semibold text-gray-800 text-base">Dr. Rajesh Paulraj</span>
+            <span className="text-gray-500 text-sm ">
                 SSN College of Engineering, India
             </span>
             </li>
@@ -65,56 +65,63 @@ const Committee = () => {
           <li className="flex justify-between items-center">
             <span className="font-bold text-gray-700">CHIEF PATRON</span>
             <div className="flex flex-col text-right">
-              <span className="font-medium">Shiv Nadar</span>
+              <span className="font-medium">Dr. Shiv Nadar</span>
               <span className="text-gray-600 text-sm">SSN Institutions, Chennai, India</span>
             </div>
           </li>
           <li className="flex justify-between items-center">
             <span className="font-bold text-gray-700">PATRON</span>
             <div className="flex flex-col text-right">
-              <span className="font-medium">Kala Vijayakumar</span>
+              <span className="font-medium">Dr. Kala Vijayakumar</span>
               <span className="text-gray-600 text-sm">SSN Institutions, Chennai, India</span>
             </div>
           </li>
           <li className="flex justify-between items-center">
             <span className="font-bold text-gray-700">CO-PATRON</span>
             <div className="flex flex-col text-right">
-              <span className="font-medium">S. Radha</span>
+              <span className="font-medium">Dr. S. Radha</span>
               <span className="text-gray-600 text-sm">SSN College of Engineering, Chennai, India</span>
             </div>
           </li>
           <li className="flex justify-between items-center">
             <span className="font-bold text-gray-700">CO-PATRON</span>
             <div className="flex flex-col text-right">
-              <span className="font-medium">P. Ramasamy</span>
+              <span className="font-medium">Dr. P. Ramasamy</span>
               <span className="text-gray-600 text-sm">SSN College of Engineering, Chennai, India</span>
             </div>
           </li>
           <li className="flex justify-between items-center">
             <span className="font-bold text-gray-700">CONVENER</span>
             <div className="flex flex-col text-right">
-              <span className="font-medium">Rajesh Paulraj</span>
+              <span className="font-medium">Dr. Rajesh Paulraj</span>
               <span className="text-gray-600 text-sm">SSN College of Engineering, Chennai, India</span>
             </div>
           </li>
           <li className="flex justify-between items-center">
             <span className="font-bold text-gray-700">CO-CONVENER</span>
             <div className="flex flex-col text-right">
-              <span className="font-medium">Srinivasan Karuppannan</span>
+              <span className="font-medium">Prof. Srinivasan Karuppannan</span>
               <span className="text-gray-600 text-sm">Bharathiar University, Coimbatore, India</span>
             </div>
           </li>
           <li className="flex justify-between items-center">
             <span className="font-bold text-gray-700">LOCAL ORGANIZING COMMITTEE</span>
             <div className="flex flex-col text-right">
-              <span className="font-medium">K. Masilla Moses Kennedy</span>
+              <span className="font-medium">Prof. K. Masilla Moses Kennedy</span>
               <span className="text-gray-600 text-sm">SSN College of Engineering, Chennai, India</span>
             </div>
           </li>
           <li className="flex justify-between items-center">
-            <span className="font-bold text-gray-700">LOCAL ORGANIZING COMMITTEE</span>
+            <span className="font-bold text-gray-700"></span>
             <div className="flex flex-col text-right">
-              <span className="font-medium">S.I. Davispresely</span>
+              <span className="font-medium">Dr. S.I. Davispresely</span>
+              <span className="text-gray-600 text-sm">SSN College of Engineering, Chennai, India</span>
+            </div>
+          </li>
+          <li className="flex justify-between items-center">
+            <span className="font-bold text-gray-700"></span>
+            <div className="flex flex-col text-right">
+              <span className="font-medium">Dr. S. Rajalakshmi</span>
               <span className="text-gray-600 text-sm">SSN College of Engineering, Chennai, India</span>
             </div>
           </li>
