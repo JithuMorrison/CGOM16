@@ -56,29 +56,29 @@ applications, including materials science, pharmaceutical development, and nanot
       </section>
 
      {/* Topics Section */}
-<section className="p-8 font-sans bg-[#255aa8] text-white text-justify">
-  <h2 className="text-2xl font-bold uppercase text-center">Workshop Topics:</h2>
-  <div className="grid grid-cols-2 gap-8 mt-8 mx-auto ml-[220px] max-w-5xl">
-    <ul className="space-y-2">
-      <li>▶ Crystal engineering and crystals in drugs & pharmaceuticals</li>
-      <li>▶ Crystallization of organic & biological systems</li>
-      <li>▶ Fundamentals of nucleation & crystal growth</li>
-      <li>▶ Growth at the nanoscale: nanocrystals, nanowires, nanomaterials</li>
-      <li>▶ 2D Materials</li>
-      <li>▶ Advances in observation & characterization methods</li>
-      <li>▶ Surfaces and Interfaces</li>
-    </ul>
-    <ul className="space-y-2">
-      <li>▶ Bulk crystal growth</li>
-      <li>▶ Composite and hybrid crystals</li>
-      <li>▶ Industrial crystal growth technology & equipment</li>
-      <li>▶ Modelling and artificial intelligence of crystal growth processes</li>
-      <li>▶ New methods and techniques for crystal growth</li>
-      <li>▶ Structural defects and impurities in crystalline materials</li>
-      <li>▶ Topological quantum materials</li>
-    </ul>
-  </div>
-</section>
+      <section className="p-8 font-sans bg-[#255aa8] text-white text-justify">
+        <h2 className="text-2xl font-bold uppercase text-center">Workshop Topics:</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 mx-auto max-w-5xl">
+          <ul className="space-y-2">
+            <li>▶ Crystal engineering and crystals in drugs & pharmaceuticals</li>
+            <li>▶ Crystallization of organic & biological systems</li>
+            <li>▶ Fundamentals of nucleation & crystal growth</li>
+            <li>▶ Growth at the nanoscale: nanocrystals, nanowires, nanomaterials</li>
+            <li>▶ 2D Materials</li>
+            <li>▶ Advances in observation & characterization methods</li>
+            <li>▶ Surfaces and Interfaces</li>
+          </ul>
+          <ul className="space-y-2">
+            <li>▶ Bulk crystal growth</li>
+            <li>▶ Composite and hybrid crystals</li>
+            <li>▶ Industrial crystal growth technology & equipment</li>
+            <li>▶ Modelling and artificial intelligence of crystal growth processes</li>
+            <li>▶ New methods and techniques for crystal growth</li>
+            <li>▶ Structural defects and impurities in crystalline materials</li>
+            <li>▶ Topological quantum materials</li>
+          </ul>
+        </div>
+      </section>
 
 
       {/* Co-organizers Section */}
