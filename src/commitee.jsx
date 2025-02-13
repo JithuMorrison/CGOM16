@@ -40,7 +40,7 @@ const Committee = () => {
   return (
     <div className="font-sans p-6 bg-gray-50 text-gray-800">
       {/* Conference Chair Section */}
-      <div className="mb-10 p-6 bg-white shadow-md rounded-lg border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+      {/* <div className="mb-10 p-6 bg-white shadow-md rounded-lg border border-gray-200 hover:shadow-lg transition-shadow duration-300">
         <h2 className="text-xl font-bold text-red-600 flex items-center mb-4">
             <span className="mr-2 text-2xl text-red-500">⦿</span>Conference Chair
         </h2>
@@ -53,7 +53,7 @@ const Committee = () => {
             </span>
             </li>
         </ul>
-        </div>
+        </div> */}
 
       {/* Local Organizing Committee Section */}
       <div className="mb-10 p-6 bg-white shadow-md rounded-lg border border-gray-200 hover:shadow-lg transition-shadow duration-300">

@@ -18,11 +18,8 @@ const ContactUs = () => {
       <div className="py-12 px-4 lg:px-32">
         <section className="text-center mb-12">
           <h2 className="text-xl font-bold text-gray-800">
-            Conference Chair
+          Dr. Rajesh Paulraj
           </h2>
-          <p className="text-lg text-gray-600 mt-2">
-           Dr. Rajesh P
-          </p>
           <p className="text-lg text-gray-600 mt-2">
           Department of Physics
           <br />

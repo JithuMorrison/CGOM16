@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div>
       {/* Header Section */}
-      <header className="text-center py-12 bg-white shadow-md">
+      {/* <header className="text-center py-12 bg-white shadow-md">
         <h1 className="text-4xl font-bold text-blue-800">
           16<sup>th</sup> International Workshop on Crystal Growth of Organic
           Materials (CGOM16)
@@ -12,7 +12,7 @@ const Home = () => {
         <p className="mt-2 text-lg text-gray-600">
           July 20<sup>th</sup> – 23<sup>rd</sup>, 2026 – Chennai, India
         </p>
-      </header>
+      </header> */}
 
 
       {/* Welcome Section */}
