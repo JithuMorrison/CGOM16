@@ -19,7 +19,7 @@ const CGOM16 = () => {
   const handleIndex = (ind) => {
     if(ind === 0 || ind === 1 || ind === 10){
       setCurrentIndex(ind);
-      //setMenuOpen(false);
+      setMenuOpen(false);
     }
     else{
       setShowAlert(true)
@@ -72,7 +72,7 @@ const CGOM16 = () => {
                   currentIndex === index
                     ? "font-bold bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
                     : ""
-                } cursor-pointer items-center py-2 px-3 -my-2 font-medium rounded-md flex gap-2 flex flex-col items-center`}
+                } cursor-pointer items-center py-1.5 px-3 -my-2 font-medium rounded-md flex gap-2 flex flex-col items-center`}
               >
                 <button onClick={() => handleIndex(index)} className="flex items-center gap-2">
                   {item.icon}
@@ -90,7 +90,7 @@ const CGOM16 = () => {
       <main className="flex-1 bg-gray-50">
         {/* Header Section */}
         <section className="bg-white shadow-md py-6 mb-6 border-b">
-          <div className="text-center">
+          <div className="text-center mt-16 sm:mt-0">
             <h1 className="text-2xl lg:text-3xl font-bold text-blue-900">
               16<sup>th</sup> International Workshop on Crystal Growth of
               Organic Materials (CGOM16)
