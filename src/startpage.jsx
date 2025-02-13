@@ -63,8 +63,8 @@ const CGOM16 = () => {
           <p className="text-center text-xs">Chennai, India</p>
         </div>
         <hr className="-mt-4 mb-6"/>
-        <nav>
-          <ul className="space-y-3 px-6 text-sm">
+        <nav className="max-h-[410px] sm:max-h-[480px] overflow-y-auto -mt-4 custom-scroll-hide">
+          <ul className="space-y-3 px-6 text-sm mt-4">
             {menuItems.map((item, index) => (
               <li
                 key={index}
