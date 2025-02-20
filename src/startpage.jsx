@@ -43,7 +43,7 @@ const CGOM16 = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex">
       <button
-        className="fixed top-8 left-4 z-20 bg-gray-800 text-white p-2 rounded-md"
+        className={`fixed top-8 left-4 z-20 bg-white-400 ${menuOpen ? "text-white" : " text-black" } p-2 rounded-md shadow-md`}
         onClick={() => setMenuOpen(!menuOpen)}
       >
         {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
