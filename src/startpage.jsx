@@ -90,9 +90,9 @@ const CGOM16 = () => {
       <main className="flex-1 bg-gray-50">
         {/* Header Section */}
         <section className="bg-white shadow-md py-6 mb-6 border-b">
-          <div className="text-center mt-16 sm:mt-0">
+          <div className="text-center mt-16 md:mt-0">
             <h1 className="text-2xl lg:text-3xl font-bold text-blue-900">
-              16<sup>th</sup> International Workshop on Crystal Growth of
+              16<sup>th</sup> International Workshop on Crystal Growth of <br/>
               Organic Materials (CGOM16)
             </h1>
             <p className="text-gray-700 mt-2">
