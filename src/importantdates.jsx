@@ -42,7 +42,7 @@ const ImportantDates = () => {
     {
       date: "23 Jul",
       year: "2026",
-      title: "Conference Date: 23-26 July 2024",
+      title: "Conference Date: 23-26 July 2026",
       description: "23-26 July 2026",
     },
   ];
