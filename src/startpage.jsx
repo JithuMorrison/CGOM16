@@ -16,9 +16,20 @@ const CGOM16 = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState({ about: false, abstract: false, information: false });
 
+  React.useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.dropdown-container')) {
+        setDropdownOpen({ about: false, abstract: false, information: false });
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const handleIndex = (ind) => {
     if(ind === 0 || ind === 1 || ind === 10){
       setCurrentIndex(ind);
+      setDropdownOpen({ about: false, abstract: false, information: false });
     }
     else{
       setShowAlert(true)
@@ -57,68 +68,99 @@ const CGOM16 = () => {
     <div className="min-h-screen bg-gray-100">
       <nav className="bg-white shadow-lg fixed w-full z-50 top-0">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex justify-between h-16">
-            <div className="flex space-x-7">
-              <div className="flex items-center space-x-8">
-                <button onClick={() => handleIndex(0)} className="text-gray-700 hover:text-gray-900">Home</button>
-                <div className="relative">
-                  <button onClick={() => toggleDropdown('about')} className="flex items-center text-gray-700 hover:text-gray-900">
-                    About <FiChevronDown className="ml-1" />
+          <div className="flex justify-center h-16">
+            <div className="flex items-center space-x-10">
+              <img src="/cgomlogo.png" alt="CGOM Logo" className="h-12 w-auto" />
+              <div className="flex items-center space-x-8 font-['Poppins']">
+                <button onClick={() => handleIndex(0)} className={`text-lg transition-colors duration-200 ${currentIndex === 0 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Home</button>
+                <div className="relative group dropdown-container">
+                  <button onClick={() => toggleDropdown('about')} className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200 text-lg">
+                    About <FiChevronDown className={`ml-1 transition-transform duration-200 ${dropdownOpen.about ? 'rotate-180' : ''}`} />
                   </button>
                   {dropdownOpen.about && (
-                    <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1 z-50">
-                      {menuItems.about.map((item, index) => (
-                        <a key={index} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{item}</a>
-                      ))}
+                    <div className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100">
+                      {menuItems.about.map((item, index) => {
+                        const pageIndex = index + 1;
+                        return (
+                          <button
+                            key={index}
+                            onClick={() => handleIndex(pageIndex)}
+                            className={`block w-full text-left px-4 py-2 text-sm ${currentIndex === pageIndex ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'} transition-colors duration-150`}
+                          >
+                            {item}
+                          </button>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
-                <button onClick={() => handleIndex(3)} className="text-gray-700 hover:text-gray-900">Program</button>
-                <button onClick={() => handleIndex(5)} className="text-gray-700 hover:text-gray-900">Registration</button>
-                <div className="relative">
-                  <button onClick={() => toggleDropdown('abstract')} className="flex items-center text-gray-700 hover:text-gray-900">
-                    Abstract <FiChevronDown className="ml-1" />
+                <button onClick={() => handleIndex(3)} className={`text-lg transition-colors duration-200 ${currentIndex === 3 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Program</button>
+                <button onClick={() => handleIndex(5)} className={`text-lg transition-colors duration-200 ${currentIndex === 5 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Registration</button>
+                <div className="relative group dropdown-container">
+                  <button onClick={() => toggleDropdown('abstract')} className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200 text-lg">
+                    Abstract <FiChevronDown className={`ml-1 transition-transform duration-200 ${dropdownOpen.abstract ? 'rotate-180' : ''}`} />
                   </button>
                   {dropdownOpen.abstract && (
-                    <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1 z-50">
-                      {menuItems.abstract.map((item, index) => (
-                        <a key={index} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{item}</a>
-                      ))}
+                    <div className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100">
+                      {menuItems.abstract.map((item, index) => {
+                        const pageIndex = index + 8;
+                        return (
+                          <button
+                            key={index}
+                            onClick={() => handleIndex(pageIndex)}
+                            className={`block w-full text-left px-4 py-2 text-sm ${currentIndex === pageIndex ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'} transition-colors duration-150`}
+                          >
+                            {item}
+                          </button>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
-                <div className="relative">
-                  <button onClick={() => toggleDropdown('information')} className="flex items-center text-gray-700 hover:text-gray-900">
-                    Information <FiChevronDown className="ml-1" />
+                <div className="relative group dropdown-container">
+                  <button onClick={() => toggleDropdown('information')} className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200 text-lg">
+                    Information <FiChevronDown className={`ml-1 transition-transform duration-200 ${dropdownOpen.information ? 'rotate-180' : ''}`} />
                   </button>
                   {dropdownOpen.information && (
-                    <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1 z-50">
-                      {menuItems.information.map((item, index) => (
-                        <a key={index} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{item}</a>
-                      ))}
+                    <div className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100">
+                      {menuItems.information.map((item, index) => {
+                        const pageIndex = index + 11;
+                        return (
+                          <button
+                            key={index}
+                            onClick={() => handleIndex(pageIndex)}
+                            className={`block w-full text-left px-4 py-2 text-sm ${currentIndex === pageIndex ? 'bg-blue-50 text-blue-600' : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'} transition-colors duration-150`}
+                          >
+                            {item}
+                          </button>
+                        );
+                      })}
                     </div>
                   )}
                 </div>
-                <button onClick={() => handleIndex(7)} className="text-gray-700 hover:text-gray-900">Exhibition</button>
-                <button onClick={() => handleIndex(10)} className="text-gray-700 hover:text-gray-900">Contacts</button>
+                <button onClick={() => handleIndex(7)} className={`text-lg transition-colors duration-200 ${currentIndex === 7 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Exhibition</button>
+                <button onClick={() => handleIndex(10)} className={`text-lg transition-colors duration-200 ${currentIndex === 10 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Contacts</button>
               </div>
             </div>
           </div>
         </div>
       </nav>
 
-      <img src="/ssn-logo.png" alt="Corner Image" className="absolute top-8 right-4 w-16 h-8" />
+      <div className="flex justify-between items-center px-4">
+        <img src="/cgomlogo.png" alt="CGOM Logo" className="absolute top-20 left-4 w-24 h-16" />
+        <img src="/ssn-logo.png" alt="SSN Logo" className="absolute top-24 right-4 w-16 h-8" />
+      </div>
 
       {/* Main Content */}
       <main className="bg-gray-50 pt-16">
         {/* Header Section */}
-        <section className="bg-white shadow-md py-6 mb-6 border-b">
+        <section className="bg-white shadow-md py-8 mb-6 border-b">
           <div className="text-center mt-8">
-            <h1 className="text-2xl lg:text-3xl font-bold text-blue-900">
+            <h1 className="text-3xl lg:text-4xl font-bold text-blue-900">
               16<sup>th</sup> International Workshop on Crystal Growth of <br/>
               Organic Materials (CGOM16)
             </h1>
-            <p className="text-gray-700 mt-2">
+            <p className="text-gray-700 mt-4 text-xl">
               July 20<sup>th</sup> – 23<sup>rd</sup>, 2026 - Chennai, India
             </p>
           </div>
