@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { FiMenu, FiX, FiHome, FiUsers, FiCalendar, FiList, FiFileText, FiDollarSign, FiMapPin, FiMic, FiBookOpen, FiStar, FiMail } from "react-icons/fi";
 import Home from "./home";
 import Committee from "./commitee";
 import ImportantDates from "./importantdates";
@@ -10,87 +9,111 @@ import AbstractSubmission from "./submission";
 import Speakers from "./Speakers";
 import PresentationGuidelines from "./PresentationGuidelines";
 import ContactUs from "./ContactUs";
+import { FiChevronDown } from "react-icons/fi";
 
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [menuOpen, setMenuOpen] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState({ about: false, abstract: false, information: false });
 
   const handleIndex = (ind) => {
     if(ind === 0 || ind === 1 || ind === 10){
       setCurrentIndex(ind);
-      setMenuOpen(false);
     }
     else{
       setShowAlert(true)
     }
   };
 
-  const menuItems = [
-    { name: "HOME", icon: <FiHome /> },
-    { name: "COMMITTEES", icon: <FiUsers /> },
-    { name: "IMPORTANT DATES", icon: <FiCalendar /> },
-    { name: "PROGRAM", icon: <FiList /> },
-    { name: "SUBMISSION", icon: <FiFileText /> },
-    { name: "REGISTRATION", icon: <FiDollarSign /> },
-    { name: "VENUE AND VISA", icon: <FiMapPin /> },
-    { name: "SPEAKERS", icon: <FiMic /> },
-    { name: "PRESENTATION GUIDELINES", icon: <FiBookOpen /> },
-    { name: "SPONSORS", icon: <FiStar /> },
-    { name: "CONTACT US", icon: <FiMail /> },
-  ];
+  const toggleDropdown = (menu) => {
+    setDropdownOpen(prev => ({
+      ...prev,
+      [menu]: !prev[menu]
+    }));
+  };
+
+  const menuItems = {
+    about: [
+      "International Advisory Committee",
+      "Local Organization Committee",
+      "Conference Sessions",
+      "Conference History"
+    ],
+    abstract: [
+      "Guidelines for Abstract Preparation",
+      "Information for Presenters Slide",
+      "Posters"
+    ],
+    information: [
+      "Transportation",
+      "Accommodations",
+      "Visa",
+      "Venue Information",
+      "Excursion"
+    ]
+  };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex">
-      <button
-        className={`fixed top-8 left-4 z-20 bg-white-400 ${menuOpen ? "text-white" : " text-black" } p-2 rounded-md shadow-md`}
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        {menuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-      </button>
-
-      <aside
-        className={`fixed top-0 left-0 z-10 h-screen w-96 bg-gray-700 text-white transform rounded-md ${
-          menuOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out`}
-      >
-        <div className="p-6 flex flex-col items-center">
-          <img src="/cgomlogo.png" alt="CGOM16 Logo" className="w-30 h-20 mb-4" />
-          <h2 className="text-center text-sm font-semibold leading-tight">
-            16<sup>th</sup> International Workshop on Crystal Growth of Organic Materials
-          </h2>
-          <p className="text-center text-xs mt-2">July 20<sup>th</sup> - 23<sup>rd</sup>, 2026</p>
-          <p className="text-center text-xs">Chennai, India</p>
+    <div className="min-h-screen bg-gray-100">
+      <nav className="bg-white shadow-lg fixed w-full z-50 top-0">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex justify-between h-16">
+            <div className="flex space-x-7">
+              <div className="flex items-center space-x-8">
+                <button onClick={() => handleIndex(0)} className="text-gray-700 hover:text-gray-900">Home</button>
+                <div className="relative">
+                  <button onClick={() => toggleDropdown('about')} className="flex items-center text-gray-700 hover:text-gray-900">
+                    About <FiChevronDown className="ml-1" />
+                  </button>
+                  {dropdownOpen.about && (
+                    <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1 z-50">
+                      {menuItems.about.map((item, index) => (
+                        <a key={index} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{item}</a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <button onClick={() => handleIndex(3)} className="text-gray-700 hover:text-gray-900">Program</button>
+                <button onClick={() => handleIndex(5)} className="text-gray-700 hover:text-gray-900">Registration</button>
+                <div className="relative">
+                  <button onClick={() => toggleDropdown('abstract')} className="flex items-center text-gray-700 hover:text-gray-900">
+                    Abstract <FiChevronDown className="ml-1" />
+                  </button>
+                  {dropdownOpen.abstract && (
+                    <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1 z-50">
+                      {menuItems.abstract.map((item, index) => (
+                        <a key={index} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{item}</a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <div className="relative">
+                  <button onClick={() => toggleDropdown('information')} className="flex items-center text-gray-700 hover:text-gray-900">
+                    Information <FiChevronDown className="ml-1" />
+                  </button>
+                  {dropdownOpen.information && (
+                    <div className="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg py-1 z-50">
+                      {menuItems.information.map((item, index) => (
+                        <a key={index} href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">{item}</a>
+                      ))}
+                    </div>
+                  )}
+                </div>
+                <button onClick={() => handleIndex(7)} className="text-gray-700 hover:text-gray-900">Exhibition</button>
+                <button onClick={() => handleIndex(10)} className="text-gray-700 hover:text-gray-900">Contacts</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <hr className="-mt-4 mb-6"/>
-        <nav className="max-h-[410px] sm:max-h-[480px] overflow-y-auto -mt-4 custom-scroll-hide">
-          <ul className="space-y-3 px-6 text-sm mt-4">
-            {menuItems.map((item, index) => (
-              <li
-                key={index}
-                className={`${
-                  currentIndex === index
-                    ? "font-bold bg-gradient-to-tr from-indigo-200 to-indigo-100 text-indigo-800"
-                    : ""
-                } cursor-pointer items-center py-1.5 px-3 -my-2 font-medium rounded-md flex gap-2 flex flex-col items-center`}
-              >
-                <button onClick={() => handleIndex(index)} className="flex items-center gap-2">
-                  {item.icon}
-                  {item.name}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </aside>
+      </nav>
 
       <img src="/ssn-logo.png" alt="Corner Image" className="absolute top-8 right-4 w-16 h-8" />
 
       {/* Main Content */}
-      <main className="flex-1 bg-gray-50">
+      <main className="bg-gray-50 pt-16">
         {/* Header Section */}
         <section className="bg-white shadow-md py-6 mb-6 border-b">
-          <div className="text-center mt-16 md:mt-0">
+          <div className="text-center mt-8">
             <h1 className="text-2xl lg:text-3xl font-bold text-blue-900">
               16<sup>th</sup> International Workshop on Crystal Growth of <br/>
               Organic Materials (CGOM16)
