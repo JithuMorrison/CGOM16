@@ -141,6 +141,7 @@ const CGOM16 = () => {
                 </div>
                 <button onClick={() => handleIndex(7)} className={`text-lg transition-colors duration-200 ${currentIndex === 7 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Exhibition</button>
                 <button onClick={() => handleIndex(10)} className={`text-lg transition-colors duration-200 ${currentIndex === 10 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Contacts</button>
+                <a href="https://cgom15.sut.ac.th/" target="_blank" rel="noopener noreferrer" className="text-lg bg-[#377bdf] text-white px-4 py-2 rounded-md hover:bg-[#255aa8] transition-colors duration-200">CGOM15</a>
               </div>
             </div>
           </div>
