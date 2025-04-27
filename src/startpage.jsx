@@ -28,7 +28,7 @@ const CGOM16 = () => {
   }, []);
 
   const handleIndex = (ind) => {
-    if(ind === 0 || ind === 1 || ind === 4 || ind === 10){
+    if(ind !== 10){
       setCurrentIndex(ind);
       setDropdownOpen({ about: false, abstract: false, information: false });
     }
@@ -95,8 +95,8 @@ const CGOM16 = () => {
                     </div>
                   )}
                 </div>
-                <button onClick={() => handleIndex(3)} className={`text-lg transition-colors duration-200 ${currentIndex === 3 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Program</button>
-                <button onClick={() => handleIndex(5)} className={`text-lg transition-colors duration-200 ${currentIndex === 5 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Registration</button>
+                <button onClick={() => handleIndex(5)} className={`text-lg transition-colors duration-200 ${currentIndex === 5 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Program</button>
+                <button onClick={() => handleIndex(6)} className={`text-lg transition-colors duration-200 ${currentIndex === 6 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Registration</button>
                 <div className="relative group dropdown-container">
                   <button onClick={() => toggleDropdown('abstract')} className="flex items-center text-gray-700 hover:text-blue-600 transition-colors duration-200 text-lg">
                     Abstract <FiChevronDown className={`ml-1 transition-transform duration-200 ${dropdownOpen.abstract ? 'rotate-180' : ''}`} />
@@ -104,7 +104,7 @@ const CGOM16 = () => {
                   {dropdownOpen.abstract && (
                     <div className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100">
                       {menuItems.abstract.map((item, index) => {
-                        const pageIndex = index + 8;
+                        const pageIndex = index + 7;
                         return (
                           <button
                             key={index}
@@ -125,7 +125,7 @@ const CGOM16 = () => {
                   {dropdownOpen.information && (
                     <div className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100">
                       {menuItems.information.map((item, index) => {
-                        const pageIndex = index + 11;
+                        const pageIndex = index + 10;
                         return (
                           <button
                             key={index}
@@ -139,8 +139,8 @@ const CGOM16 = () => {
                     </div>
                   )}
                 </div>
-                <button onClick={() => handleIndex(7)} className={`text-lg transition-colors duration-200 ${currentIndex === 7 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Exhibition</button>
-                <button onClick={() => handleIndex(10)} className={`text-lg transition-colors duration-200 ${currentIndex === 10 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Contacts</button>
+                <button onClick={() => handleIndex(15)} className={`text-lg transition-colors duration-200 ${currentIndex === 15 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Exhibition</button>
+                <button onClick={() => handleIndex(16)} className={`text-lg transition-colors duration-200 ${currentIndex === 16 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Contacts</button>
                 <a href="https://cgom15.sut.ac.th/" target="_blank" rel="noopener noreferrer" className="text-lg bg-[#377bdf] text-white px-4 py-2 rounded-md hover:bg-[#255aa8] transition-colors duration-200">CGOM15</a>
               </div>
             </div>
@@ -193,22 +193,34 @@ const CGOM16 = () => {
         ) : currentIndex === 1 ? (
           <Committee />
         ) : currentIndex === 2 ? (
-          <ImportantDates />
+          <Committee />
         ) : currentIndex === 3 ? (
-          <Program />
+          <ImportantDates />
         ) : currentIndex === 4 ? (
           <ConferenceHistory />
         ) : currentIndex === 5 ? (
-          <Pricing handleIndex={handleIndex} />
+          <Program />
         ) : currentIndex === 6 ? (
-          <div>VENUE</div>
+          <Pricing handleIndex={handleIndex} />
         ) : currentIndex === 7 ? (
-          <Speakers />
-        ) : currentIndex === 8 ? (
           <PresentationGuidelines />
+        ) : currentIndex === 8 ? (
+          <Speakers />
         ) : currentIndex === 9 ? (
+          <PresentationGuidelines />
+        ) : currentIndex === 10 ? (
           <div>NotNow</div>
-        ): currentIndex === 10 ? (
+        ) : currentIndex === 11 ? (
+          <ContactUs />
+        ) : currentIndex === 12 ? (
+          <div>NotNow</div>
+        ) : currentIndex === 13 ? (
+          <div>NotNow</div>
+        ) : currentIndex === 14 ? (
+          <div>NotNow</div>
+        ) : currentIndex === 15 ? (
+          <div>NotNow</div>
+        ) : currentIndex === 16 ? (
           <ContactUs />
         ) : (
           <RegistrationForm />
