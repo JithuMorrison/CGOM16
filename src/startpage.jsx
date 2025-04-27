@@ -9,6 +9,7 @@ import AbstractSubmission from "./submission";
 import Speakers from "./Speakers";
 import PresentationGuidelines from "./PresentationGuidelines";
 import ContactUs from "./ContactUs";
+import ConferenceHistory from "./ConferenceHistory";
 import { FiChevronDown } from "react-icons/fi";
 
 const CGOM16 = () => {
@@ -27,7 +28,7 @@ const CGOM16 = () => {
   }, []);
 
   const handleIndex = (ind) => {
-    if(ind === 0 || ind === 1 || ind === 10){
+    if(ind === 0 || ind === 1 || ind === 4 || ind === 10){
       setCurrentIndex(ind);
       setDropdownOpen({ about: false, abstract: false, information: false });
     }
@@ -195,7 +196,7 @@ const CGOM16 = () => {
         ) : currentIndex === 3 ? (
           <Program />
         ) : currentIndex === 4 ? (
-          <AbstractSubmission />
+          <ConferenceHistory />
         ) : currentIndex === 5 ? (
           <Pricing handleIndex={handleIndex} />
         ) : currentIndex === 6 ? (
