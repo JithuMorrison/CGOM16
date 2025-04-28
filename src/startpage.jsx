@@ -10,6 +10,7 @@ import Speakers from "./Speakers";
 import PresentationGuidelines from "./PresentationGuidelines";
 import ContactUs from "./ContactUs";
 import ConferenceHistory from "./ConferenceHistory";
+import Transportation from "./Transportation";
 import { FiChevronDown } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -456,19 +457,19 @@ const CGOM16 = () => {
             ) : currentIndex === 4 ? (
               <ConferenceHistory />
             ) : currentIndex === 5 ? (
-              <Program />
+              <Program handleIndex={handleIndex} />
             ) : currentIndex === 6 ? (
               <Pricing handleIndex={handleIndex} />
             ) : currentIndex === 7 ? (
               <PresentationGuidelines />
             ) : currentIndex === 8 ? (
-              <Speakers />
+              <PresentationGuidelines />
             ) : currentIndex === 9 ? (
               <PresentationGuidelines />
             ) : currentIndex === 10 ? (
-              <div>NotNow</div>
+              <Transportation />
             ) : currentIndex === 11 ? (
-              <ContactUs />
+              <Transportation />
             ) : currentIndex === 12 ? (
               <div>NotNow</div>
             ) : currentIndex === 13 ? (

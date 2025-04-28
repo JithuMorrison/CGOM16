@@ -1,6 +1,7 @@
 import React from 'react';
+import Speakers from './Speakers';
 
-const Program = () => {
+const Program = ({handleIndex}) => {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Banner Section */}
@@ -16,12 +17,13 @@ const Program = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <button
             className="bg-blue-600 text-white py-4 px-6 rounded-lg shadow-lg hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 text-lg font-semibold flex items-center justify-center gap-2"
-            onClick={() => window.location.href = '/abstract-submission'}
+            onClick={() => handleIndex(10)}
           >
             Abstract Submission
           </button>
           <button
             className="bg-orange-500 text-white py-4 px-6 rounded-lg shadow-lg hover:bg-orange-600 transform hover:scale-105 transition-all duration-200 text-lg font-semibold flex items-center justify-center gap-2"
+            onClick={() => handleIndex(17)}
           >
             Registration
           </button>
@@ -67,6 +69,7 @@ const Program = () => {
             </div>
           </div>
         </div>
+        <Speakers/>
       </div>
      </div>
     </div>
