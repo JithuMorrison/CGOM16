@@ -11,6 +11,7 @@ import PresentationGuidelines from "./PresentationGuidelines";
 import ContactUs from "./ContactUs";
 import ConferenceHistory from "./ConferenceHistory";
 import { FiChevronDown } from "react-icons/fi";
+import { motion, AnimatePresence } from "framer-motion";
 
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -79,7 +80,12 @@ const CGOM16 = () => {
                     About <FiChevronDown className={`ml-1 transition-transform duration-200 ${dropdownOpen.about ? 'rotate-180' : ''}`} />
                   </button>
                   {dropdownOpen.about && (
-                    <div className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100">
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100">
                       {menuItems.about.map((item, index) => {
                         const pageIndex = index + 1;
                         return (
@@ -92,7 +98,7 @@ const CGOM16 = () => {
                           </button>
                         );
                       })}
-                    </div>
+                    </motion.div>
                   )}
                 </div>
                 <button onClick={() => handleIndex(5)} className={`text-lg transition-colors duration-200 ${currentIndex === 5 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Program</button>
@@ -102,7 +108,12 @@ const CGOM16 = () => {
                     Abstract <FiChevronDown className={`ml-1 transition-transform duration-200 ${dropdownOpen.abstract ? 'rotate-180' : ''}`} />
                   </button>
                   {dropdownOpen.abstract && (
-                    <div className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100">
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100">
                       {menuItems.abstract.map((item, index) => {
                         const pageIndex = index + 7;
                         return (
@@ -115,7 +126,7 @@ const CGOM16 = () => {
                           </button>
                         );
                       })}
-                    </div>
+                    </motion.div>
                   )}
                 </div>
                 <div className="relative group dropdown-container">
@@ -123,7 +134,12 @@ const CGOM16 = () => {
                     Information <FiChevronDown className={`ml-1 transition-transform duration-200 ${dropdownOpen.information ? 'rotate-180' : ''}`} />
                   </button>
                   {dropdownOpen.information && (
-                    <div className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100">
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute left-0 mt-2 w-72 bg-white rounded-lg shadow-xl py-2 z-50 border border-gray-100">
                       {menuItems.information.map((item, index) => {
                         const pageIndex = index + 10;
                         return (
@@ -136,7 +152,7 @@ const CGOM16 = () => {
                           </button>
                         );
                       })}
-                    </div>
+                    </motion.div>
                   )}
                 </div>
                 <button onClick={() => handleIndex(15)} className={`text-lg transition-colors duration-200 ${currentIndex === 15 ? 'text-blue-600 font-semibold' : 'text-gray-700 hover:text-blue-600'}`}>Exhibition</button>
@@ -188,43 +204,53 @@ const CGOM16 = () => {
         </section>
 
         {/* Dynamic Content */}
-        {currentIndex === 0 ? (
-          <Home />
-        ) : currentIndex === 1 ? (
-          <Committee />
-        ) : currentIndex === 2 ? (
-          <Committee />
-        ) : currentIndex === 3 ? (
-          <ImportantDates />
-        ) : currentIndex === 4 ? (
-          <ConferenceHistory />
-        ) : currentIndex === 5 ? (
-          <Program />
-        ) : currentIndex === 6 ? (
-          <Pricing handleIndex={handleIndex} />
-        ) : currentIndex === 7 ? (
-          <PresentationGuidelines />
-        ) : currentIndex === 8 ? (
-          <Speakers />
-        ) : currentIndex === 9 ? (
-          <PresentationGuidelines />
-        ) : currentIndex === 10 ? (
-          <div>NotNow</div>
-        ) : currentIndex === 11 ? (
-          <ContactUs />
-        ) : currentIndex === 12 ? (
-          <div>NotNow</div>
-        ) : currentIndex === 13 ? (
-          <div>NotNow</div>
-        ) : currentIndex === 14 ? (
-          <div>NotNow</div>
-        ) : currentIndex === 15 ? (
-          <div>NotNow</div>
-        ) : currentIndex === 16 ? (
-          <ContactUs />
-        ) : (
-          <RegistrationForm />
-        )}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentIndex}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            {currentIndex === 0 ? (
+              <Home />
+            ) : currentIndex === 1 ? (
+              <Committee />
+            ) : currentIndex === 2 ? (
+              <Committee />
+            ) : currentIndex === 3 ? (
+              <ImportantDates />
+            ) : currentIndex === 4 ? (
+              <ConferenceHistory />
+            ) : currentIndex === 5 ? (
+              <Program />
+            ) : currentIndex === 6 ? (
+              <Pricing handleIndex={handleIndex} />
+            ) : currentIndex === 7 ? (
+              <PresentationGuidelines />
+            ) : currentIndex === 8 ? (
+              <Speakers />
+            ) : currentIndex === 9 ? (
+              <PresentationGuidelines />
+            ) : currentIndex === 10 ? (
+              <div>NotNow</div>
+            ) : currentIndex === 11 ? (
+              <ContactUs />
+            ) : currentIndex === 12 ? (
+              <div>NotNow</div>
+            ) : currentIndex === 13 ? (
+              <div>NotNow</div>
+            ) : currentIndex === 14 ? (
+              <div>NotNow</div>
+            ) : currentIndex === 15 ? (
+              <div>NotNow</div>
+            ) : currentIndex === 16 ? (
+              <ContactUs />
+            ) : (
+              <RegistrationForm />
+            )}
+          </motion.div>
+        </AnimatePresence>
 
         {showAlert && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
