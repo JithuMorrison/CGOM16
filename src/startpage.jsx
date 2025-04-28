@@ -13,6 +13,7 @@ import ConferenceHistory from "./ConferenceHistory";
 import Transportation from "./Transportation";
 import { FiChevronDown } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
+import Exhibition from "./Exhibiton";
 
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -477,7 +478,7 @@ const CGOM16 = () => {
             ) : currentIndex === 14 ? (
               <div>NotNow</div>
             ) : currentIndex === 15 ? (
-              <div>NotNow</div>
+              <Exhibition />
             ) : currentIndex === 16 ? (
               <ContactUs />
             ) : (
