@@ -15,6 +15,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentImage, setCurrentImage] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState({ 
     about: false, 
@@ -377,6 +378,35 @@ const CGOM16 = () => {
             </motion.p>
           </div>
         </motion.section>
+
+        <section className="relative w-full h-[400px] overflow-hidden mb-6 -mt-6">
+        {['https://www.fodors.com/wp-content/uploads/2019/12/04_ChennaiArchitecture__GroupofMonuments_shutterstock_700441387-1600x1067.jpg', 'https://static-blog.treebo.com/blog/wp-content/uploads/2018/06/Ripon-Building.jpg', 'https://i.pinimg.com/736x/a3/23/be/a323bebde8c243eb3b3124028703dd2c.jpg'].map((image, index) => (
+          <motion.div
+            key={index}
+            className="absolute w-full h-full"
+            initial={{ opacity: 0 }}
+            animate={{ 
+              opacity: currentImage === index ? 1 : 0,
+              transition: { duration: 0.5 } 
+            }}
+          >
+            <img
+              src={image}
+              alt={`SSN Campus ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+          </motion.div>
+        ))}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+          {[0, 1, 2].map((dot) => (
+            <button
+              key={dot}
+              onClick={() => setCurrentImage(dot)}
+              className={`w-3 h-3 rounded-full transition-colors duration-200 ${currentImage === dot ? 'bg-white' : 'bg-white/50'}`}
+            />
+          ))}
+        </div>
+      </section>
 
         {/* Hero Images */}
         <motion.section 
