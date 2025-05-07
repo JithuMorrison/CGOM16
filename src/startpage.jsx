@@ -451,9 +451,9 @@ const CGOM16 = () => {
             {currentIndex === 0 ? (
               <Home />
             ) : currentIndex === 1 ? (
-              <Committee />
+              <Committee scrollTo="international" />
             ) : currentIndex === 2 ? (
-              <Committee />
+              <Committee scrollTo="local" />
             ) : currentIndex === 3 ? (
               <ImportantDates />
             ) : currentIndex === 4 ? (

@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
-const Committee = () => {
+const Committee = ({ scrollTo }) => {
     const members = [
         { name: "Adrian Flood", institution: "Vidyasirimedhi Institute of Science and Technology, Thailand" },
         { name: "Allen S. Myerson", institution: "MIT, U.S.A." },
@@ -37,6 +37,17 @@ const Committee = () => {
         { name: "Woo-Sik Kim", institution: "Kyung Hee University, South Korea" },
       ];
 
+      const internationalRef = useRef(null);
+      const localRef = useRef(null);
+    
+      useEffect(() => {
+        if (scrollTo === 'international' && internationalRef.current) {
+          internationalRef.current.scrollIntoView({ behavior: 'smooth' });
+        } else if (scrollTo === 'local' && localRef.current) {
+          localRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, [scrollTo]);
+
   return (
     <div className="font-sans p-6 bg-gray-50 text-gray-800">
       {/* Conference Chair Section */}
@@ -56,9 +67,9 @@ const Committee = () => {
         </div> */}
 
       {/* Local Organizing Committee Section */}
-      <div className="mb-10 p-6 bg-white shadow-md rounded-lg border border-gray-200 hover:shadow-lg transition-shadow duration-300">
+      <div className="mb-10 p-6 bg-white shadow-md rounded-lg border border-gray-200 hover:shadow-lg transition-shadow duration-300" ref={localRef}>
         <h2 className="text-xl font-bold text-red-600 flex items-center">
-          <span className="mr-2 text-2xl">⦿</span>Local Organizing Committee
+          <span className="mr-2 text-2xl" >⦿</span>Local Organizing Committee
         </h2>
         <hr className="my-3 border-t border-gray-300" />
         <ul className="space-y-4">
@@ -127,8 +138,8 @@ const Committee = () => {
           </li>
         </ul>
       </div>
-        <div className="font-sans p-6 bg-gray-50 text-gray-800">
-        <h1 className="text-2xl font-bold text-red-600 mb-6"><span className="mr-2 text-2xl">⦿</span>Advisory Committee Members</h1>
+        <div className="font-sans p-6 bg-gray-50 text-gray-800" ref={internationalRef}>
+        <h1 className="text-2xl font-bold text-red-600 mb-6"><span className="mr-2 text-2xl" >⦿</span>Advisory Committee Members</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {members.map((member, index) => (
             <div
