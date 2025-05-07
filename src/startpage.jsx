@@ -337,7 +337,7 @@ const CGOM16 = () => {
         <motion.img 
           src="/cgomlogo.png" 
           alt="CGOM Logo" 
-          className="absolute top-20 left-4 w-24 h-16"
+          className="absolute top-20 -left-2 w-24 h-16"
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ delay: 0.4 }}
@@ -353,7 +353,7 @@ const CGOM16 = () => {
       </div>
 
       {/* Main Content */}
-      <main className="bg-gray-50 pt-16">
+      <main className="bg-gray-50 pt-20">
         {/* Header Section */}
         <motion.section 
           className="bg-white shadow-md py-8 mb-6 border-b"
@@ -383,7 +383,7 @@ const CGOM16 = () => {
         </motion.section>
 
         <section className="relative w-full h-[400px] overflow-hidden mb-6 -mt-6">
-        {['https://www.fodors.com/wp-content/uploads/2019/12/04_ChennaiArchitecture__GroupofMonuments_shutterstock_700441387-1600x1067.jpg', 'https://static-blog.treebo.com/blog/wp-content/uploads/2018/06/Ripon-Building.jpg', 'https://i.pinimg.com/736x/a3/23/be/a323bebde8c243eb3b3124028703dd2c.jpg'].map((image, index) => (
+        {['https://www.fodors.com/wp-content/uploads/2019/12/04_ChennaiArchitecture__GroupofMonuments_shutterstock_700441387-1600x1067.jpg', 'https://www.fodors.com/wp-content/uploads/2019/12/06_ChennaiArchitecture__Senatehouse_6.-Madras_University_Senate_House.jpg', 'https://www.trawell.in/admin/images/upload/786367266Chennai_Art_Gallery_Main.jpg'].map((image, index) => (
           <motion.div
             key={index}
             className="absolute w-full h-full"
