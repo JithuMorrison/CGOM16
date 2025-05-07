@@ -17,6 +17,7 @@ import Exhibition from "./Exhibiton";
 import Accommodations from "./Accommodations";
 import Visa from "./Visa";
 import VenueInformation from "./VenueInformation";
+import Excursion from "./Excursion";
 
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -479,7 +480,7 @@ const CGOM16 = () => {
             ) : currentIndex === 13 ? (
               <VenueInformation />
             ) : currentIndex === 14 ? (
-              <Accommodations />
+              <Excursion />
             ) : currentIndex === 15 ? (
               <Exhibition />
             ) : currentIndex === 16 ? (
