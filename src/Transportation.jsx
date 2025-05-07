@@ -106,11 +106,43 @@ const Transportation = () => {
             <div>
               <h2 className="text-2xl font-semibold text-teal-800 mb-3">Local Transportation</h2>
               <ul className="list-disc list-inside space-y-2 text-gray-700">
-                <li>Uber and Ola cab services are readily available throughout Chennai</li>
+                <li>Uber and Ola cab services are readily available throughout Chennai - a convenient choice for all travelers</li>
                 <li>Local buses (519, 519A) run frequently from Thiruvanmiyur to SSN College</li>
                 <li>Auto rickshaws are available for short distances</li>
                 <li>Conference shuttle service details will be announced closer to the event</li>
               </ul>
+            </div>
+          </div>
+        </motion.section>
+
+        <motion.section 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="bg-white rounded-lg shadow-lg p-6"
+        >
+          <div className="flex items-start space-x-4">
+            <FaHotel className="text-3xl text-teal-600 mt-1" />
+            <div>
+              <h2 className="text-2xl font-semibold text-teal-800 mb-3">Hotel Transportation</h2>
+              <p className="text-gray-700 mb-4">
+                All conference hotels are located near the conference center. Conference volunteers will be available to provide detailed transportation information between your hotel and the venue.
+              </p>
+            </div>
+          </div>
+        </motion.section>
+
+        <motion.section 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="bg-white rounded-lg shadow-lg p-6"
+        >
+          <div className="flex items-start space-x-4">
+            <FaBus className="text-3xl text-teal-600 mt-1" />
+            <div>
+              <h2 className="text-2xl font-semibold text-teal-800 mb-3">Travel in Xi'an</h2>
+              <p className="text-gray-700">
+                We will provide each attendee with a traffic card pre-loaded with 30 Chinese Yuan. This card can be used for all bus and Metro services. Additional credit can be added to the card at any Metro station if needed.
+              </p>
             </div>
           </div>
         </motion.section>

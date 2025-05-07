@@ -37,7 +37,7 @@ const CGOM16 = () => {
   }, []);
 
   const handleIndex = (ind) => {
-    if(ind !== 10){
+    if(ind !== 5 && ind!== 6){
       setCurrentIndex(ind);
       setDropdownOpen({ about: false, abstract: false, information: false });
     }
@@ -59,7 +59,7 @@ const CGOM16 = () => {
     about: [
       "International Advisory Committee",
       "Local Organization Committee",
-      "Conference Sessions",
+      "Important Dates",
       "Conference History"
     ],
     abstract: [
