@@ -16,6 +16,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Exhibition from "./Exhibiton";
 import Accommodations from "./Accommodations";
 import Visa from "./Visa";
+import VenueInformation from "./VenueInformation";
 
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -475,10 +476,8 @@ const CGOM16 = () => {
               <Accommodations />
             ) : currentIndex === 12 ? (
               <Visa />
-            ) : currentIndex === 12 ? (
-              <Accommodations />
             ) : currentIndex === 13 ? (
-              <Accommodations />
+              <VenueInformation />
             ) : currentIndex === 14 ? (
               <Accommodations />
             ) : currentIndex === 15 ? (
