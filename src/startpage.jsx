@@ -159,14 +159,14 @@ const CGOM16 = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-center h-16">
             <div className="flex items-center space-x-10">
-              <motion.img 
+              {/*<motion.img 
                 src="/cgomlogo.png" 
                 alt="CGOM Logo" 
                 className="h-12 w-auto"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2 }}
-              />
+              />*/}
               <motion.div 
                 className="flex items-center space-x-8 font-['Poppins']"
                 variants={containerVariants}
