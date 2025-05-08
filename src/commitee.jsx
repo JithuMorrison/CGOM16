@@ -41,10 +41,16 @@ const Committee = ({ scrollTo }) => {
       const localRef = useRef(null);
     
       useEffect(() => {
-        if (scrollTo === 'international' && internationalRef.current) {
-          internationalRef.current.scrollIntoView({ behavior: 'smooth' });
-        } else if (scrollTo === 'local' && localRef.current) {
-          localRef.current.scrollIntoView({ behavior: 'smooth' });
+        const scrollWithOffset = (ref, offset) => {
+          if (ref && ref.current) {
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+          }
+        };
+      
+        if (scrollTo === 'international') {
+          scrollWithOffset(internationalRef, 1550); // scroll 120px above
+        } else if (scrollTo === 'local') {
+          scrollWithOffset(localRef, 875); // scroll 120px above
         }
       }, [scrollTo]);
 

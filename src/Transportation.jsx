@@ -20,10 +20,10 @@ const Transportation = () => {
         <motion.section 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-white rounded-lg shadow-lg p-6"
+          className="bg-white rounded-lg shadow-lg p-6 text-center"
         >
-          <div className="flex items-start space-x-4">
-            <FaMapMarkerAlt className="text-3xl text-teal-600 mt-1" />
+          <div className="flex flex-col items-center space-y-4">
+            <FaMapMarkerAlt className="text-3xl text-teal-600" />
             <div>
               <h2 className="text-2xl font-semibold text-teal-800 mb-3">Conference Venue</h2>
               <p className="text-gray-700 leading-relaxed">
@@ -39,22 +39,22 @@ const Transportation = () => {
         <motion.section 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-white rounded-lg shadow-lg p-6"
+          className="bg-white rounded-lg shadow-lg p-6 text-center"
         >
-          <div className="flex items-start space-x-4">
-            <FaPlane className="text-3xl text-teal-600 mt-1" />
+          <div className="flex flex-col items-center space-y-4">
+            <FaPlane className="text-3xl text-teal-600" />
             <div>
               <h2 className="text-2xl font-semibold text-teal-800 mb-3">From Chennai International Airport</h2>
               <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <FaTaxi className="text-xl text-teal-600 mt-1" />
+                <div className="flex flex-col items-center space-y-2">
+                  <FaTaxi className="text-xl text-teal-600" />
                   <div>
                     <h3 className="font-semibold text-gray-800">By Taxi</h3>
                     <p className="text-gray-700">Distance: ~40 km | Duration: ~1 hour | Fare: ₹800-1000</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <FaBus className="text-xl text-teal-600 mt-1" />
+                <div className="flex flex-col items-center space-y-2">
+                  <FaBus className="text-xl text-teal-600" />
                   <div>
                     <h3 className="font-semibold text-gray-800">By Bus</h3>
                     <p className="text-gray-700">Take bus 109/M109 to Thiruvanmiyur, then bus 519/519A to SSN College</p>
@@ -69,22 +69,22 @@ const Transportation = () => {
         <motion.section 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-white rounded-lg shadow-lg p-6"
+          className="bg-white rounded-lg shadow-lg p-6 text-center"
         >
-          <div className="flex items-start space-x-4">
-            <FaTrain className="text-3xl text-teal-600 mt-1" />
+          <div className="flex flex-col items-center space-y-4">
+            <FaTrain className="text-3xl text-teal-600" />
             <div>
               <h2 className="text-2xl font-semibold text-teal-800 mb-3">From Chennai Central Railway Station</h2>
               <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <FaTaxi className="text-xl text-teal-600 mt-1" />
+                <div className="flex flex-col items-center space-y-2">
+                  <FaTaxi className="text-xl text-teal-600" />
                   <div>
                     <h3 className="font-semibold text-gray-800">By Taxi</h3>
                     <p className="text-gray-700">Distance: ~35 km | Duration: ~1 hour | Fare: ₹700-900</p>
                   </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <FaBus className="text-xl text-teal-600 mt-1" />
+                <div className="flex flex-col items-center space-y-2">
+                  <FaBus className="text-xl text-teal-600" />
                   <div>
                     <h3 className="font-semibold text-gray-800">By Bus</h3>
                     <p className="text-gray-700">Take bus 21G to Thiruvanmiyur, then bus 519/519A to SSN College</p>
@@ -99,13 +99,13 @@ const Transportation = () => {
         <motion.section 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-white rounded-lg shadow-lg p-6"
+          className="bg-white rounded-lg shadow-lg p-6 text-center"
         >
-          <div className="flex items-start space-x-4">
-            <FaHotel className="text-3xl text-teal-600 mt-1" />
+          <div className="flex flex-col items-center space-y-4">
+            <FaHotel className="text-3xl text-teal-600" />
             <div>
               <h2 className="text-2xl font-semibold text-teal-800 mb-3">Local Transportation</h2>
-              <ul className="list-disc list-inside space-y-2 text-gray-700">
+              <ul className="list-disc list-inside space-y-2 text-gray-700 text-left mx-auto max-w-md">
                 <li>Uber and Ola cab services are readily available throughout Chennai - a convenient choice for all travelers</li>
                 <li>Local buses (519, 519A) run frequently from Thiruvanmiyur to SSN College</li>
                 <li>Auto rickshaws are available for short distances</li>
@@ -118,13 +118,13 @@ const Transportation = () => {
         <motion.section 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-white rounded-lg shadow-lg p-6"
+          className="bg-white rounded-lg shadow-lg p-6 text-center"
         >
-          <div className="flex items-start space-x-4">
-            <FaHotel className="text-3xl text-teal-600 mt-1" />
+          <div className="flex flex-col items-center space-y-4">
+            <FaHotel className="text-3xl text-teal-600" />
             <div>
               <h2 className="text-2xl font-semibold text-teal-800 mb-3">Hotel Transportation</h2>
-              <p className="text-gray-700 mb-4">
+              <p className="text-gray-700 mb-4 mx-auto max-w-md">
                 All conference hotels are located near the conference center. Conference volunteers will be available to provide detailed transportation information between your hotel and the venue.
               </p>
             </div>
@@ -134,13 +134,13 @@ const Transportation = () => {
         <motion.section 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-white rounded-lg shadow-lg p-6"
+          className="bg-white rounded-lg shadow-lg p-6 text-center"
         >
-          <div className="flex items-start space-x-4">
-            <FaBus className="text-3xl text-teal-600 mt-1" />
+          <div className="flex flex-col items-center space-y-4">
+            <FaBus className="text-3xl text-teal-600" />
             <div>
               <h2 className="text-2xl font-semibold text-teal-800 mb-3">Travel in Xi'an</h2>
-              <p className="text-gray-700">
+              <p className="text-gray-700 mx-auto max-w-md">
                 We will provide each attendee with a traffic card pre-loaded with 30 Chinese Yuan. This card can be used for all bus and Metro services. Additional credit can be added to the card at any Metro station if needed.
               </p>
             </div>
@@ -151,7 +151,7 @@ const Transportation = () => {
         <motion.section 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-white rounded-lg shadow-lg p-6"
+          className="bg-white rounded-lg shadow-lg p-6 text-center"
         >
           <h2 className="text-2xl font-semibold text-teal-800 mb-4">Location Map</h2>
           <div className="aspect-w-16 aspect-h-9">
