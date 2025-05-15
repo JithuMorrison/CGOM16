@@ -5,7 +5,7 @@ const ImportantDates = () => {
     {
       date: "07",
       month: "March",
-      title: "Abstract Submission Deadline Extended to May 1, 2025"
+      title: "Abstract Submission Deadline Extended to May 1, 2026"
     },
     {
       date: "19",
@@ -16,19 +16,19 @@ const ImportantDates = () => {
 
   const importantDates = [
     {
-      date: "May 1, 2025",
+      date: "May 1, 2026",
       title: "Abstract submission deadline"
     },
     {
-      date: "May 15, 2025",
+      date: "May 15, 2026",
       title: "Notification of abstract acceptance"
     },
     {
-      date: "May 15, 2025",
+      date: "May 15, 2026",
       title: "End of early conference registration"
     },
     {
-      date: "July 15, 2025",
+      date: "July 15, 2026",
       title: "End of online registration"
     }
   ];
