@@ -10,7 +10,7 @@ const ImportantDates = () => {
     {
       date: "19",
       month: "February",
-      title: "The First Announcement of ICCGE-21 & ISSGE-19"
+      title: "The First Announcement of CGOM16"
     }
   ];
 
