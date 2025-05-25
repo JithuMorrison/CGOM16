@@ -10,7 +10,7 @@ const ConferenceHistory = () => {
     { id: 'ICCG-16', location: 'Beijing, China', year: 2010, active: false },
     { id: 'ICCG-15', location: 'Salt Lake City, USA', year: 2007, active: false },
     { id: 'ICCG-14', location: 'Grenoble, France', year: 2004, active: false },
-    { id: 'CGOM15', location: 'Kyoto, Japan', year: 2001, active: false },
+    { id: 'CGOM14', location: 'Kyoto, Japan', year: 2001, active: false },
     { id: 'CGOM15', location: 'Jerusalem, Israel', year: 1998, active: false },
   ];
 
