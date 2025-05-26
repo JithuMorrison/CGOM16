@@ -5,8 +5,6 @@ import ImportantDates from "./importantdates";
 import Program from "./program";
 import RegistrationForm from "./registration";
 import Pricing from "./pricing";
-import AbstractSubmission from "./submission";
-import Speakers from "./Speakers";
 import PresentationGuidelines from "./PresentationGuidelines";
 import ContactUs from "./ContactUs";
 import ConferenceHistory from "./ConferenceHistory";
@@ -18,11 +16,13 @@ import Accommodations from "./Accommodations";
 import Visa from "./Visa";
 import VenueInformation from "./VenueInformation";
 import Excursion from "./Excursion";
+import { FiArrowUp } from "react-icons/fi";
 
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [currentImage, setCurrentImage] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
+  const [showScroll, setShowScroll] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState({ 
     about: false, 
     abstract: false, 
@@ -41,6 +41,18 @@ const CGOM16 = () => {
 
     return () => clearInterval(interval);
   }, [images.length]);
+
+  useEffect(() => {
+    const checkScroll = () => {
+      if (!showScroll && window.pageYOffset > 400) {
+        setShowScroll(true);
+      } else if (showScroll && window.pageYOffset <= 400) {
+        setShowScroll(false);
+      }
+    };
+    window.addEventListener('scroll', checkScroll);
+    return () => window.removeEventListener('scroll', checkScroll);
+  }, [showScroll]);
 
   React.useEffect(() => {
     const handleClickOutside = (event) => {
@@ -593,6 +605,21 @@ const CGOM16 = () => {
             </motion.div>
           </div>
         </motion.footer>
+        <AnimatePresence>
+          {showScroll && (
+            <motion.button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg z-50"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <FiArrowUp className="text-xl" />
+            </motion.button>
+          )}
+        </AnimatePresence>
       </main>
     </motion.div>
   );
