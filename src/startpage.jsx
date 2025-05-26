@@ -16,7 +16,7 @@ import Accommodations from "./Accommodations";
 import Visa from "./Visa";
 import VenueInformation from "./VenueInformation";
 import Excursion from "./Excursion";
-import { FiArrowUp } from "react-icons/fi";
+import { FiArrowUp, FiMapPin, FiMail } from "react-icons/fi";
 
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -638,62 +638,163 @@ const CGOM16 = () => {
 
         {/* Footer Section */}
         <motion.footer
-  className="mt-auto bg-gray-100 py-12 border-t border-gray-200"
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ delay: 0.2 }}
->
-  <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10">
-    {/* Workshop Info */}
-    <motion.div
-      className="flex flex-col sm:flex-row items-center sm:items-start gap-6"
-      variants={itemVariants}
-    >
-      <img
-        src="/cgomlogo.png"
-        alt="CGOM Logo"
-        className="h-14 w-[120px] object-contain"
-      />
-      <div className="text-center sm:text-left">
-        <h3 className="text-xl font-semibold text-blue-900">
-          16th International Workshop on Crystal Growth of Organic Materials (CGOM16)
-        </h3>
-        <p className="text-sm text-gray-600 mt-1">
-          July 20th – 23rd, 2026 · Chennai, India
-        </p>
-      </div>
-    </motion.div>
+          className="mt-auto bg-gradient-to-b from-gray-50 to-gray-100 py-12 border-t border-gray-300"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
+        >
+          <div className="max-w-7xl mx-auto px-6">
+            {/* Main Footer Content */}
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
+              {/* Logo and Conference Info */}
+              <motion.div 
+                className="flex flex-col items-center md:items-start"
+                variants={itemVariants}
+              >
+                <img
+                  src="/cgomlogo.png"
+                  alt="CGOM Logo"
+                  className="h-16 w-auto mb-4 hover:scale-105 transition-transform duration-300 mx-auto"
+                />
+                <h3 className="text-xl font-semibold text-blue-900">
+                  16th International Workshop on Crystal Growth of Organic Materials (CGOM16)
+                </h3>
+                <p className="text-sm text-gray-600 mt-1 mx-auto">
+                  July 20th – 23rd, 2026 · Chennai, India
+                </p>
+                
+                {/* Social Icons */}
+                <div className="flex space-x-4 mt-4 mx-auto">
+                  {['twitter', 'facebook', 'linkedin', 'instagram'].map((social) => (
+                    <motion.a
+                      key={social}
+                      href="#"
+                      className="text-gray-500 hover:text-blue-600 transition-colors"
+                      whileHover={{ y: -2 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <span className="sr-only">{social}</span>
+                      <i className={`fab fa-${social} text-xl`}></i>
+                    </motion.a>
+                  ))}
+                </div>
+              </motion.div>
 
-    {/* Contact Info */}
-    <motion.div variants={itemVariants}>
-      <address className="not-italic text-gray-700 text-sm space-y-3">
-        <p className="flex items-start gap-2">
-          <span className="font-medium text-gray-800 w-20">📍 Address:</span>
-          <span>
-            Rajiv Gandhi Salai (OMR), Kalavakkam – 603 110<br />
-            Tamil Nadu, India
-          </span>
-        </p>
-        <p className="flex items-start gap-2">
-          <span className="font-medium text-gray-800 w-20">📧 Email:</span>
-          <span>
-            <a href="mailto:cgom16@ssn.edu.in" className="text-blue-600 hover:underline">cgom16@ssn.edu.in</a>, 
-            <a href="mailto:rajeshp@ssn.edu.in" className="text-blue-600 hover:underline ml-1">rajeshp@ssn.edu.in</a>
-          </span>
-        </p>
-        <p className="flex items-start gap-2">
-          <span className="font-medium text-gray-800 w-20">📞 Phone:</span>
-          <span>+91 94454348932</span>
-        </p>
-        <p className="flex items-start gap-2">
-          <span className="font-medium text-gray-800 w-21">🏫 Institution:</span>
-          <span>+91 44 2746 9700</span>
-        </p>
-      </address>
-    </motion.div>
-  </div>
-</motion.footer>
+              {/* Quick Links */}
+              <motion.div 
+                className="space-y-4"
+                variants={itemVariants}
+                transition={{ delay: 0.1 }}
+              >
+                <h4 className="text-lg font-semibold text-gray-800 border-b pb-2 border-gray-200">
+                  Quick Links
+                </h4>
+                <nav className="space-y-2">
+                  {['Home', 'Program', 'Registration', 'Contact'].map((item, index) => (
+                    <motion.a
+                      key={item}
+                      href="#"
+                      className="block text-gray-600 hover:text-blue-600 transition-colors"
+                      whileHover={{ x: 5 }}
+                    >
+                      {item}
+                    </motion.a>
+                  ))}
+                </nav>
+              </motion.div>
+
+              {/* Contact Info */}
+              <motion.div 
+                className="space-y-4"
+                variants={itemVariants}
+                transition={{ delay: 0.2 }}
+              >
+                <h4 className="text-lg font-semibold text-gray-800 border-b pb-2 border-gray-200">
+                  Contact Us
+                </h4>
+                <address className="not-italic space-y-3">
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="flex items-center">
+                      <FiMapPin className="text-blue-600 mr-2 flex-shrink-0" />
+                      <p className="text-gray-800 font-medium">Address:</p>
+                    </div>
+                    <p className="text-gray-600 text-sm text-center mt-1">
+                      Rajiv Gandhi Salai (OMR)<br />
+                      Kalavakkam – 603 110<br />
+                      Tamil Nadu, India
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-center justify-center">
+                    <div className="flex items-center">
+                      <FiMail className="text-blue-600 mr-2 flex-shrink-0" />
+                      <p className="text-gray-800 font-medium">Email:</p>
+                    </div>
+                    <div className="text-center mt-1">
+                      <a href="mailto:cgom16@ssn.edu.in" className="text-blue-600 hover:underline text-sm block">
+                        cgom16@ssn.edu.in
+                      </a>
+                      <a href="mailto:rajeshp@ssn.edu.in" className="text-blue-600 hover:underline text-sm block">
+                        rajeshp@ssn.edu.in
+                      </a>
+                    </div>
+                  </div>
+                </address>
+              </motion.div>
+
+              {/* Newsletter */}
+              <motion.div 
+                className="space-y-4"
+                variants={itemVariants}
+                transition={{ delay: 0.3 }}
+              >
+                <h4 className="text-lg font-semibold text-gray-800 border-b pb-2 border-gray-200">
+                  Stay Updated
+                </h4>
+                <p className="text-gray-600 text-sm">
+                  Subscribe to receive conference updates and important announcements.
+                </p>
+                <form className="mt-2 space-y-3">
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                  <motion.button
+                    type="submit"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors duration-200"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Subscribe
+                  </motion.button>
+                </form>
+              </motion.div>
+            </div>
+
+            {/* Copyright */}
+            <motion.div 
+              className="border-t border-gray-200 mt-12 pt-8 text-center text-gray-500 text-sm"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+            >
+              <div className="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-6">
+                <p>© 2026 CGOM16. All rights reserved.</p>
+                <div className="hidden md:block">•</div>
+                <div className="flex space-x-4">
+                  <a href="#" className="hover:text-blue-600 transition-colors">Privacy Policy</a>
+                  <a href="#" className="hover:text-blue-600 transition-colors">Terms of Service</a>
+                  <a href="#" className="hover:text-blue-600 transition-colors">Sitemap</a>
+                </div>
+              </div>
+              <p className="mt-2">
+                Made with ❤️ by SSN College of Engineering
+              </p>
+            </motion.div>
+          </div>
+        </motion.footer>
         <AnimatePresence>
           {showScroll && (
             <motion.button
