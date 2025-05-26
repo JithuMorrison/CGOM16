@@ -531,24 +531,27 @@ const CGOM16 = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
         >
-          <motion.img
-            src="/ssn1.JPG"
-            alt="Image 1"
-            className="w-full h-48 object-cover rounded-lg"
-            whileHover={{ scale: 1.02 }}
-          />
-          <motion.img
-            src="/ssn2.jpg"
-            alt="Image 2"
-            className="w-full h-48 object-cover rounded-lg"
-            whileHover={{ scale: 1.02 }}
-          />
-          <motion.img
-            src="/ssn3.jpg"
-            alt="Image 3"
-            className="w-full h-48 object-cover rounded-lg"
-            whileHover={{ scale: 1.02 }}
-          />
+          {[
+            { title: "Keynote Speakers", desc: "World-renowned experts", img: "/ssn1.JPG", index: 5 },
+            { title: "Conference Program", desc: "Detailed schedule", img: "/ssn2.jpg", index: 6 },
+            { title: "Venue Information", desc: "Location details", img: "/ssn3.jpg", index: 13 }
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              whileHover={{ y: -5 }}
+              onClick={() => handleIndex(item.index)}
+            >
+              <img src={item.img} alt={item.title} className="w-full h-48 object-cover" />
+              <div className="p-4">
+                <h3 className="text-lg font-semibold text-gray-800 mb-1">{item.title}</h3>
+                <p className="text-gray-600 text-sm mb-2">{item.desc}</p>
+                <button className="text-blue-600 text-sm font-medium hover:text-blue-800 transition-colors">
+                  Learn more →
+                </button>
+              </div>
+            </motion.div>
+          ))}
         </motion.section>
 
         {/* Dynamic Content */}
