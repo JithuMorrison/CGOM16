@@ -634,62 +634,63 @@ const CGOM16 = () => {
         </AnimatePresence>
 
         {/* Footer Section */}
-        <motion.footer 
-          className="mt-auto bg-gray-100 py-10"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-        >
-          <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Workshop Info */}
-            <motion.div 
-              className="flex items-center space-x-4"
-              variants={itemVariants}
-            >
-              <div>
-                <img
-                  src="/cgomlogo.png"
-                  alt="CGOM Logo"
-                  className="h-12 w-[100px]"
-                />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-blue-900">
-                  16th International Workshop on Crystal Growth of Organic
-                  Materials (CGOM16)
-                </h3>
-                <p className="text-sm text-gray-700">
-                  July 20th – 23rd, 2026 · Chennai, India
-                </p>
-              </div>
-            </motion.div>
+        <motion.footer
+  className="mt-auto bg-gray-100 py-12 border-t border-gray-200"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ delay: 0.2 }}
+>
+  <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-10">
+    {/* Workshop Info */}
+    <motion.div
+      className="flex flex-col sm:flex-row items-center sm:items-start gap-6"
+      variants={itemVariants}
+    >
+      <img
+        src="/cgomlogo.png"
+        alt="CGOM Logo"
+        className="h-14 w-[120px] object-contain"
+      />
+      <div className="text-center sm:text-left">
+        <h3 className="text-xl font-semibold text-blue-900">
+          16th International Workshop on Crystal Growth of Organic Materials (CGOM16)
+        </h3>
+        <p className="text-sm text-gray-600 mt-1">
+          July 20th – 23rd, 2026 · Chennai, India
+        </p>
+      </div>
+    </motion.div>
 
-            {/* Contact Info */}
-            <motion.div variants={itemVariants}>
-              <address className="not-italic text-gray-700 text-sm">
-                <p className="flex items-center space-x-2">
-                  <span className="font-bold">Address:</span>
-                  <span>
-                    Rajiv Gandhi Salai (OMR) Kalavakkam – 603 110 Tamil Nadu, India
-                  </span>
-                </p>
-                <p className="flex items-center space-x-2">
-                  <span className="font-bold">Email:</span>
-                  <span>cgom16@ssn.edu.in, rajeshp@ssn.edu.in</span>
-                </p>
-                <p className="flex items-center space-x-2">
-                  <span className="font-bold">Phone:</span>
-                  <span>+91 94454348932</span>
-                </p>
-                <p className="flex items-center space-x-2">
-                  <span className="font-bold">Institution:</span>
-                  <span>+91 44 2746 9700</span>
-                </p>
-              </address>
-            </motion.div>
-          </div>
-        </motion.footer>
+    {/* Contact Info */}
+    <motion.div variants={itemVariants}>
+      <address className="not-italic text-gray-700 text-sm space-y-3">
+        <p className="flex items-start gap-2">
+          <span className="font-medium text-gray-800 w-20">📍 Address:</span>
+          <span>
+            Rajiv Gandhi Salai (OMR), Kalavakkam – 603 110<br />
+            Tamil Nadu, India
+          </span>
+        </p>
+        <p className="flex items-start gap-2">
+          <span className="font-medium text-gray-800 w-20">📧 Email:</span>
+          <span>
+            <a href="mailto:cgom16@ssn.edu.in" className="text-blue-600 hover:underline">cgom16@ssn.edu.in</a>, 
+            <a href="mailto:rajeshp@ssn.edu.in" className="text-blue-600 hover:underline ml-1">rajeshp@ssn.edu.in</a>
+          </span>
+        </p>
+        <p className="flex items-start gap-2">
+          <span className="font-medium text-gray-800 w-20">📞 Phone:</span>
+          <span>+91 94454348932</span>
+        </p>
+        <p className="flex items-start gap-2">
+          <span className="font-medium text-gray-800 w-21">🏫 Institution:</span>
+          <span>+91 44 2746 9700</span>
+        </p>
+      </address>
+    </motion.div>
+  </div>
+</motion.footer>
         <AnimatePresence>
           {showScroll && (
             <motion.button
