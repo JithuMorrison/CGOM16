@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Home from "./home";
 import Committee from "./commitee";
 import ImportantDates from "./importantdates";
@@ -28,6 +28,19 @@ const CGOM16 = () => {
     abstract: false, 
     information: false 
   });
+  const images = [
+    'https://www.fodors.com/wp-content/uploads/2019/12/04_ChennaiArchitecture__GroupofMonuments_shutterstock_700441387-1600x1067.jpg',
+    'https://www.fodors.com/wp-content/uploads/2019/12/06_ChennaiArchitecture__Senatehouse_6.-Madras_University_Senate_House.jpg',
+    'https://media.istockphoto.com/id/1314088407/photo/gayetri-temple-behind-sri-kapaleeshwarar-temple-chennai-india.jpg?b=1&s=170667a&w=0&k=20&c=pBMi4PEpEcIoO-EHDo6fqHkYeHQEXNGltgLYSd-ALsk='
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   React.useEffect(() => {
     const handleClickOutside = (event) => {
@@ -386,7 +399,7 @@ const CGOM16 = () => {
         </motion.section>
 
         <section className="relative w-full h-[400px] overflow-hidden mb-6 -mt-6">
-        {['https://www.fodors.com/wp-content/uploads/2019/12/04_ChennaiArchitecture__GroupofMonuments_shutterstock_700441387-1600x1067.jpg', 'https://www.fodors.com/wp-content/uploads/2019/12/06_ChennaiArchitecture__Senatehouse_6.-Madras_University_Senate_House.jpg', 'https://www.trawell.in/admin/images/upload/786367266Chennai_Art_Gallery_Main.jpg'].map((image, index) => (
+        {images.map((image, index) => (
           <motion.div
             key={index}
             className="absolute w-full h-full"
@@ -404,7 +417,7 @@ const CGOM16 = () => {
           </motion.div>
         ))}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-          {[0, 1, 2].map((dot) => (
+          {images.map((_, dot) => (
             <button
               key={dot}
               onClick={() => setCurrentImage(dot)}
