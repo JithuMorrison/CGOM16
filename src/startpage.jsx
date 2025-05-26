@@ -23,6 +23,7 @@ const CGOM16 = () => {
   const [currentImage, setCurrentImage] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState({ 
     about: false, 
     abstract: false, 
@@ -63,6 +64,11 @@ const CGOM16 = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  const handleMobileNavClick = (ind) => {
+    handleIndex(ind);
+    setMobileMenuOpen(false);
+  };
 
   const handleIndex = (ind) => {
     if(ind !== 5 && ind!== 6){
@@ -178,8 +184,87 @@ const CGOM16 = () => {
       animate="visible"
       variants={containerVariants}
     >
+      <motion.div 
+        className="lg:hidden fixed top-0 left-0 right-0 bg-white shadow-lg z-50"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ type: "spring", stiffness: 300 }}
+      >
+        <div className="flex justify-between items-center h-16 px-4">
+          <button onClick={() => handleMobileNavClick(0)}>
+            <img src="/cgomlogo.png" alt="CGOM Logo" className="h-10" />
+          </button>
+          
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="p-2 focus:outline-none"
+            aria-label="Toggle menu"
+          >
+            <motion.div
+              animate={mobileMenuOpen ? "open" : "closed"}
+              variants={{
+                open: { rotate: 45, y: 5 },
+                closed: { rotate: 0 }
+              }}
+              className="w-6 h-0.5 bg-gray-700 mb-1.5"
+            />
+            <motion.div
+              animate={mobileMenuOpen ? "open" : "closed"}
+              variants={{
+                open: { opacity: 0 },
+                closed: { opacity: 1 }
+              }}
+              className="w-6 h-0.5 bg-gray-700 mb-1.5"
+            />
+            <motion.div
+              animate={mobileMenuOpen ? "open" : "closed"}
+              variants={{
+                open: { rotate: -45, y: -5 },
+                closed: { rotate: 0 }
+              }}
+              className="w-6 h-0.5 bg-gray-700"
+            />
+          </button>
+        </div>
+      </motion.div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div 
+            className="fixed inset-0 bg-white z-40 pt-16 overflow-y-auto"
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
+            transition={{ type: "tween", ease: "easeInOut" }}
+          >
+            <div className="container mx-auto px-4 py-8">
+              <MobileMenu 
+                currentIndex={currentIndex}
+                dropdownOpen={dropdownOpen}
+                toggleDropdown={toggleDropdown}
+                menuItems={menuItems}
+                handleMobileNavClick={handleMobileNavClick}
+              />
+              
+              <div className="mt-8">
+                <motion.a 
+                  href="https://cgom15.sut.ac.th/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="block text-center bg-[#377bdf] text-white px-6 py-3 rounded-md hover:bg-[#255aa8] transition-colors duration-200 mb-4"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  CGOM15
+                </motion.a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       <motion.nav 
-        className="bg-white shadow-lg fixed w-full z-50 top-0"
+        className="hidden lg:block bg-white shadow-lg fixed w-full z-50 top-0"
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ type: "spring", stiffness: 300 }}
@@ -626,3 +711,211 @@ const CGOM16 = () => {
 };
 
 export default CGOM16;
+
+const MobileMenu = ({ currentIndex, dropdownOpen, toggleDropdown, menuItems, handleMobileNavClick }) => {
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100
+      }
+    }
+  };
+
+  const dropdownItemVariants = {
+    hidden: { x: -10, opacity: 0 },
+    visible: { x: 0, opacity: 1 }
+  };
+  
+  return (
+    <motion.div 
+      className="space-y-4"
+      initial="hidden"
+      animate="visible"
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.2
+          }
+        }
+      }}
+    >
+      <motion.button 
+        onClick={() => handleMobileNavClick(0)} 
+        className={`block w-full text-left py-3 px-4 text-lg ${currentIndex === 0 ? 'text-blue-600 font-semibold bg-blue-50 rounded-lg' : 'text-gray-700'}`}
+        variants={itemVariants}
+      >
+        Home
+      </motion.button>
+      
+      {/* About Dropdown */}
+      <div className="border-b border-gray-100 pb-4">
+        <motion.button 
+          onClick={() => toggleDropdown('about')} 
+          className="flex items-center justify-between w-full py-3 px-4 text-lg text-gray-700"
+          variants={itemVariants}
+        >
+          <span>About</span>
+          <FiChevronDown className={`ml-2 transition-transform duration-200 ${dropdownOpen.about ? 'rotate-180' : ''}`} />
+        </motion.button>
+        <AnimatePresence>
+          {dropdownOpen.about && (
+            <motion.div 
+              className="pl-6 mt-2 space-y-2"
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.05
+                  }
+                }
+              }}
+            >
+              {menuItems.about.map((item, index) => {
+                const pageIndex = index + 1;
+                return (
+                  <motion.button
+                    key={index}
+                    onClick={() => handleMobileNavClick(pageIndex)}
+                    className={`block w-full text-left py-2 px-4 text-base ${currentIndex === pageIndex ? 'text-blue-600 font-medium' : 'text-gray-600'}`}
+                    variants={dropdownItemVariants}
+                  >
+                    {item}
+                  </motion.button>
+                );
+              })}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+      
+      {/* Program */}
+      <motion.button 
+        onClick={() => handleMobileNavClick(5)} 
+        className={`block w-full text-left py-3 px-4 text-lg ${currentIndex === 5 ? 'text-blue-600 font-semibold bg-blue-50 rounded-lg' : 'text-gray-700'}`}
+        variants={itemVariants}
+      >
+        Program
+      </motion.button>
+      
+      {/* Registration */}
+      <motion.button 
+        onClick={() => handleMobileNavClick(6)} 
+        className={`block w-full text-left py-3 px-4 text-lg ${currentIndex === 6 ? 'text-blue-600 font-semibold bg-blue-50 rounded-lg' : 'text-gray-700'}`}
+        variants={itemVariants}
+      >
+        Registration
+      </motion.button>
+      
+      {/* Abstract Dropdown */}
+      <div className="border-b border-gray-100 pb-4">
+        <motion.button 
+          onClick={() => toggleDropdown('abstract')} 
+          className="flex items-center justify-between w-full py-3 px-4 text-lg text-gray-700"
+          variants={itemVariants}
+        >
+          <span>Abstract</span>
+          <FiChevronDown className={`ml-2 transition-transform duration-200 ${dropdownOpen.abstract ? 'rotate-180' : ''}`} />
+        </motion.button>
+        <AnimatePresence>
+          {dropdownOpen.abstract && (
+            <motion.div 
+              className="pl-6 mt-2 space-y-2"
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.05
+                  }
+                }
+              }}
+            >
+              {menuItems.abstract.map((item, index) => {
+                const pageIndex = index + 7;
+                return (
+                  <motion.button
+                    key={index}
+                    onClick={() => handleMobileNavClick(pageIndex)}
+                    className={`block w-full text-left py-2 px-4 text-base ${currentIndex === pageIndex ? 'text-blue-600 font-medium' : 'text-gray-600'}`}
+                    variants={dropdownItemVariants}
+                  >
+                    {item}
+                  </motion.button>
+                );
+              })}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+      
+      {/* Information Dropdown */}
+      <div className="border-b border-gray-100 pb-4">
+        <motion.button 
+          onClick={() => toggleDropdown('information')} 
+          className="flex items-center justify-between w-full py-3 px-4 text-lg text-gray-700"
+          variants={itemVariants}
+        >
+          <span>Information</span>
+          <FiChevronDown className={`ml-2 transition-transform duration-200 ${dropdownOpen.information ? 'rotate-180' : ''}`} />
+        </motion.button>
+        <AnimatePresence>
+          {dropdownOpen.information && (
+            <motion.div 
+              className="pl-6 mt-2 space-y-2"
+              initial="hidden"
+              animate="visible"
+              exit="hidden"
+              variants={{
+                visible: {
+                  transition: {
+                    staggerChildren: 0.05
+                  }
+                }
+              }}
+            >
+              {menuItems.information.map((item, index) => {
+                const pageIndex = index + 10;
+                return (
+                  <motion.button
+                    key={index}
+                    onClick={() => handleMobileNavClick(pageIndex)}
+                    className={`block w-full text-left py-2 px-4 text-base ${currentIndex === pageIndex ? 'text-blue-600 font-medium' : 'text-gray-600'}`}
+                    variants={dropdownItemVariants}
+                  >
+                    {item}
+                  </motion.button>
+                );
+              })}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+      
+      {/* Exhibition */}
+      <motion.button 
+        onClick={() => handleMobileNavClick(15)} 
+        className={`block w-full text-left py-3 px-4 text-lg ${currentIndex === 15 ? 'text-blue-600 font-semibold bg-blue-50 rounded-lg' : 'text-gray-700'}`}
+        variants={itemVariants}
+      >
+        Exhibition
+      </motion.button>
+      
+      {/* Contacts */}
+      <motion.button 
+        onClick={() => handleMobileNavClick(16)} 
+        className={`block w-full text-left py-3 px-4 text-lg ${currentIndex === 16 ? 'text-blue-600 font-semibold bg-blue-50 rounded-lg' : 'text-gray-700'}`}
+        variants={itemVariants}
+      >
+        Contacts
+      </motion.button>
+    </motion.div>
+  );
+};
