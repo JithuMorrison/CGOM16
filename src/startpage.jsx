@@ -281,7 +281,7 @@ const CGOM16 = () => {
                 transition={{ delay: 0.2 }}
               />*/}
               <motion.div 
-                className="flex items-center space-x-8 font-['Poppins']"
+                className="flex items-center space-x-8 font-['Raleway']"
                 variants={containerVariants}
               >
                 <motion.button 
