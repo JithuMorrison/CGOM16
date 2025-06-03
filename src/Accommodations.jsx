@@ -32,9 +32,9 @@ const Accommodations = () => {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
               <div className="border rounded-lg p-4">
-                <h3 className="font-semibold text-lg text-blue-800">Taj Coromandel</h3>
-                <p className="text-sm text-gray-500">5-star luxury hotel • 2.5 km from venue</p>
-                <p className="mt-2">Special Rate: ₹8,500/night</p>
+                <h3 className="font-semibold text-lg text-blue-800">Park Plaza Chennai OMR</h3>
+                <p className="text-sm text-gray-500">5-star hotel • 2.5 km from venue</p>
+                <p className="mt-2">Special Rate: ₹4266/night</p>
               </div>
               <div className="border rounded-lg p-4">
                 <h3 className="font-semibold text-lg text-blue-800">ITC Grand Chola</h3>
