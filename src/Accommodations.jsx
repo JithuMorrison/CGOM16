@@ -41,6 +41,11 @@ const Accommodations = () => {
                 <p className="text-sm text-gray-500">5-star luxury hotel • 3 km from venue</p>
                 <p className="mt-2">Special Rate: ₹4871/night</p>
               </div>
+              <div className="border rounded-lg p-4">
+                <h3 className="font-semibold text-lg text-blue-800">Movotel Chennai Sipcot</h3>
+                <p className="text-sm text-gray-500">5-star luxury hotel • 3 km from venue</p>
+                <p className="mt-2">Special Rate: ₹4871/night</p>
+              </div>
             </div>
             <div className="mt-6">
               <a 
