@@ -37,7 +37,7 @@ const ImportantDates = () => {
     {
       date: "01 Dec",
       year: "2025",
-      title: "Please note that the submission system will open on 1 December 2025",
+      title: "Please note that the submission system will open on 1 December 2026",
       description: "1 December 2025",
     },
     {
