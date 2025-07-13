@@ -2,151 +2,233 @@ import React from "react";
 
 const RegistrationForm = () => {
   return (
-    <div className="p-8 bg-gray-50 min-h-screen">
-      <div className="max-w-6xl mx-auto bg-white shadow-md rounded-lg p-6">
-        <div className="grid md:grid-cols-3 gap-6">
-          {/* Left Section */}
-          <div className="md:col-span-2">
-            <h2 className="text-lg font-semibold mb-4">Account</h2>
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 mb-6"
-            />
+    <div className="p-4 md:p-8 bg-gray-50 min-h-screen">
+      <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+        {/* Header */}
+        <div className="bg-[#008066] text-white p-6">
+          <h1 className="text-2xl font-bold">Conference Registration</h1>
+          <p className="text-white/90">Please fill out the form below to complete your registration</p>
+        </div>
 
-            <h2 className="text-lg font-semibold mb-4">Information</h2>
-            <div className="flex items-center mb-4">
-              <span className="mr-4 font-medium">Title *</span>
-              <label className="mr-4 flex items-center">
-                <input type="radio" name="title" className="mr-1" /> Mr.
-              </label>
-              <label className="mr-4 flex items-center">
-                <input type="radio" name="title" className="mr-1" /> Ms.
-              </label>
-              <label className="flex items-center">
-                <input type="radio" name="title" className="mr-1" /> Mrs.
-              </label>
+        <div className="p-6">
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Left Section */}
+            <div className="md:col-span-2 space-y-6">
+              <section className="bg-gray-50 p-4 rounded-lg">
+                <h2 className="text-lg font-semibold mb-4 text-[#008066]">Account Information</h2>
+                <input
+                  type="email"
+                  placeholder="Email *"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 mb-4 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
+                  required
+                />
+              </section>
+
+              <section className="bg-gray-50 p-4 rounded-lg">
+                <h2 className="text-lg font-semibold mb-4 text-[#008066]">Personal Information</h2>
+                <div className="flex flex-wrap items-center mb-4 gap-4">
+                  <span className="font-medium text-gray-700">Title *</span>
+                  <label className="flex items-center space-x-2">
+                    <input type="radio" name="title" className="text-[#008066] focus:ring-[#008066]" /> 
+                    <span>Mr.</span>
+                  </label>
+                  <label className="flex items-center space-x-2">
+                    <input type="radio" name="title" className="text-[#008066] focus:ring-[#008066]" /> 
+                    <span>Ms.</span>
+                  </label>
+                  <label className="flex items-center space-x-2">
+                    <input type="radio" name="title" className="text-[#008066] focus:ring-[#008066]" /> 
+                    <span>Mrs.</span>
+                  </label>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                  <div>
+                    <label className="block text-sm text-gray-600 mb-1">First name *</label>
+                    <input
+                      type="text"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-gray-600 mb-1">Middle name</label>
+                    <input
+                      type="text"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-gray-600 mb-1">Last name *</label>
+                    <input
+                      type="text"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm text-gray-600 mb-1">Organization *</label>
+                  <input
+                    type="text"
+                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
+                    required
+                  />
+                </div>
+
+                <div className="mb-4">
+                  <label className="block text-sm text-gray-600 mb-1">Address</label>
+                  <textarea
+                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
+                    rows="3"
+                  />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div>
+                    <label className="block text-sm text-gray-600 mb-1">Country *</label>
+                    <input
+                      type="text"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-gray-600 mb-1">State/Province</label>
+                    <input
+                      type="text"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm text-gray-600 mb-1">ZIP/Postal code</label>
+                    <input
+                      type="text"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
+                    />
+                  </div>
+                </div>
+              </section>
             </div>
 
-            <div className="grid grid-cols-3 gap-4 mb-4">
-              <input
-                type="text"
-                placeholder="First name *"
-                className="col-span-1 border border-gray-300 rounded-lg px-4 py-2"
-              />
-              <input
-                type="text"
-                placeholder="Middle name"
-                className="col-span-1 border border-gray-300 rounded-lg px-4 py-2"
-              />
-              <input
-                type="text"
-                placeholder="Last name *"
-                className="col-span-1 border border-gray-300 rounded-lg px-4 py-2"
-              />
-            </div>
+            {/* Right Section */}
+            <div className="space-y-6">
+              <section className="bg-gray-50 p-4 rounded-lg">
+                <h2 className="text-lg font-semibold mb-4 text-[#008066]">Registration Type</h2>
+                <div className="mb-4">
+                  <label className="block text-sm text-gray-600 mb-2">Application Type *</label>
+                  <select
+                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
+                    required
+                  >
+                    <option value="">--- Choose an option ---</option>
+                    <option value="regular">Regular Attendee</option>
+                    <option value="student">Student Attendee</option>
+                  </select>
+                </div>
 
-            <input
-              type="text"
-              placeholder="Organization *"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 mb-4"
-            />
-            <textarea
-              placeholder="Address"
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 mb-4"
-              rows="3"
-            />
+                <div className="bg-white p-4 rounded-lg border border-gray-200 mb-4">
+                  <h3 className="font-semibold text-gray-800 mb-2">Registration Fees</h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between">
+                      <span className="text-sm">Early Bird (Before deadline):</span>
+                    </div>
+                    <div className="pl-4 space-y-2">
+                      <div className="flex justify-between">
+                        <span className="text-sm">Participation + Presentation</span>
+                        <span className="text-sm font-medium">$450</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-sm">Participation Only</span>
+                        <span className="text-sm font-medium">$400</span>
+                      </div>
+                      <div className="flex justify-between border-t pt-2">
+                        <span className="text-sm">Student - Participation + Presentation</span>
+                        <span className="text-sm font-medium">$350</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-sm">Student - Participation Only</span>
+                        <span className="text-sm font-medium">$300</span>
+                      </div>
+                    </div>
+                    <div className="text-xs text-gray-500 mt-2">
+                      Note: After Early Bird deadline, an additional $100 will be charged.
+                    </div>
+                  </div>
+                </div>
+              </section>
 
-            <div className="grid grid-cols-3 gap-4 mb-4">
-              <input
-                type="text"
-                placeholder="Countries *"
-                className="col-span-1 border border-gray-300 rounded-lg px-4 py-2"
-              />
-              <input
-                type="text"
-                placeholder="States"
-                className="col-span-1 border border-gray-300 rounded-lg px-4 py-2"
-              />
-              <input
-                type="text"
-                placeholder="ZIP code"
-                className="col-span-1 border border-gray-300 rounded-lg px-4 py-2"
-              />
+              <section className="bg-gray-50 p-4 rounded-lg">
+                <h2 className="text-lg font-semibold mb-4 text-[#008066]">Additional Information</h2>
+                <div className="space-y-4">
+                  <div>
+                    <p className="text-sm text-gray-700 mb-2">Will you attend the Tutorials on 23 July 2024 at 14:00-18:00?</p>
+                    <div className="flex space-x-4">
+                      <label className="flex items-center">
+                        <input type="radio" name="tutorials" className="text-[#008066] focus:ring-[#008066] mr-2" /> Yes
+                      </label>
+                      <label className="flex items-center">
+                        <input type="radio" name="tutorials" className="text-[#008066] focus:ring-[#008066] mr-2" /> No
+                      </label>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="text-sm text-gray-700 mb-2">Will you attend the Welcome Reception on 23 July 2024 at 18:00-20:00?</p>
+                    <div className="flex space-x-4">
+                      <label className="flex items-center">
+                        <input type="radio" name="welcome" className="text-[#008066] focus:ring-[#008066] mr-2" /> Yes
+                      </label>
+                      <label className="flex items-center">
+                        <input type="radio" name="welcome" className="text-[#008066] focus:ring-[#008066] mr-2" /> No
+                      </label>
+                    </div>
+                  </div>
+
+                  <div>
+                    <p className="text-sm text-gray-700 mb-2">Will you attend the Conference Dinner on 25 July 2024 at 18:30-21:00?</p>
+                    <div className="flex space-x-4">
+                      <label className="flex items-center">
+                        <input type="radio" name="dinner" className="text-[#008066] focus:ring-[#008066] mr-2" /> Yes
+                      </label>
+                      <label className="flex items-center">
+                        <input type="radio" name="dinner" className="text-[#008066] focus:ring-[#008066] mr-2" /> No
+                      </label>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm text-gray-700 mb-2">Dietary Requirements:</label>
+                    <textarea
+                      placeholder="Please list any special requirements or dietary needs"
+                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
+                      rows="2"
+                    />
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
 
-          {/* Right Section */}
-          <div>
-            <h2 className="text-lg font-semibold mb-4">Registration</h2>
-            <select
-              className="w-full border border-gray-300 rounded-lg px-4 py-2 mb-6"
-            >
-              <option>--- Choose an application type ---</option>
-            </select>
-
-            <h2 className="text-lg font-semibold mb-4">Additional questions</h2>
-            <div className="mb-4">
-              <p>Will you attend the Tutorials on 23 July 2024 at 14:00-18:00?</p>
-              <label className="flex items-center">
-                <input type="radio" name="tutorials" className="mr-2" /> Yes
-              </label>
-              <label className="flex items-center">
-                <input type="radio" name="tutorials" className="mr-2" /> No
-              </label>
+          {/* Footer */}
+          <div className="mt-8 pt-6 border-t border-gray-200">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+              <div className="text-sm text-gray-600 max-w-lg">
+                After saving your data, you will receive an email with a confirmation link. 
+                Please click "Confirmation & Payment" and use the provided PIN code to 
+                complete your registration and payment.
+              </div>
+              <div className="flex space-x-3">
+                <button className="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg shadow hover:bg-gray-300 transition-colors">
+                  Clear Data
+                </button>
+                <button className="bg-[#008066] text-white px-6 py-2 rounded-lg shadow hover:bg-[#006652] transition-colors">
+                  Save Registration
+                </button>
+              </div>
             </div>
-
-            <div className="mb-4">
-              <p>Will you attend the Welcome Reception on 23 July 2024 at 18:00-20:00?</p>
-              <label className="flex items-center">
-                <input type="radio" name="welcome" className="mr-2" /> Yes
-              </label>
-              <label className="flex items-center">
-                <input type="radio" name="welcome" className="mr-2" /> No
-              </label>
-            </div>
-
-            <div className="mb-4">
-              <p>Will you attend the Conference Dinner on 25 July 2024 at 18:30-21:00?</p>
-              <label className="flex items-center">
-                <input type="radio" name="dinner" className="mr-2" /> Yes
-              </label>
-              <label className="flex items-center">
-                <input type="radio" name="dinner" className="mr-2" /> No
-              </label>
-            </div>
-
-            <div className="mb-4">
-              <p>Dietary Requirements:</p>
-              <textarea
-                placeholder="If you have any special requirements or dietary needs, please list them here."
-                className="w-full border border-gray-300 rounded-lg px-4 py-2"
-                rows="3"
-              />
-            </div>
-
-            <p className="text-sm text-gray-600">
-              Registrant can select more than one. (All are included with the
-              conference registration)
-            </p>
           </div>
-        </div>
-
-        {/* Footer */}
-        <div className="mt-6 flex justify-between">
-          <button className="bg-green-500 text-white px-6 py-2 rounded-lg shadow hover:bg-green-600">
-            Save
-          </button>
-          <button className="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg shadow hover:bg-gray-300">
-            Clear Data
-          </button>
-        </div>
-
-        {/* Confirmation Notice */}
-        <div className="mt-4 text-sm text-gray-600">
-          After registrant saves data, you will receive an email form. Please
-          click the link "Confirmation & Payment" using the provided PIN code to
-          complete your registration and payment.
         </div>
       </div>
     </div>

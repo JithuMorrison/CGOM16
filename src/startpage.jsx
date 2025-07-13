@@ -71,7 +71,7 @@ const CGOM16 = () => {
   };
 
   const handleIndex = (ind) => {
-    if(ind !== 5 && ind!== 6){
+    if(ind !== 5){//addindex
       setCurrentIndex(ind);
       setDropdownOpen({ about: false, abstract: false, information: false });
     }
