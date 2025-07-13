@@ -50,14 +50,14 @@ const Pricing = ({ handleIndex }) => {
         </div>
 
         {/* Early Bird - Regular Participation + Presentation */}
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden border-t-4 border-[#008066] transform hover:scale-105 transition-transform duration-300">
+        <div className="bg-white shadow-lg rounded-lg overflow-hidden border-t-4 border-orange-500 transform hover:scale-105 transition-transform duration-300">
           <div className="p-6 text-center">
-            <div className="bg-[#008066] text-white py-1 px-3 rounded-full text-xs font-bold inline-block">
+            <div className="bg-orange-500 text-white py-1 px-3 rounded-full text-xs font-bold inline-block">
               EARLY BIRD
             </div>
             <h3 className="text-gray-700 font-bold text-lg mt-4">Regular Registration</h3>
             <p className="text-gray-500 text-sm mt-1">Participation + Presentation</p>
-            <p className="text-3xl font-bold text-[#008066] mt-4">$450</p>
+            <p className="text-3xl font-bold text-orange-500 mt-4">$450</p>
             <div className="mt-4 text-sm text-gray-600">
               <p>Deadline: May 4, 2024</p>
             </div>
@@ -65,14 +65,14 @@ const Pricing = ({ handleIndex }) => {
         </div>
 
         {/* Early Bird - Regular Participation Only */}
-        <div className="bg-white shadow-lg rounded-lg overflow-hidden border-t-4 border-[#008066] transform hover:scale-105 transition-transform duration-300">
+        <div className="bg-white shadow-lg rounded-lg overflow-hidden border-t-4 border-orange-500 transform hover:scale-105 transition-transform duration-300">
           <div className="p-6 text-center">
-            <div className="bg-[#008066] text-white py-1 px-3 rounded-full text-xs font-bold inline-block">
+            <div className="bg-orange-500 text-white py-1 px-3 rounded-full text-xs font-bold inline-block">
               EARLY BIRD
             </div>
             <h3 className="text-gray-700 font-bold text-lg mt-4">Regular Registration</h3>
             <p className="text-gray-500 text-sm mt-1">Participation Only</p>
-            <p className="text-3xl font-bold text-[#008066] mt-4">$400</p>
+            <p className="text-3xl font-bold text-orange-500 mt-4">$400</p>
             <div className="mt-4 text-sm text-gray-600">
               <p>Deadline: May 4, 2024</p>
             </div>
