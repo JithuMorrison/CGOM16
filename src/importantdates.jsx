@@ -3,96 +3,133 @@ import React from 'react';
 const ImportantDates = () => {
   const latestNews = [
     {
-      date: "07",
-      month: "March",
-      title: "Abstract Submission Deadline Extended to May 1, 2026"
+      date: "15 Oct 2025",
+      title: "Abstract Submission Starts",
+      highlight: true
     },
     {
-      date: "19",
-      month: "February",
-      title: "The First Announcement of CGOM16"
+      date: "30 Apr 2026",
+      title: "Abstract Submission Ends",
+      highlight: false
     }
   ];
 
   const importantDates = [
     {
-      date: "May 1, 2026",
-      title: "Abstract submission deadline"
+      date: "15 Oct 2025",
+      title: "Abstract Submission Starts",
+      category: "Submission"
     },
     {
-      date: "May 15, 2026",
-      title: "Notification of abstract acceptance"
+      date: "30 Apr 2026",
+      title: "Abstract Submission Ends",
+      category: "Submission"
     },
     {
-      date: "May 15, 2026",
-      title: "End of early conference registration"
+      date: "15 Apr 2026",
+      title: "Intimation of Acceptance Starts",
+      category: "Notification"
     },
     {
-      date: "July 15, 2026",
-      title: "End of online registration"
+      date: "15 Oct 2025",
+      title: "Registration Starts",
+      category: "Registration"
+    },
+    {
+      date: "30 Apr 2026",
+      title: "Last Date for Early Bird Registration",
+      category: "Registration"
+    },
+    {
+      date: "10 Jul 2026",
+      title: "Last Date for Regular Registration",
+      category: "Registration"
     }
   ];
 
-  const dates = [
-    {
-      date: "01 Dec",
-      year: "2025",
-      title: "Please note that the submission system will open on 1 December 2026",
-      description: "1 December 2025",
-    },
-    {
-      date: "31 Mar",
-      year: "2026",
-      title: "Abstract Submission for Oral Presentation Deadline",
-      description: "31 March 2026",
-    },
-    {
-      date: "15 Apr",
-      year: "2026",
-      title: "Notification of Abstract Acceptance for Oral Presentation",
-      description: "15 April 2026",
-    },
-  ];
+  const getCategoryColor = (category) => {
+    switch(category) {
+      case 'Submission': return 'bg-blue-100 text-blue-800';
+      case 'Notification': return 'bg-purple-100 text-purple-800';
+      case 'Registration': return 'bg-green-100 text-green-800';
+      default: return 'bg-gray-100 text-gray-800';
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-white py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Latest News Section */}
-        <div>
-          <h2 className="text-4xl font-bold text-[#008066] mb-8">Latest News</h2>
-          <div className="space-y-6">
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-4xl font-bold text-gray-800 mb-12 text-center">
+          <span className="text-[#008066]">IMPORTANT</span> DATES
+        </h1>
+
+        {/* Latest News Section - Modern Cards */}
+        <div className="mb-20">
+          <h2 className="text-3xl font-bold text-[#008066] mb-8 pb-2 border-b-2 border-[#008066] inline-block">
+            Latest News
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2">
             {latestNews.map((news, index) => (
-              <div key={index} className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-20 h-20 bg-[#008066] text-white rounded-lg flex flex-col items-center justify-center">
-                  <span className="text-2xl font-bold">{news.date}</span>
-                  <span className="text-sm">{news.month}</span>
-                </div>
-                <div className="flex-grow">
-                  <h3 className="text-xl font-semibold text-gray-900">{news.title}</h3>
+              <div 
+                key={index} 
+                className={`p-6 rounded-xl shadow-md transition-all duration-300 hover:shadow-lg ${news.highlight ? 'border-l-4 border-[#008066] bg-white' : 'bg-white'}`}
+              >
+                <div className="flex items-start">
+                  <div className={`mr-4 p-2 rounded-lg ${news.highlight ? 'bg-[#008066] text-white' : 'bg-gray-200 text-gray-700'}`}>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-gray-500">{news.date}</p>
+                    <h3 className={`text-lg font-semibold mt-1 ${news.highlight ? 'text-[#008066]' : 'text-gray-800'}`}>
+                      {news.title}
+                    </h3>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Important Dates Section */}
+        {/* Key Dates Section - Enhanced Double-sided Timeline */}
         <div>
-          <h2 className="text-4xl font-bold text-[#008066] mb-8">Important Dates</h2>
+          <h2 className="text-3xl font-bold text-[#008066] mb-8 pb-2 border-b-2 border-[#008066] inline-block">
+            Key Dates
+          </h2>
           <div className="relative">
             {/* Vertical Line */}
-            <div className="absolute left-1/2 top-0 w-0.5 h-full bg-[#255aa8] transform -translate-x-1/2"></div>
+            <div className="absolute left-1/2 top-0 w-1 bg-gradient-to-b from-[#008066] to-gray-300 h-full transform -translate-x-1/2"></div>
 
-            <div className="space-y-6">
+            <div className="space-y-12">
               {importantDates.map((date, index) => (
                 <div key={index} className="relative flex items-center justify-center">
-                  {/* Blue Dot */}
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-[#255aa8] rounded-full"></div>
+                  {/* Circular Date Marker */}
+                  <div className={`absolute left-1/2 transform -translate-x-1/2 w-6 h-6 rounded-full flex items-center justify-center 
+                    ${date.category === 'Submission' ? 'bg-blue-500' : 
+                      date.category === 'Notification' ? 'bg-purple-500' : 'bg-green-500'}`}>
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
                   
-                  {/* Content */}
-                  <div className={`w-5/12 ${index % 2 === 0 ? 'mr-auto -pr-8' : 'ml-auto -pl-8'}`}>
-                    <div className="bg-[#255aa8] text-white p-4 rounded-lg transform transition-all duration-300 hover:scale-105 hover:shadow-lg">
-                      <h3 className="text-xl font-bold">{date.date}</h3>
-                      <p className="mt-1">{date.title}</p>
+                  {/* Content - Alternating sides */}
+                  <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'mr-auto pr-0 md:pr-8 text-left md:text-right' : 'ml-auto pl-0 md:pl-8 text-left'}`}>
+                    <div className={`bg-white p-6 rounded-xl shadow-md border-l-4 
+                      ${date.category === 'Submission' ? 'border-blue-500' : 
+                        date.category === 'Notification' ? 'border-purple-500' : 'border-green-500'}
+                      transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg`}>
+                      
+                      <div className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold mb-3 
+                        ${getCategoryColor(date.category)}`}>
+                        {date.category}
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-gray-800 mb-1">{date.title}</h3>
+                      <div className="flex items-center text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span className="text-sm">{date.date}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -100,57 +137,6 @@ const ImportantDates = () => {
             </div>
           </div>
         </div>
-        <div className="p-8">
-       <h1 className="text-3xl font-bold text-gray-800 mb-10">
-         <span className="text-red-600">IMPORTANT</span> DATES
-       </h1>
-       <div className="relative">
-         {/* Vertical Line */}
-         <div className="absolute left-6 top-0 w-px bg-gray-300 h-full"></div>
-         {latestNews.map((item, index) => (
-           <div
-             key={index}
-             className="flex items-start mb-10 relative"
-             style={{ marginBottom: index === dates.length - 1 ? 0 : "3rem" }}
-           >
-             {/* Diamond Shape */}
-             <div className="relative w-12 h-12 transform rotate-45 bg-red-500 flex items-center justify-center">
-                 <div className="transform -rotate-45 flex flex-col items-center justify-center">
-                     <span className="text-white font-bold text-sm">
-                     {item.date.split(" ")[0]}
-                     </span>
-                     <span className="text-white font-bold text-sm">
-                     {item.date.split(" ")[1]}
-                     </span>
-                     </div>
-               <span className="absolute left-12 -rotate-45 text-gray-500 text-sm">
-                 {item.year}
-               </span>
-             </div>
-             {/* Connecting Line */}
-             {index < dates.length - 1 && (
-               <div className="absolute left-6 top-14 h-12 w-px bg-gray-300"></div>
-             )}
-             {/* Event Content */}
-             <div className="ml-10 flex-1 bg-white shadow-md p-6 rounded-lg">
-               <h3
-                 className={`font-semibold text-lg ${
-                   item.highlight ? "text-red-600" : "text-gray-800"
-                 }`}
-               >
-                 {item.title}
-               </h3>
-               <p className="text-gray-500 text-sm flex items-center mt-2">
-                 <span className="material-icons-outlined text-base mr-2">
-                   event
-                 </span>
-                 {item.description}
-               </p>
-               </div>
-           </div>
-         ))}  
-       </div>
-       </div>
       </div>
     </div>
   );
