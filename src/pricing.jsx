@@ -96,6 +96,19 @@ const Pricing = ({ handleIndex }) => {
         </div>
       </div>
 
+      <div className="max-w-4xl mx-auto mt-8 text-center">
+        <a 
+          href="CGOM16, Chennai - PRICE LIST FOR EXHIBITORS AND SPONSORS.docx"
+          download="CGOM16_Price_List.docx"
+          className="inline-block bg-[#008066] text-white px-6 py-3 rounded-lg shadow hover:bg-[#006652] transition-colors duration-300 font-semibold"
+        >
+          Download Price List for Exhibitors and Sponsors
+        </a>
+        <p className="text-sm text-gray-500 mt-2">
+          Click to download the document
+        </p>
+      </div>
+
       {/* Registration Section */}
       <div className="text-center mt-12">
         <h2 className="text-2xl font-bold text-gray-800">
