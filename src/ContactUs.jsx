@@ -1,95 +1,156 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMapMarkerAlt, faPhoneAlt, faEnvelope, faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { 
+  faMapMarkerAlt, 
+  faPhoneAlt, 
+  faEnvelope, 
+  faPaperPlane,
+  faUserTie,
+  faUniversity,
+  faGlobe
+} from "@fortawesome/free-solid-svg-icons";
 
 const ContactUs = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 py-14 shadow-lg">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+      {/* Hero Section with Parallax Effect */}
+      <section className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
             Contact Us
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Get in touch with our team for any inquiries or questions
+            Reach out to our team for any inquiries or assistance
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16 max-w-7xl">
         {/* Contact Person Section */}
-        <section className="text-center mb-16 bg-white rounded-xl shadow-md p-8 max-w-4xl mx-auto">
+        <section className="text-center mb-20 bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto transform transition-all hover:scale-[1.01]">
           <div className="mb-6">
-            <div className="w-24 h-24 mx-auto rounded-full bg-blue-100 flex items-center justify-center mb-4">
-              <span className="text-3xl font-bold text-blue-600">RP</span>
+            <div className="w-28 h-28 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mb-4 shadow-md">
+              <FontAwesomeIcon 
+                icon={faUserTie} 
+                className="text-4xl text-white" 
+              />
             </div>
-            <h2 className="text-2xl font-bold text-gray-800">
+            <h2 className="text-3xl font-bold text-gray-800">
               Dr. Rajesh Paulraj
             </h2>
-            <p className="text-lg text-gray-600 mt-2">
-              Department of Physics
+            <div className="flex items-center justify-center mt-2">
+              <FontAwesomeIcon 
+                icon={faUniversity} 
+                className="text-blue-500 mr-2" 
+              />
+              <p className="text-lg text-gray-600">
+                Department of Physics
+              </p>
+            </div>
+          </div>
+          <div className="bg-blue-50 p-4 rounded-lg inline-block">
+            <p className="text-gray-700 font-medium">
+              Sri Sivasubramaniya Nadar (SSN) College of Engineering<br />
+              Chennai, Tamil Nadu, India
             </p>
           </div>
-          <p className="text-gray-700">
-            Sri Sivasubramaniya Nadar (SSN) College of Engineering<br />
-            Chennai, TamilNadu, India
-          </p>
         </section>
 
         {/* Contact Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           {/* Address Card */}
-          <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-            <div className="bg-orange-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6">
+          <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-orange-500">
+            <div className="bg-gradient-to-br from-orange-100 to-orange-50 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6 shadow-inner">
               <FontAwesomeIcon
                 icon={faMapMarkerAlt}
-                className="text-orange-600 text-2xl"
+                className="text-orange-600 text-3xl"
               />
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Address</h3>
-            <address className="text-gray-600 not-italic">
-              Sri Sivasubramaniya Nadar (SSN) College of Engineering – Campus<br />
-              Rajiv Gandhi Salai (OMR)<br />
-              Kalavakkam – 603 110<br />
-              Tamil Nadu, India
+            <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">Address</h3>
+            <address className="text-gray-600 not-italic text-center space-y-2">
+              <p className="flex items-center justify-center">
+                <FontAwesomeIcon icon={faGlobe} className="mr-2 text-blue-500 -mt-6" />
+                <span>Sri Sivasubramaniya Nadar (SSN) College of Engineering</span>
+              </p>
+              <p>Rajiv Gandhi Salai (OMR)</p>
+              <p>Kalavakkam – 603 110</p>
+              <p>Tamil Nadu, India</p>
             </address>
+            <div className="mt-6">
+              <a 
+                href="https://maps.google.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
+              >
+                <FontAwesomeIcon icon={faMapMarkerAlt} className="mr-2" />
+                View on Map
+              </a>
+            </div>
           </div>
 
           {/* Phone Card */}
-          <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-            <div className="bg-blue-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6">
+          <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-blue-500">
+            <div className="bg-gradient-to-br from-blue-100 to-blue-50 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6 shadow-inner">
               <FontAwesomeIcon
                 icon={faPhoneAlt}
-                className="text-blue-600 text-2xl"
+                className="text-blue-600 text-3xl"
               />
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">Phone</h3>
-            <p className="text-gray-600">
-              <a href="tel:+919445434893" className="hover:text-blue-600 transition-colors">
-                +91 9445434893
-              </a>
-            </p>
+            <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">Phone</h3>
+            <div className="space-y-3 text-center">
+              <p className="text-gray-600">
+                <a 
+                  href="tel:+919445434893" 
+                  className="text-lg font-medium hover:text-blue-600 transition-colors flex items-center justify-center"
+                >
+                  <FontAwesomeIcon icon={faPhoneAlt} className="mr-2 text-blue-500" />
+                  +91 9445434893
+                </a>
+              </p>
+              <p className="text-sm text-gray-500 mt-4">
+                Available Monday to Friday<br />
+                9:00 AM to 5:00 PM IST
+              </p>
+            </div>
           </div>
 
           {/* Email Card */}
-          <div className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
-            <div className="bg-green-100 w-16 h-16 mx-auto rounded-full flex items-center justify-center mb-6">
+          <div className="bg-white p-8 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border-t-4 border-green-500">
+            <div className="bg-gradient-to-br from-green-100 to-green-50 w-20 h-20 mx-auto rounded-full flex items-center justify-center mb-6 shadow-inner">
               <FontAwesomeIcon
                 icon={faEnvelope}
-                className="text-green-600 text-2xl"
+                className="text-green-600 text-3xl"
               />
             </div>
-            <h3 className="text-xl font-bold text-gray-800 mb-4">E-mail</h3>
-            <p className="text-gray-600">
-              <a href="mailto:cgom16@ssn.edu.in" className="hover:text-green-600 transition-colors block mb-2">
+            <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">E-mail</h3>
+            <div className="space-y-3 text-center">
+              <a 
+                href="mailto:cgom16@ssn.edu.in" 
+                className="block text-gray-700 hover:text-green-600 transition-colors font-medium"
+              >
+                <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-green-500" />
                 cgom16@ssn.edu.in
               </a>
-              <a href="mailto:rajeshp@ssn.edu.in" className="hover:text-green-600 transition-colors block">
+              <a 
+                href="mailto:rajeshp@ssn.edu.in" 
+                className="block text-gray-700 hover:text-green-600 transition-colors font-medium"
+              >
+                <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-green-500" />
                 rajeshp@ssn.edu.in
               </a>
-            </p>
+              <div className="mt-6">
+                <a 
+                  href="mailto:cgom16@ssn.edu.in" 
+                  className="inline-flex items-center px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
+                >
+                  <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />
+                  Send Message
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
