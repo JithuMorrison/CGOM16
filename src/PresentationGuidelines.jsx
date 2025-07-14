@@ -195,7 +195,7 @@ const PresentationGuidelines = () => {
                 Our technical team is available to help with any presentation-related questions or requirements.
               </p>
               <a 
-                href="mailto:jithumorrison2210564@ssn.edu.in" 
+                href="mailto:cgom16@ssn.edu.in" 
                 className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
               >
                 Contact Support
