@@ -80,7 +80,7 @@ const ContactUs = () => {
             </address>
             <div className="mt-6">
               <a 
-                href="https://maps.google.com" 
+                href="https://www.google.com/maps/place/Sri+Sivasubramaniya+Nadar+College+of+Engineering/@12.7526667,80.1936078,15z/data=!4m15!1m7!3m6!1s0x3a52512f04729e11:0xbc4ea0ae50ca1aaa!2sSri+Sivasubramaniya+Nadar+College+of+Engineering!8m2!3d12.7517236!4d80.2033321!16zL20vMDhxMGQy!3m6!1s0x3a52512f04729e11:0xbc4ea0ae50ca1aaa!8m2!3d12.7517236!4d80.2033321!15sCh9zc24gZW5nZW5lZXJpbmcgY29sbGVnZSBjaGVubmFpIgOIAQFaISIfc3NuIGVuZ2VuZWVyaW5nIGNvbGxlZ2UgY2hlbm5haZIBB2NvbGxlZ2WaASRDaGREU1VoTk1HOW5TMFZKUTBGblNVTnFjV1UyYTNGblJSQUKqAXQKDS9nLzExY3NxOWZkN24QASobIhdzc24gZW5nZW5lZXJpbmcgY29sbGVnZSgAMh8QASIbkSw6WBqJyz8CvlTsklR8ZRSo5hv5t0Uvn0a6MiMQAiIfc3NuIGVuZ2VuZWVyaW5nIGNvbGxlZ2UgY2hlbm5haeABAPoBBAhVED0!16zL20vMDhxMGQy?entry=ttu&g_ep=EgoyMDI1MDcwOS4wIKXMDSoASAFQAw%3D%3D" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="inline-flex items-center px-4 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors"
