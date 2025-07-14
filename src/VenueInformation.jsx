@@ -69,7 +69,7 @@ const VenueInformation = () => {
             <div className="mt-6">
               <div className="aspect-w-16 aspect-h-9">
                 <iframe 
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.0407191182134!2d80.19585731482037!3d12.834959990945392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525851fbcd3b6b%3A0x9f1067aa71e3898e!2sSSN%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1629800000000!5m2!1sen!2sin" 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d189018.41513012067!2d80.04824585778003!3d12.866894101184013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52512f04729e11%3A0xbc4ea0ae50ca1aaa!2sSri%20Sivasubramaniya%20Nadar%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1746842148807!5m2!1sen!2sin" 
                   width="100%" 
                   height="450" 
                   style={{ border: 0 }} 
