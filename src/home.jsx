@@ -16,7 +16,7 @@ const Home = () => {
 
 
       {/* Welcome Section */}
-      <section className="bg-[#255aa8] text-white text-center py-8">
+      <section className="bg-blue-800 text-white text-center py-8">
         <h2 className="text-3xl font-bold">WELCOME TO CGOM16!</h2>
         <p className="mt-2 text-lg">
           CRYSTAL GROWTH OF ORGANIC MATERIALS
@@ -56,7 +56,7 @@ applications, including materials science, pharmaceutical development, and nanot
       </section>
 
      {/* Topics Section */}
-      <section className="p-8 font-sans bg-[#255aa8] text-white text-justify">
+      <section className="p-8 font-sans bg-gradient-to-r from-blue-700 to-blue-600 text-white text-justify">
         <h2 className="text-2xl font-bold uppercase text-center">Workshop Topics:</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 mx-auto max-w-5xl">
           <ul className="space-y-2">
