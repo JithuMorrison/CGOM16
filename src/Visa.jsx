@@ -1,108 +1,220 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPassport, faFileAlt, faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { faPassport, faFileAlt, faGlobe, faDownload, faFilePdf, faFileWord } from '@fortawesome/free-solid-svg-icons';
 
 const Visa = () => {
   return (
-    <div className="min-h-screen bg-gray-100 font-sans">
-      {/* Banner Section */}
-      <div className="bg-blue-800 text-white py-16">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans">
+      {/* Hero Banner */}
+      <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold mb-4">Visa Information</h1>
-          <p className="text-xl">Entry Requirements & Application Process</p>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Visa Information for CGOM16</h1>
+          <p className="text-xl md:text-2xl">Entry Requirements & Application Process for International Participants</p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Download Buttons */}
+        <div className="flex flex-wrap gap-4 mb-12 justify-center">
+          <a 
+            href="/path-to-visa-guide.pdf" 
+            download="CGOM16_Visa_Guide.pdf"
+            className="flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors shadow-md"
+          >
+            <FontAwesomeIcon icon={faFilePdf} className="mr-3 text-xl" />
+            Download Visa Guide (PDF)
+          </a>
+          <a 
+            href="/path-to-visa-checklist.docx" 
+            download="CGOM16_Visa_Checklist.docx"
+            className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md"
+          >
+            <FontAwesomeIcon icon={faFileWord} className="mr-3 text-xl" />
+            Download Visa Checklist (Word)
+          </a>
+        </div>
+
         {/* Visa Requirements Section */}
         <motion.div 
-          className="bg-white rounded-lg shadow-lg p-8 mb-8"
+          className="bg-white rounded-xl shadow-xl p-8 mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
           <div className="flex items-center mb-6">
-            <FontAwesomeIcon icon={faPassport} className="text-3xl text-blue-600 mr-4" />
-            <h2 className="text-2xl font-bold text-gray-900">Visa Requirements</h2>
+            <FontAwesomeIcon icon={faPassport} className="text-4xl text-blue-600 mr-4" />
+            <h2 className="text-3xl font-bold text-gray-900">Do You Need a Visa?</h2>
           </div>
-          <div className="prose max-w-none text-gray-600 space-y-4">
+          <div className="prose-lg max-w-none text-gray-700 space-y-4">
             <p>
-              Most foreign nationals require a visa to enter India. The type of visa required depends on your nationality and the purpose of your visit.
+              <strong>Yes</strong> — most foreign nationals must obtain a visa before entering India, unless they are from a visa-exempt country. India offers various visa types depending on your visit purpose.
             </p>
-            <div className="bg-blue-50 p-4 rounded-lg mt-4">
-              <h3 className="font-semibold text-blue-900 mb-2">Important Notes:</h3>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>Conference participants should apply for a Business Visa (B-Visa)</li>
-                <li>Visa processing time varies by country (typically 5-15 working days)</li>
-                <li>Passport must be valid for at least 6 months beyond your planned stay</li>
-                <li>Two blank passport pages are required for visa stamps</li>
-              </ul>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+              {/* e-Visa */}
+              <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                <h3 className="text-xl font-bold text-blue-800 mb-3">e-Visa (Online Application)</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Categories: e-Tourist, e-Business, e-Medical</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Convenient & Fast: Apply and receive authorization online</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>ETA (Electronic Travel Authorization) via email</span>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Conference Visa */}
+              <div className="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                <h3 className="text-xl font-bold text-green-800 mb-3">Conference Visa</h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    <span>Required for CGOM16 participants</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    <span>Requires official invitation from organizers</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-green-500 mr-2">•</span>
+                    <span>Issued after conference registration</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </motion.div>
 
         {/* Application Process Section */}
         <motion.div 
-          className="bg-white rounded-lg shadow-lg p-8 mb-8"
+          className="bg-white rounded-xl shadow-xl p-8 mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <div className="flex items-center mb-6">
-            <FontAwesomeIcon icon={faFileAlt} className="text-3xl text-blue-600 mr-4" />
-            <h2 className="text-2xl font-bold text-gray-900">Application Process</h2>
+            <FontAwesomeIcon icon={faFileAlt} className="text-4xl text-blue-600 mr-4" />
+            <h2 className="text-3xl font-bold text-gray-900">Visa Requirements</h2>
           </div>
-          <div className="prose max-w-none text-gray-600">
-            <ol className="list-decimal pl-5 space-y-4">
-              <li>
-                <strong>Conference Registration:</strong>
-                <p>Complete your conference registration to receive an official invitation letter.</p>
-              </li>
-              <li>
-                <strong>Online Application:</strong>
-                <p>Apply through the official Indian e-Visa website: <a href="https://indianvisaonline.gov.in/evisa" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">https://indianvisaonline.gov.in/evisa</a></p>
-              </li>
-              <li>
-                <strong>Required Documents:</strong>
-                <ul className="list-disc pl-5 space-y-2 mt-2">
-                  <li>Passport-size photographs (specifications provided on visa website)</li>
-                  <li>Scanned copy of passport biographical page</li>
-                  <li>Conference invitation letter</li>
-                  <li>Conference registration confirmation</li>
-                  <li>Hotel booking confirmation</li>
-                </ul>
-              </li>
-              <li>
-                <strong>Visa Fee Payment:</strong>
-                <p>Pay the applicable visa fee online (varies by nationality and visa type)</p>
-              </li>
-            </ol>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* e-Visa Requirements */}
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">e-Visa Requirements</h3>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">✓</span>
+                  <span>Valid passport (min. 6 months validity, 2 blank pages)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">✓</span>
+                  <span>Recent passport-style photo</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">✓</span>
+                  <span>Complete online application form</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">✓</span>
+                  <span>Pay e-visa processing fee</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">✓</span>
+                  <span>Must enter through designated airports/seaports</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">✓</span>
+                  <span>Processing time: Usually within 72 hours</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Traditional Visa Requirements */}
+            <div>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">Traditional Visa Requirements</h3>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">✓</span>
+                  <span>Filled visa application form</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">✓</span>
+                  <span>Valid passport (min. 6 months validity, 2 blank pages)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">✓</span>
+                  <span>Recent photographs</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">✓</span>
+                  <span>Supporting documents (invitation letter for conference)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-blue-500 mr-2">✓</span>
+                  <span>Proof of financial means & return travel</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </motion.div>
 
-        {/* Embassy Information Section */}
+        {/* Additional Information Section */}
         <motion.div 
-          className="bg-white rounded-lg shadow-lg p-8"
+          className="bg-white rounded-xl shadow-xl p-8"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
           <div className="flex items-center mb-6">
-            <FontAwesomeIcon icon={faGlobe} className="text-3xl text-blue-600 mr-4" />
-            <h2 className="text-2xl font-bold text-gray-900">Embassy Information</h2>
+            <FontAwesomeIcon icon={faGlobe} className="text-4xl text-blue-600 mr-4" />
+            <h2 className="text-3xl font-bold text-gray-900">General Information & Tips</h2>
           </div>
-          <div className="prose max-w-none text-gray-600">
-            <p>
-              For specific visa requirements and updated information, please contact the Indian Embassy or Consulate in your country.
-            </p>
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-              <h3 className="font-semibold text-gray-900 mb-4">Need Assistance?</h3>
-              <p>
-                If you require any assistance with your visa application or need an invitation letter, please contact the conference organizers at:
-                <br />
-                <a href="mailto:cgom16@ssn.edu.in" className="text-blue-600 hover:underline">cgom16@ssn.edu.in</a>
-              </p>
+          
+          <div className="prose-lg max-w-none text-gray-700">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Important Notes</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Apply early to avoid last-minute issues</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Traditional visas may take longer than e-visas</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>Country-specific requirements may apply</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-blue-500 mr-2">•</span>
+                    <span>OCI cardholders do not need a visa</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div className="bg-blue-50 p-6 rounded-lg">
+                <h3 className="text-xl font-semibold text-blue-800 mb-3">Conference Support</h3>
+                <p className="mb-4">
+                  The organizers of CGOM16 will issue the necessary documentation for visa applications upon successful registration.
+                </p>
+                <p>
+                  For assistance, contact:
+                  <br />
+                  <a href="mailto:cgom16@ssn.edu.in" className="text-blue-600 hover:underline font-medium">
+                    cgom16@ssn.edu.in
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
         </motion.div>
