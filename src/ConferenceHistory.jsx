@@ -3,10 +3,21 @@ import React from 'react';
 const ConferenceHistory = () => {
   const cgomConferences = [
     { id: 'CGOM16', location: 'Chennai, India', year: 2024, active: true },
-    { id: 'CGOM15', location: 'Jerusalem, Israel', year: 1998, active: true },
-    { id: 'CGOM14', location: 'Kyoto, Japan', year: 2001, active: false },
-    { id: 'CGOM13', location: 'Berlin, Germany', year: 1995, active: false },
-    { id: 'CGOM12', location: 'San Diego, USA', year: 1992, active: false },
+    { id: 'CGOM15', location: 'Thailand', year: 2024, active: true },
+    { id: 'CGOM14', location: 'Belgium', year: 2022, active: false },
+    { id: 'CGOM13', location: 'Korea', year: 2018, active: false },
+    { id: 'CGOM12', location: 'UK', year: 2016, active: false },
+    { id: 'CGOM11', location: 'Japan', year: 2014, active: false },
+    { id: 'CGOM10', location: 'Ireland', year: 2012, active: false },
+    { id: 'CGOM9', location: 'Singapore', year: 2010, active: false },
+    { id: 'CGOM8', location: 'The Netherlands', year: 2008, active: false },
+    { id: 'CGOM7', location: 'France', year: 2006, active: false },
+    { id: 'CGOM6', location: 'UK', year: 2003, active: false },
+    { id: 'CGOM5', location: 'UK', year: 1999, active: false },
+    { id: 'CGOM4', location: 'Germany', year: 1996, active: false },
+    { id: 'CGOM3', location: 'Germany', year: 1994, active: false },
+    { id: 'CGOM2', location: 'UK', year: 1992, active: false },
+    { id: 'CGOM1', location: 'Japan', year: 1990, active: false }
   ];
 
   return (
