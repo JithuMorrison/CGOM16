@@ -57,7 +57,7 @@ const Exhibition = () => {
                 <FontAwesomeIcon icon={faEnvelope} className="text-blue-500 text-xl mt-1 mr-4" />
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800">Email</h3>
-                  <a href="mailto:exhibition@cgom16.org" className="text-blue-600 hover:underline">exhibition@cgom16.org</a>
+                  <a href="mailto:cgom16@ssn.edu.in" className="text-blue-600 hover:underline">cgom16@ssn.edu.in</a>
                 </div>
               </div>
               <div className="flex items-start justify-center">
