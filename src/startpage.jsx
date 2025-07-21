@@ -763,6 +763,29 @@ const CGOM16 = () => {
                 </div>
               </motion.div>
             </div>
+            {/*<h4 className="text-lg font-semibold text-gray-800 border-b pb-2 border-gray-200">
+                  Stay Updated
+                </h4>
+                <p className="text-gray-600 text-sm">
+                  Subscribe to receive conference updates and important announcements.
+                </p>
+                <form className="mt-2 space-y-3">
+                  <input
+                    type="email"
+                    placeholder="Your email address"
+                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  />
+                  <motion.button
+                    type="submit"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors duration-200"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                  >
+                    Subscribe
+                  </motion.button>
+                </form>
+              </motion.div>
+            </div>*/}
 
             {/* Copyright */}
             <motion.div 
