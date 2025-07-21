@@ -533,7 +533,7 @@ const CGOM16 = () => {
         >
           {[
             { title: "Keynote Speakers", desc: "World-renowned experts", img: "/ssn1.JPG", index: 5 },
-            { title: "Conference Program", desc: "Detailed schedule", img: "/ssn2.jpg", index: 6 },
+            { title: "Conference Registration", desc: "Find details about registration", img: "/ssn2.jpg", index: 6 },
             { title: "Venue Information", desc: "Location details", img: "/ssn3.jpg", index: 13 }
           ].map((item, i) => (
             <motion.div
@@ -749,26 +749,18 @@ const CGOM16 = () => {
                 transition={{ delay: 0.3 }}
               >
                 <h4 className="text-lg font-semibold text-gray-800 border-b pb-2 border-gray-200">
-                  Stay Updated
+                  Conference Info
                 </h4>
                 <p className="text-gray-600 text-sm">
-                  Subscribe to receive conference updates and important announcements.
+                  Our conference brings together industry leaders, researchers, and enthusiasts to share ideas and explore the latest innovations.
                 </p>
-                <form className="mt-2 space-y-3">
-                  <input
-                    type="email"
-                    placeholder="Your email address"
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                  <motion.button
-                    type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors duration-200"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Subscribe
-                  </motion.button>
-                </form>
+                <div className="mt-3 space-y-2">
+                  <div className="bg-gray-100 p-3 rounded-lg">
+                    <p className="text-gray-700 text-sm font-medium">
+                      🌐 Explore sessions and keynotes on our conference website.
+                    </p>
+                  </div>
+                </div>
               </motion.div>
             </div>
 
