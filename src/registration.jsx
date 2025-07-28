@@ -6,229 +6,196 @@ const RegistrationForm = () => {
       <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
         {/* Header */}
         <div className="bg-[#008066] text-white p-6">
-          <h1 className="text-2xl font-bold">Conference Registration</h1>
-          <p className="text-white/90">Please fill out the form below to complete your registration</p>
+          <h1 className="text-2xl font-bold">CGOM16 Payment Information</h1>
+          <p className="text-white/90">16th International Workshop on Crystal Growth of Organic Materials | Chennai, India</p>
         </div>
 
-        <div className="p-6">
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* Left Section */}
-            <div className="md:col-span-2 space-y-6">
-              <section className="bg-gray-50 p-4 rounded-lg">
-                <h2 className="text-lg font-semibold mb-4 text-[#008066]">Account Information</h2>
-                <input
-                  type="email"
-                  placeholder="Email *"
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 mb-4 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
-                  required
-                />
-              </section>
-
-              <section className="bg-gray-50 p-4 rounded-lg">
-                <h2 className="text-lg font-semibold mb-4 text-[#008066]">Personal Information</h2>
-                <div className="flex flex-wrap items-center mb-4 gap-4">
-                  <span className="font-medium text-gray-700">Title *</span>
-                  <label className="flex items-center space-x-2">
-                    <input type="radio" name="title" className="text-[#008066] focus:ring-[#008066]" /> 
-                    <span>Mr.</span>
-                  </label>
-                  <label className="flex items-center space-x-2">
-                    <input type="radio" name="title" className="text-[#008066] focus:ring-[#008066]" /> 
-                    <span>Ms.</span>
-                  </label>
-                  <label className="flex items-center space-x-2">
-                    <input type="radio" name="title" className="text-[#008066] focus:ring-[#008066]" /> 
-                    <span>Mrs.</span>
-                  </label>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                  <div>
-                    <label className="block text-sm text-gray-600 mb-1">First name *</label>
-                    <input
-                      type="text"
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-gray-600 mb-1">Middle name</label>
-                    <input
-                      type="text"
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-gray-600 mb-1">Last name *</label>
-                    <input
-                      type="text"
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <label className="block text-sm text-gray-600 mb-1">Organization *</label>
-                  <input
-                    type="text"
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
-                    required
-                  />
-                </div>
-
-                <div className="mb-4">
-                  <label className="block text-sm text-gray-600 mb-1">Address</label>
-                  <textarea
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
-                    rows="3"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <label className="block text-sm text-gray-600 mb-1">Country *</label>
-                    <input
-                      type="text"
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-gray-600 mb-1">State/Province</label>
-                    <input
-                      type="text"
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm text-gray-600 mb-1">ZIP/Postal code</label>
-                    <input
-                      type="text"
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
-                    />
-                  </div>
-                </div>
-              </section>
-            </div>
-
-            {/* Right Section */}
-            <div className="space-y-6">
-              <section className="bg-gray-50 p-4 rounded-lg">
-                <h2 className="text-lg font-semibold mb-4 text-[#008066]">Registration Type</h2>
-                <div className="mb-4">
-                  <label className="block text-sm text-gray-600 mb-2">Application Type *</label>
-                  <select
-                    className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
-                    required
-                  >
-                    <option value="">--- Choose an option ---</option>
-                    <option value="regular">Regular Attendee</option>
-                    <option value="student">Student Attendee</option>
-                  </select>
-                </div>
-
-                <div className="bg-white p-4 rounded-lg border border-gray-200 mb-4">
-                  <h3 className="font-semibold text-gray-800 mb-2">Registration Fees</h3>
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="text-sm">Early Bird (Before deadline):</span>
-                    </div>
-                    <div className="pl-4 space-y-2">
-                      <div className="flex justify-between">
-                        <span className="text-sm">Participation + Presentation</span>
-                        <span className="text-sm font-medium">$450</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-sm">Participation Only</span>
-                        <span className="text-sm font-medium">$400</span>
-                      </div>
-                      <div className="flex justify-between border-t pt-2">
-                        <span className="text-sm">Student - Participation + Presentation</span>
-                        <span className="text-sm font-medium">$350</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-sm">Student - Participation Only</span>
-                        <span className="text-sm font-medium">$300</span>
-                      </div>
-                    </div>
-                    <div className="text-xs text-gray-500 mt-2">
-                      Note: After Early Bird deadline, an additional $100 will be charged.
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <section className="bg-gray-50 p-4 rounded-lg">
-                <h2 className="text-lg font-semibold mb-4 text-[#008066]">Additional Information</h2>
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-sm text-gray-700 mb-2">Will you attend the Tutorials on 23 July 2024 at 14:00-18:00?</p>
-                    <div className="flex space-x-4">
-                      <label className="flex items-center">
-                        <input type="radio" name="tutorials" className="text-[#008066] focus:ring-[#008066] mr-2" /> Yes
-                      </label>
-                      <label className="flex items-center">
-                        <input type="radio" name="tutorials" className="text-[#008066] focus:ring-[#008066] mr-2" /> No
-                      </label>
-                    </div>
-                  </div>
-
-                  <div>
-                    <p className="text-sm text-gray-700 mb-2">Will you attend the Welcome Reception on 23 July 2024 at 18:00-20:00?</p>
-                    <div className="flex space-x-4">
-                      <label className="flex items-center">
-                        <input type="radio" name="welcome" className="text-[#008066] focus:ring-[#008066] mr-2" /> Yes
-                      </label>
-                      <label className="flex items-center">
-                        <input type="radio" name="welcome" className="text-[#008066] focus:ring-[#008066] mr-2" /> No
-                      </label>
-                    </div>
-                  </div>
-
-                  <div>
-                    <p className="text-sm text-gray-700 mb-2">Will you attend the Conference Dinner on 25 July 2024 at 18:30-21:00?</p>
-                    <div className="flex space-x-4">
-                      <label className="flex items-center">
-                        <input type="radio" name="dinner" className="text-[#008066] focus:ring-[#008066] mr-2" /> Yes
-                      </label>
-                      <label className="flex items-center">
-                        <input type="radio" name="dinner" className="text-[#008066] focus:ring-[#008066] mr-2" /> No
-                      </label>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm text-gray-700 mb-2">Dietary Requirements:</label>
-                    <textarea
-                      placeholder="Please list any special requirements or dietary needs"
-                      className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-[#008066] focus:border-transparent"
-                      rows="2"
-                    />
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-
-          {/* Footer */}
-          <div className="mt-8 pt-6 border-t border-gray-200">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="text-sm text-gray-600 max-w-lg">
-                After saving your data, you will receive an email with a confirmation link. 
-                Please click "Confirmation & Payment" and use the provided PIN code to 
-                complete your registration and payment.
-              </div>
-              <div className="flex space-x-3">
-                <button className="bg-gray-200 text-gray-700 px-6 py-2 rounded-lg shadow hover:bg-gray-300 transition-colors">
-                  Clear Data
-                </button>
-                <button className="bg-[#008066] text-white px-6 py-2 rounded-lg shadow hover:bg-[#006652] transition-colors">
-                  Save Registration
-                </button>
+        <div className="p-6 space-y-8">
+          {/* Registration Fees Section */}
+          <section className="space-y-4">
+            <h2 className="text-xl font-bold text-[#008066]">Registration Fees</h2>
+            
+            {/* Early Bird Fees */}
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h3 className="font-semibold mb-3">Early Bird (Before Deadline)</h3>
+              <div className="overflow-x-auto">
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="bg-gray-100">
+                    <tr>
+                      <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Category</th>
+                      <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Participation & Presentation</th>
+                      <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Participation Only</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-gray-200">
+                    <tr>
+                      <td className="px-4 py-2 text-sm font-medium text-gray-900">General</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$450 / ₹38,250</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$400 / ₹34,000</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-2 text-sm font-medium text-gray-900">Student</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$350 / ₹29,750</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$300 / ₹25,500</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
             </div>
-          </div>
+
+            {/* Regular Fees */}
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h3 className="font-semibold mb-3">Regular (After Deadline)</h3>
+              <p className="text-sm text-gray-600 mb-3">An additional $100 will be added to each category.</p>
+              <div className="overflow-x-auto">
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="bg-gray-100">
+                    <tr>
+                      <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Category</th>
+                      <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Participation & Presentation</th>
+                      <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Participation Only</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-gray-200">
+                    <tr>
+                      <td className="px-4 py-2 text-sm font-medium text-gray-900">General</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$550 / ₹46,750</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$500 / ₹42,500</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-2 text-sm font-medium text-gray-900">Student</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$450 / ₹38,250</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$400 / ₹34,000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h3 className="font-semibold mb-3">Accompanying Person</h3>
+              <p className="text-gray-600">$300 / ₹25,500</p>
+            </div>
+          </section>
+
+          {/* Payment Options Section */}
+          <section className="space-y-4">
+            <h2 className="text-xl font-bold text-[#008066]">Payment Options</h2>
+            
+            {/* International Participants */}
+            <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+              <h3 className="font-semibold mb-2">For International Participants (USD Payment via Wire Transfer)</h3>
+              <ul className="space-y-2 text-sm text-gray-700">
+                <li><span className="font-medium">Bank Account Number:</span> 158100710400045</li>
+                <li><span className="font-medium">Bank Name:</span> Tamilnadu Mercantile Bank</li>
+                <li><span className="font-medium">Bank Address:</span> No.3, Thiruvalluvar Salai, Thiruvanmiyur, Chennai, Tamil Nadu - 600041</li>
+                <li><span className="font-medium">SWIFT Code:</span> TMBLINBB</li>
+                <li><span className="font-medium">IFSC Code:</span> TMBL0000158</li>
+              </ul>
+              <p className="mt-3 text-sm text-gray-600">
+                <span className="font-medium">Important:</span> Please mention "CGOM16 Registration [Your Name]" in the transaction reference.
+              </p>
+            </div>
+
+            {/* Indian Participants */}
+            <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+              <h3 className="font-semibold mb-2">For Indian Participants (INR Payment via Online Portal)</h3>
+              <p className="text-sm text-gray-700 mb-3">Use the secure payment link below to complete your registration in Indian Rupees:</p>
+              <a 
+                href="https://rzp.io/rzp/CGOM16" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block bg-green-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-green-700 transition-colors"
+              >
+                Proceed to INR Payment Portal
+              </a>
+            </div>
+          </section>
+
+          {/* Sponsorship Section */}
+          <section className="space-y-4">
+            <h2 className="text-xl font-bold text-[#008066]">Sponsorship Opportunities</h2>
+            
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h3 className="font-semibold mb-3">Main Sponsorship Tiers</h3>
+              <div className="overflow-x-auto">
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="bg-gray-100">
+                    <tr>
+                      <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Tier</th>
+                      <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Amount (USD)</th>
+                      <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Amount (INR)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-gray-200">
+                    <tr>
+                      <td className="px-4 py-2 text-sm font-medium text-gray-900">Platinum</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$10,000</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">₹8,50,000</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-2 text-sm font-medium text-gray-900">Gold</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$7,000</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">₹5,95,000</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-2 text-sm font-medium text-gray-900">Silver</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$4,000</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">₹3,40,000</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-2 text-sm font-medium text-gray-900">Bronze</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$2,000</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">₹1,70,000</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <h3 className="font-semibold mb-3">Add-On Sponsorships</h3>
+              <div className="overflow-x-auto">
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="bg-gray-100">
+                    <tr>
+                      <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Item</th>
+                      <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Amount (USD)</th>
+                      <th className="px-4 py-2 text-left text-sm font-medium text-gray-700">Amount (INR)</th>
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-gray-200">
+                    <tr>
+                      <td className="px-4 py-2 text-sm font-medium text-gray-900">Conference Bag Insert</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$300</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">₹25,500</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-2 text-sm font-medium text-gray-900">Notepad & Pen Branding</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$500</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">₹42,500</td>
+                    </tr>
+                    <tr>
+                      <td className="px-4 py-2 text-sm font-medium text-gray-900">Coffee Break Sponsor/Day</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">$750</td>
+                      <td className="px-4 py-2 text-sm text-gray-600">₹63,750</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+
+          {/* Contact Information */}
+          <section className="bg-gray-50 p-4 rounded-lg">
+            <h2 className="text-xl font-bold text-[#008066] mb-3">Contact for Payment Assistance or Sponsorship Queries</h2>
+            <div className="space-y-2 text-sm text-gray-700">
+              <p><span className="font-medium">Name:</span> Dr. P. RAJESH</p>
+              <p><span className="font-medium">Email:</span> rajeshp@ssn.edu.in</p>
+              <p><span className="font-medium">Phone:</span> +91 94454 34893</p>
+              <p><span className="font-medium">Website:</span> cgom16@ssn.edu.in</p>
+            </div>
+          </section>
         </div>
       </div>
     </div>
