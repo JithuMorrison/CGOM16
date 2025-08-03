@@ -114,9 +114,9 @@ const Pricing = ({ handleIndex }) => {
         <h2 className="text-2xl font-bold text-gray-800">
           Online Registration <span className="text-[#008066]">and Payment</span>
         </h2>
-        <button 
+        <button
           className="mt-6 bg-[#008066] text-white px-8 py-3 rounded-lg shadow-lg hover:bg-[#006652] transition-colors duration-300 font-semibold"
-          onClick={() => handleIndex(17)}
+          onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScxj4U8ZHiR0DLnNbmn6AF-XeNNyUIt9O1EJAb3zUrBO60Xog/viewform', '_blank')}
         >
           PROCEED TO REGISTRATION
         </button>
