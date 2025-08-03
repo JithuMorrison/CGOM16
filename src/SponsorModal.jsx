@@ -34,7 +34,7 @@ const SponsorModal = ({ show, onClose }) => (
             >
               ×
             </button>
-            <h2 className="text-3xl font-bold mb-6 text-orange-600">Become a Sponsor of CGOM16</h2>
+            <h2 className="text-3xl font-bold mb-6" style={{ color: 'rgb(55, 123, 223)' }}>Become a Sponsor of CGOM16</h2>
             <p className="text-gray-700 mb-8 text-lg text-justify text-center leading-relaxed">
               The 16th International Workshop on Crystal Growth of Organic Materials (CGOM16) will be held in Chennai, India, from July 20th to 23rd, 2026. This prestigious event brings together global experts, researchers, and industry leaders to share the latest advancements in organic crystal growth, materials science, and related technologies. <br/><br/>
               By sponsoring CGOM16, your organization will gain visibility among a distinguished audience, foster new collaborations, and contribute to the progress of science and technology. Sponsors will be recognized throughout the conference, in all materials, and have the opportunity to engage directly with participants from academia and industry. <br/><br/>
@@ -44,7 +44,8 @@ const SponsorModal = ({ show, onClose }) => (
               href="https://docs.google.com/forms/d/e/1FAIpQLSds1nxNFU6TfZfEY7Pyb_j5vHO03Nr7JxCEdKeCrQ0RN3J36w/viewform?usp=header"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-orange-600 text-white px-8 py-4 rounded-lg shadow hover:bg-orange-700 transition-colors font-semibold text-xl"
+              className="inline-block text-white px-8 py-4 rounded-lg shadow transition-colors font-semibold text-xl"
+              style={{ backgroundColor: 'rgb(55, 123, 223)', boxShadow: '0 4px 16px rgba(55, 123, 223, 0.15)' }}
             >
               Sponsor Form
             </a>
