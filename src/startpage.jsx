@@ -11,6 +11,7 @@ import ConferenceHistory from "./ConferenceHistory";
 import Transportation from "./Transportation";
 import { FiChevronDown } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
+import SponsorModal from "./SponsorModal";
 import Exhibition from "./Exhibiton";
 import Accommodations from "./Accommodations";
 import Visa from "./Visa";
@@ -24,11 +25,29 @@ const CGOM16 = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [showScroll, setShowScroll] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showSponsor, setShowSponsor] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState({ 
     about: false, 
     abstract: false, 
     information: false 
   });
+
+  // Close sponsor modal on ESC key
+  useEffect(() => {
+    if (!showSponsor) return;
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') setShowSponsor(false);
+    };
+    window.addEventListener('keydown', handleEsc);
+    // Prevent background scroll when modal is open
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+      document.body.style.overflow = '';
+    };
+  }, [showSponsor]);
+
+
   const images = [
     'https://www.fodors.com/wp-content/uploads/2019/12/04_ChennaiArchitecture__GroupofMonuments_shutterstock_700441387-1600x1067.jpg',
     'https://www.fodors.com/wp-content/uploads/2019/12/06_ChennaiArchitecture__Senatehouse_6.-Madras_University_Senate_House.jpg',
@@ -71,7 +90,7 @@ const CGOM16 = () => {
   };
 
   const handleIndex = (ind) => {
-    if(ind !== 5){//addindex
+    if(ind !== 17){
       setCurrentIndex(ind);
       setDropdownOpen({ about: false, abstract: false, information: false });
     }
@@ -428,7 +447,13 @@ const CGOM16 = () => {
                 >
                   Contacts
                 </motion.button>
-                
+                <motion.button 
+                  onClick={() => setShowSponsor(true)}
+                  className="text-lg transition-colors duration-200 text-gray-700 hover:text-blue-600"
+                  variants={itemVariants}
+                >
+                  Sponsor
+                </motion.button>
                 <motion.a 
                   href="https://cgom15.sut.ac.th/" 
                   target="_blank" 
@@ -440,6 +465,10 @@ const CGOM16 = () => {
                 >
                   CGOM15
                 </motion.a>
+        {/* Sponsor Modal Overlay and Window */}
+        {showSponsor && (
+          <SponsorModal show={showSponsor} onClose={() => setShowSponsor(false)} />
+        )}
               </motion.div>
             </div>
           </div>
