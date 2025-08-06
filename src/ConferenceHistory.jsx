@@ -2,7 +2,6 @@ import React from 'react';
 
 const ConferenceHistory = () => {
   const cgomConferences = [
-    { id: 'CGOM16', location: 'Chennai, India', year: 2026, active: true },
     { id: 'CGOM15', location: 'Thailand', year: 2024, active: true },
     { id: 'CGOM14', location: 'Belgium', year: 2022, active: false },
     { id: 'CGOM13', location: 'Korea', year: 2018, active: false },
