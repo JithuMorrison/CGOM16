@@ -86,7 +86,7 @@ applications, including materials science, pharmaceutical development, and nanot
         <h2 className="text-3xl font-bold text-orange-600">Co-organizers</h2>
         <div className="flex justify-center items-center gap-10 mt-6">
           <img
-            src="/bu-logo.png"
+            src="/Co-org/bu-logo.png"
             alt="Logo"
             className="h-36 -mt-4"
           />

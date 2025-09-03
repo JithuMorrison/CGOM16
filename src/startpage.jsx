@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import Home from "./home";
-import Committee from "./commitee";
-import ImportantDates from "./importantdates";
-import Program from "./program";
-import RegistrationForm from "./registration";
-import Pricing from "./pricing";
-import PresentationGuidelines from "./PresentationGuidelines";
-import ContactUs from "./ContactUs";
-import ConferenceHistory from "./ConferenceHistory";
-import Transportation from "./Transportation";
+import Committee from "./About/commitee";
+import ImportantDates from "./About/importantdates";
+import Program from "./Others/program";
+import RegistrationForm from "./Others/registration";
+import Pricing from "./Others/pricing";
+import PresentationGuidelines from "./Abstract/PresentationGuidelines";
+import ContactUs from "./Others/ContactUs";
+import ConferenceHistory from "./About/ConferenceHistory";
+import Transportation from "./Information/Transportation";
 import { FiChevronDown } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
-import SponsorModal from "./SponsorModal";
-import Exhibition from "./Exhibiton";
-import Accommodations from "./Accommodations";
-import Visa from "./Visa";
-import VenueInformation from "./VenueInformation";
-import Excursion from "./Excursion";
+import SponsorModal from "./Others/SponsorModal";
+import Exhibition from "./Others/Exhibiton";
+import Accommodations from "./Information/Accommodations";
+import Visa from "./Information/Visa";
+import VenueInformation from "./Information/VenueInformation";
+import Excursion from "./Information/Excursion";
 import { FiArrowUp, FiMapPin, FiMail } from "react-icons/fi";
 
 const CGOM16 = () => {
@@ -211,7 +211,7 @@ const CGOM16 = () => {
       >
         <div className="flex justify-between items-center h-16 px-4">
           <button onClick={() => handleMobileNavClick(0)}>
-            <img src="/cgomlogo.png" alt="CGOM Logo" className="h-10" />
+            <img src="/Logos/cgomlogo.png" alt="CGOM Logo" className="h-10" />
           </button>
           
           <button 
@@ -477,7 +477,7 @@ const CGOM16 = () => {
 
       <div className="flex justify-between items-center px-4">
         <motion.img 
-          src="/cgomlogo.png" 
+          src="/Logos/cgomlogo.png" 
           alt="CGOM Logo" 
           className="absolute top-20 -left-2 w-24 h-16"
           initial={{ x: -50, opacity: 0 }}
@@ -485,7 +485,7 @@ const CGOM16 = () => {
           transition={{ delay: 0.4 }}
         />
         <motion.img 
-          src="/ssn-logo.png" 
+          src="/Logos/ssn-logo.png" 
           alt="SSN Logo" 
           className="absolute top-24 right-4 w-16 h-8"
           initial={{ x: 50, opacity: 0 }}
@@ -561,9 +561,9 @@ const CGOM16 = () => {
           transition={{ delay: 0.7 }}
         >
           {[
-            { title: "Keynote Speakers", desc: "World-renowned experts", img: "/ssn1.JPG", index: 5 },
-            { title: "Conference Registration", desc: "Find details about registration", img: "/ssn2.jpg", index: 6 },
-            { title: "Venue Information", desc: "Location details", img: "/ssn3.jpg", index: 13 }
+            { title: "Keynote Speakers", desc: "World-renowned experts", img: "/SSN/ssn1.JPG", index: 5 },
+            { title: "Conference Registration", desc: "Find details about registration", img: "/SSN/ssn2.jpg", index: 6 },
+            { title: "Venue Information", desc: "Location details", img: "/SSN/ssn3.jpg", index: 13 }
           ].map((item, i) => (
             <motion.div
               key={i}
@@ -682,7 +682,7 @@ const CGOM16 = () => {
                 variants={itemVariants}
               >
                 <img
-                  src="/cgomlogo.png"
+                  src="/Logos/cgomlogo.png"
                   alt="CGOM Logo"
                   className="h-16 w-auto mb-4 hover:scale-105 transition-transform duration-300 mx-auto"
                 />

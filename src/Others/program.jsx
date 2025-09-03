@@ -1,5 +1,5 @@
 import React from 'react';
-import Speakers from './Speakers';
+import Speakers from '../Speakers';
 
 const Program = ({handleIndex}) => {
   return (
