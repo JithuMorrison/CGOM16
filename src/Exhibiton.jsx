@@ -85,7 +85,7 @@ const Exhibition = () => {
 
         {/* Exhibition Details in Two Columns */}
         <div className="grid md:grid-cols-2 gap-8 mb-10">
-          {/* Target Audience Card */}
+          {/* Why Exhibit Card */}
           <section className="bg-white rounded-xl shadow-2xl overflow-hidden transition-all hover:shadow-xl">
             <div className="md:flex h-full">
               <div className="md:w-1/3 bg-blue-800 p-8 flex items-center justify-center">
@@ -95,7 +95,7 @@ const Exhibition = () => {
                     className="text-6xl text-white mb-4" 
                   />
                   <h2 className="text-2xl font-bold text-white">
-                    Target Audience
+                    Why Exhibit at CGOM16?
                   </h2>
                 </div>
               </div>
@@ -103,30 +103,34 @@ const Exhibition = () => {
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-2 mt-1">•</span>
-                    <span className="leading-relaxed">Leading researchers in crystal growth</span>
+                    <span className="leading-relaxed">
+                      Showcase your latest products, technologies, and services
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-2 mt-1">•</span>
-                    <span className="leading-relaxed">Materials science professionals</span>
+                    <span className="leading-relaxed">
+                      Reach an international audience of crystal growth experts
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-2 mt-1">•</span>
-                    <span className="leading-relaxed">Industry R&D teams</span>
+                    <span className="leading-relaxed">
+                      Connect with researchers, scientists, and industry professionals
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-2 mt-1">•</span>
-                    <span className="leading-relaxed">Academic and government representatives</span>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-blue-600 mr-2 mt-1">•</span>
-                    <span className="leading-relaxed">Technology solution providers</span>
+                    <span className="leading-relaxed">
+                      Strengthen your brand visibility within the crystal growth community
+                    </span>
                   </li>
                 </ul>
               </div>
             </div>
           </section>
 
-          {/* Exhibition Packages Card */}
+          {/* Exhibition Opportunities Card */}
           <section className="bg-white rounded-xl shadow-2xl overflow-hidden transition-all hover:shadow-xl">
             <div className="md:flex h-full">
               <div className="md:w-1/3 bg-blue-800 p-8 flex items-center justify-center">
@@ -136,7 +140,7 @@ const Exhibition = () => {
                     className="text-6xl text-white mb-4" 
                   />
                   <h2 className="text-2xl font-bold text-white">
-                    Exhibition Packages
+                    Exhibition Opportunities
                   </h2>
                 </div>
               </div>
@@ -144,19 +148,27 @@ const Exhibition = () => {
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-2 mt-1">•</span>
-                    <span className="leading-relaxed"><span className="font-bold">Standard Booth:</span> 3m x 2m space with basic furnishings</span>
+                    <span className="leading-relaxed">
+                      Connect directly with key decision-makers in academia and industry
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-2 mt-1">•</span>
-                    <span className="leading-relaxed"><span className="font-bold">Premium Booth:</span> Larger space with enhanced visibility</span>
+                    <span className="leading-relaxed">
+                      Demonstrate your cutting-edge technologies and solutions
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-2 mt-1">•</span>
-                    <span className="leading-relaxed"><span className="font-bold">Sponsorship Packages:</span> Custom options with branding opportunities</span>
+                    <span className="leading-relaxed">
+                      Network with potential partners, collaborators, and clients
+                    </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-blue-600 mr-2 mt-1">•</span>
-                    <span className="leading-relaxed">All packages include company listing in conference materials</span>
+                    <span className="leading-relaxed">
+                      Gain valuable insights into emerging trends and market needs
+                    </span>
                   </li>
                 </ul>
               </div>
@@ -207,6 +219,7 @@ const Exhibition = () => {
                         <a href="mailto:cgom16@ssn.edu.in" className="text-blue-600 hover:underline">cgom16@ssn.edu.in</a>
                       </div>
                     </div>
+                    <div className='mt-10 mb-7'></div>
                     <div className="flex items-start">
                       <FontAwesomeIcon icon={faPhone} className="text-blue-500 text-xl mt-1 mr-4" />
                       <div>
