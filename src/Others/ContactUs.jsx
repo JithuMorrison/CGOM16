@@ -29,7 +29,7 @@ const ContactUs = () => {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16 max-w-7xl">
         {/* Contact Person Section */}
-        <section className="text-center mb-20 bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto transform transition-all hover:scale-[1.01]">
+        <section className="text-center mb-20 bg-white rounded-2xl shadow-xl p-8 max-w-xl mx-auto transform transition-all hover:scale-[1.01] border-t-4 border-purple-500">
           <div className="mb-6">
             <div className="w-28 h-28 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mb-4 shadow-md">
               <FontAwesomeIcon 
