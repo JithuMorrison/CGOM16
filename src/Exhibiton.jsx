@@ -20,10 +20,10 @@ const Exhibition = () => {
       <header className="bg-gradient-to-r from-blue-700 to-blue-900 py-12 shadow-lg">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Exhibition Opportunities
+            Exhibition Information
           </h1>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Showcase your products and services at CGOM16 in Chennai, India
+            Join us as an exhibitor at CGOM16 in Chennai, India
           </p>
         </div>
       </header>
@@ -47,7 +47,7 @@ const Exhibition = () => {
             <div className="md:w-2/3 p-8">
               <div className="mb-6">
                 <p className="text-lg text-gray-700 mb-6">
-                  The <strong>16th International Conference on Crystal Growth and Organization of Materials (CGOM16)</strong> 
+                  The <strong>16th International Conference on Crystal Growth and Organization of Materials (CGOM16) </strong> 
                   will bring together leading researchers, scientists, and industry professionals from around the world 
                   to Chennai, India.
                 </p>
@@ -181,34 +181,38 @@ const Exhibition = () => {
             <div className="md:w-2/3 p-8">
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-6">
-                  <div className="flex items-start">
-                    <FontAwesomeIcon icon={faUserTie} className="text-blue-500 text-xl mt-1 mr-4" />
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800">Exhibition Coordinator</h3>
-                      <p className="text-gray-600">Dr. Rajesh Paulraj</p>
+                  <div className="bg-blue-50 p-6 rounded-lg">
+                    <div className="flex items-start mb-4">
+                      <FontAwesomeIcon icon={faUserTie} className="text-blue-500 text-xl mt-1 mr-4" />
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-800">Exhibition Coordinator</h3>
+                        <p className="text-gray-600">Dr. Rajesh Paulraj</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-start">
-                    <FontAwesomeIcon icon={faEnvelope} className="text-blue-500 text-xl mt-1 mr-4" />
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800">Email</h3>
-                      <a href="mailto:cgom16@ssn.edu.in" className="text-blue-600 hover:underline">cgom16@ssn.edu.in</a>
+                    <div className="flex items-start">
+                      <FontAwesomeIcon icon={faMapMarkerAlt} className="text-blue-500 text-xl mt-1 mr-4" />
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-800">Venue</h3>
+                        <p className="text-gray-600">SSN College of Engineering, Chennai</p>
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div className="space-y-6">
-                  <div className="flex items-start">
-                    <FontAwesomeIcon icon={faPhone} className="text-blue-500 text-xl mt-1 mr-4" />
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800">Phone</h3>
-                      <a href="tel:+919445434893" className="text-blue-600 hover:underline">+91 9445434893</a>
+                  <div className="bg-blue-50 p-6 rounded-lg">
+                    <div className="flex items-start mb-4">
+                      <FontAwesomeIcon icon={faEnvelope} className="text-blue-500 text-xl mt-1 mr-4" />
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-800">Email</h3>
+                        <a href="mailto:cgom16@ssn.edu.in" className="text-blue-600 hover:underline">cgom16@ssn.edu.in</a>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex items-start">
-                    <FontAwesomeIcon icon={faMapMarkerAlt} className="text-blue-500 text-xl mt-1 mr-4" />
-                    <div>
-                      <h3 className="text-xl font-semibold text-gray-800">Venue</h3>
-                      <p className="text-gray-600">SSN College of Engineering, Chennai</p>
+                    <div className="flex items-start">
+                      <FontAwesomeIcon icon={faPhone} className="text-blue-500 text-xl mt-1 mr-4" />
+                      <div>
+                        <h3 className="text-xl font-semibold text-gray-800">Phone</h3>
+                        <a href="tel:+919445434893" className="text-blue-600 hover:underline">+91 9445434893</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -234,13 +238,6 @@ const Exhibition = () => {
               >
                 <FontAwesomeIcon icon={faEnvelope} className="mr-3" />
                 Email Us
-              </a>
-              <a
-                href="tel:+919445434893"
-                className="inline-flex items-center justify-center px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors font-semibold text-base tracking-wide"
-              >
-                <FontAwesomeIcon icon={faPhone} className="mr-3" />
-                Call Us
               </a>
             </div>
           </div>
