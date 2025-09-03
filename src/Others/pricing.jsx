@@ -98,7 +98,7 @@ const Pricing = ({ handleIndex }) => {
 
       <div className="max-w-4xl mx-auto mt-8 text-center">
         <a 
-          href="CGOM16, Chennai - PRICE LIST FOR EXHIBITORS AND SPONSORS.docx"
+          href="Docs/CGOM16, Chennai - PRICE LIST FOR EXHIBITORS AND SPONSORS.docx"
           download="CGOM16_Price_List.docx"
           className="inline-block bg-[#008066] text-white px-6 py-3 rounded-lg shadow hover:bg-[#006652] transition-colors duration-300 font-semibold"
         >

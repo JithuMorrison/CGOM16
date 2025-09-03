@@ -18,16 +18,16 @@ const Visa = () => {
         {/* Download Buttons */}
         <div className="flex flex-wrap gap-4 mb-12 justify-center">
           <a 
-            href="/VisDetails.pdf" 
-            download="VisDetails.pdf"
+            href="Docs/VisDetails.pdf" 
+            download="Visa_Details.pdf"
             className="flex items-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors shadow-md"
           >
             <FontAwesomeIcon icon={faFilePdf} className="mr-3 text-xl" />
             Download Visa Guide (PDF)
           </a>
           <a 
-            href="/IndVis.docx" 
-            download="IndVis.docx"
+            href="Docs/IndVis.docx" 
+            download="Visa_Checklist.docx"
             className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors shadow-md"
           >
             <FontAwesomeIcon icon={faFileWord} className="mr-3 text-xl" />

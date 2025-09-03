@@ -68,7 +68,7 @@ const PresentationGuidelines = () => {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="CGOM16_Abstract_Rajesh Paulraj.doc"
+                  href="Docs/CGOM16_Abstract_Rajesh Paulraj.doc"
                   download="CGOM16_Abstract_Template.doc"
                   className="flex-1 inline-flex items-center justify-center px-6 py-3 bg-teal-700 text-white rounded-lg hover:bg-teal-800 transition-all duration-200 shadow-md hover:shadow-lg font-semibold text-base tracking-wide text-center"
                 >
