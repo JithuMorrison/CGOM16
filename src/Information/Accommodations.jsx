@@ -7,10 +7,15 @@ const Accommodations = () => {
   return (
     <div className="min-h-screen bg-gray-100 font-sans">
       {/* Banner Section */}
-      <div className="bg-blue-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold mb-4">Accommodations</h1>
-          <p className="text-xl">Hotel Booking & Dining Information</p>
+      <div className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1708119063168-4785d1359824?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YWNjb21tb2RhdGlvbnxlbnwwfHwwfHx8MA%3D%3D')] bg-cover bg-center opacity-20"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+            Accommodations
+          </h1>
+          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            Hotel Booking & Dining Information
+          </p>
         </div>
       </div>
 
