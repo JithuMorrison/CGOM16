@@ -7,10 +7,16 @@ const Excursion = () => {
   return (
     <div className="min-h-screen bg-gray-100 font-sans">
       {/* Banner Section */}
-      <div className="bg-blue-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold mb-4">Excursion</h1>
-          <p className="text-xl">Explore Chennai's Cultural Heritage</p>
+      <div className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://cdn.pixabay.com/photo/2020/03/18/10/08/mountain-4943466_1280.jpg')] bg-cover bg-center opacity-30"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+            Excursion
+          </h1>
+          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+            Explore Chennai's Cultural Heritage
+          </p>
         </div>
       </div>
 
