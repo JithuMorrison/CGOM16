@@ -36,9 +36,9 @@ const Excursion = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <img 
-                  src="https://pro2-bar-s3-cdn-cf3.myportfolio.com/214050548952e363c2e6110ec68884e5/49f14ab2-9461-4170-b133-fbdeb6bb3e08_rwc_119x0x1381x1080x1381.jpg?h=866a1e49bcdf721a2ad990812d8568dc" 
+                  src="https://live.staticflickr.com/8766/28993903986_533ecef321_b.jpg" 
                   alt="Mahabalipuram Shore Temple" 
-                  className="rounded-lg w-full h-64 object-cover"
+                  className="rounded-lg w-full h-[320px] object-cover"
                 />
               </div>
               <div>
@@ -76,7 +76,7 @@ const Excursion = () => {
                 <img 
                   src="https://img.staticmb.com/mbcontent/images/crop/uploads/2022/9/Marina-Beach_0_1200.jpg" 
                   alt="Marina Beach" 
-                  className="rounded-lg w-full h-64 object-cover"
+                  className="rounded-lg w-full h-[295px] object-cover"
                 />
               </div>
               <div>
