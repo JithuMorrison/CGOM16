@@ -18,6 +18,7 @@ import Visa from "./Information/Visa";
 import VenueInformation from "./Information/VenueInformation";
 import Excursion from "./Information/Excursion";
 import { FiArrowUp, FiMapPin, FiMail } from "react-icons/fi";
+import PaymentInfo from "./Others/paymentinfo";
 
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -627,6 +628,8 @@ const CGOM16 = () => {
               <Exhibition />
             ) : currentIndex === 16 ? (
               <ContactUs />
+            ) : currentIndex === 17 ? (
+              <PaymentInfo handleIndex={handleIndex} />
             ) : (
               <RegistrationForm handleIndex={handleIndex} />
             )}
