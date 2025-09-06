@@ -628,7 +628,7 @@ const CGOM16 = () => {
             ) : currentIndex === 16 ? (
               <ContactUs />
             ) : (
-              <RegistrationForm />
+              <RegistrationForm handleIndex={handleIndex} />
             )}
           </motion.div>
         </AnimatePresence>

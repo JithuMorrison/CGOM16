@@ -1,13 +1,21 @@
 import React from "react";
+import { FiArrowLeft } from "react-icons/fi";
 
-const RegistrationForm = () => {
+const RegistrationForm = ({ handleIndex }) => {
   return (
     <div className="p-4 md:p-8 bg-gray-50 min-h-screen">
       <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
         {/* Header */}
-        <div className="bg-[#008066] text-white p-6">
+        <div className="bg-[#008066] text-white p-6 relative">
           <h1 className="text-2xl font-bold">CGOM16 Payment Information</h1>
-          <p className="text-white/90">16th International Workshop on Crystal Growth of Organic Materials | Chennai, India</p>
+          <p className="text-white/90">
+            16th International Workshop on Crystal Growth of Organic Materials | Chennai, India
+          </p>
+
+          <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition absolute top-6 right-6">
+            <FiArrowLeft className="text-lg" />
+            <span className="font-medium" onClick={() => handleIndex(6)}>Back</span>
+          </button>
         </div>
 
         <div className="p-6 space-y-8">

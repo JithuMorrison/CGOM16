@@ -121,6 +121,12 @@ const Pricing = ({ handleIndex }) => {
           PROCEED TO REGISTRATION
         </button>
       </div>
+      <button
+        className="mt-6 bg-[#008066] text-white px-8 py-3 rounded-lg shadow-lg hover:bg-[#006652] transition-colors duration-300 font-semibold"
+        onClick={() => handleIndex(17)}
+      >
+        PAYMENT INFO
+      </button>
     </div>
   );
 };
