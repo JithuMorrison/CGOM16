@@ -7,10 +7,15 @@ const Visa = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans">
       {/* Hero Banner */}
-      <div className="bg-gradient-to-r from-blue-800 to-blue-600 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Visa Information for CGOM16</h1>
-          <p className="text-xl md:text-2xl">Entry Requirements & Application Process for International Participants</p>
+      <div className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-4.0.3&auto=format&fit=crop&w=3000&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Visa Information for CGOM16
+          </h1>
+          <p className="text-xl text-blue-100">
+            Entry Requirements & Application Process for International Participants
+          </p>
         </div>
       </div>
 
