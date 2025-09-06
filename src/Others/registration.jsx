@@ -12,9 +12,9 @@ const RegistrationForm = ({ handleIndex }) => {
             16th International Workshop on Crystal Growth of Organic Materials | Chennai, India
           </p>
 
-          <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition absolute top-6 right-6">
+          <button className="flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 transition absolute top-6 right-6" onClick={() => handleIndex(6)}>
             <FiArrowLeft className="text-lg" />
-            <span className="font-medium" onClick={() => handleIndex(6)}>Back</span>
+            <span className="font-medium">Back</span>
           </button>
         </div>
 
