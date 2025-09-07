@@ -7,10 +7,15 @@ const VenueInformation = () => {
   return (
     <div className="min-h-screen bg-gray-100 font-sans">
       {/* Banner Section */}
-      <div className="bg-blue-800 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl font-bold mb-4">Venue Information</h1>
-          <p className="text-xl">SSN College of Engineering, Chennai</p>
+      <div className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-20 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://cdn0.weddingwire.com/emp/fotos/7/9/2/9/9/9/1118171900713_51_999297-1571959316.jpg')] bg-cover bg-center opacity-20"></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg mb-4">
+            Venue Information
+          </h1>
+          <p className="text-xl text-blue-100">
+            SSN College of Engineering, Chennai
+          </p>
         </div>
       </div>
 

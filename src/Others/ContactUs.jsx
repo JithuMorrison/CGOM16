@@ -12,7 +12,7 @@ import {
 
 const ContactUs = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans -mb-20">
       {/* Hero Section with Parallax Effect */}
       <section className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center opacity-20"></div>
@@ -29,7 +29,7 @@ const ContactUs = () => {
       {/* Main Content */}
       <div className="container mx-auto px-4 py-16 max-w-7xl">
         {/* Contact Person Section */}
-        <section className="text-center mb-20 bg-white rounded-2xl shadow-xl p-8 max-w-xl mx-auto transform transition-all hover:scale-[1.01] border-t-4 border-purple-500">
+        <section className="text-center mb-16 bg-white rounded-2xl shadow-xl p-8 max-w-xl mx-auto transform transition-all hover:scale-[1.01] border-t-4 border-purple-500">
           <div className="mb-6">
             <div className="w-28 h-28 mx-auto rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mb-4 shadow-md">
               <FontAwesomeIcon 
