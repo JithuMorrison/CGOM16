@@ -48,11 +48,13 @@ const Committee = ({ scrollTo }) => {
             }, 500);
           }
         };
+
+        const isMobile = window.innerWidth <= 768;
       
         if (scrollTo === 'international') {
-          scrollWithOffset(internationalRef, 1675); // scroll 120px above
+          scrollWithOffset(internationalRef, isMobile ? 2525 : 1675); // scroll 120px above
         } else if (scrollTo === 'local') {
-          scrollWithOffset(localRef, 1000); // scroll 120px above
+          scrollWithOffset(localRef, isMobile ? 1650 : 1000); // scroll 120px above
         }
       }, [scrollTo]);
 
