@@ -18,7 +18,7 @@ const RegistrationForm = ({ handleIndex }) => {
     transactionId: "",
     registrationType: "Early Bird",
     paymentDate: "",
-    paymentAmount: "",
+    amountPaid: "",
     paymentProof: null
   });
 
@@ -29,6 +29,32 @@ const RegistrationForm = ({ handleIndex }) => {
   // Handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  // inside RegistrationForm component
+  const handleFileUpload = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      // Validate file size (max 10 MB)
+      if (file.size > 10 * 1024 * 1024) {
+        alert("File size should not exceed 10 MB");
+        return;
+      }
+
+      // Validate file type (pdf, jpg, jpeg, png)
+      const allowedTypes = ["application/pdf", "image/jpeg", "image/jpg", "image/png"];
+      if (!allowedTypes.includes(file.type)) {
+        alert("Only PDF, JPG, JPEG, or PNG files are allowed");
+        return;
+      }
+
+      // Update state
+      setFormData((prev) => ({
+        ...prev,
+        paymentProof: "file"//file
+      }));
+    }
   };
 
   // Submit to Firebase
@@ -90,12 +116,10 @@ const RegistrationForm = ({ handleIndex }) => {
 
   const nextStep = () => {
     setCurrentStep(currentStep + 1);
-    window.scrollTo(0, 0);
   };
 
   const prevStep = () => {
     setCurrentStep(currentStep - 1);
-    window.scrollTo(0, 0);
   };
 
   return (
@@ -277,12 +301,12 @@ const RegistrationForm = ({ handleIndex }) => {
                         <input
                           type="radio"
                           name="registrationType"
-                          value="Regular"
-                          checked={formData.registrationType === "Regular"}
+                          value="After Deadline"
+                          checked={formData.registrationType === "After Deadline"}
                           onChange={handleChange}
                           className="text-[#008066] focus:ring-[#008066]"
                         />
-                        <span>Regular (After Deadline) - Additional $100 fee</span>
+                        <span>After Deadline - Additional $100 fee</span>
                       </label>
                     </div>
                   </div>
@@ -295,10 +319,10 @@ const RegistrationForm = ({ handleIndex }) => {
                       onChange={handleChange}
                       className="w-full border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#008066] focus:border-transparent"
                     >
-                      <option value="General - Participation & Presentation">General - Participation & Presentation</option>
-                      <option value="General - Participation Only">General - Participation Only</option>
-                      <option value="Student - Participation & Presentation">Student - Participation & Presentation</option>
-                      <option value="Student - Participation Only">Student - Participation Only</option>
+                      <option value="General - Participation & Presentation">Regular Attendee - Participation & Presentation</option>
+                      <option value="General - Participation Only">Regular Attendee - Participation Only</option>
+                      <option value="Student - Participation & Presentation">Student Attendee - Participation & Presentation</option>
+                      <option value="Student - Participation Only">Student Attendee - Participation Only</option>
                       <option value="Accompanying Person">Accompanying Person</option>
                     </select>
                   </div>
@@ -342,8 +366,8 @@ const RegistrationForm = ({ handleIndex }) => {
                       className="w-full border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#008066] focus:border-transparent"
                     >
                       <option value="">Select Payment Method</option>
-                      <option value="International Wire Transfer">International Wire Transfer (USD)</option>
-                      <option value="Indian Online Payment">Indian Online Payment (INR)</option>
+                      <option value="International Wire Transfer">International Participants (USD Payment via Wire Transfer)</option>
+                      <option value="Indian Online Payment">Indian Participants (INR Payment via Online Portal)</option>
                     </select>
                   </div>
 
@@ -351,14 +375,17 @@ const RegistrationForm = ({ handleIndex }) => {
                     <div className="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
                       <h3 className="font-semibold mb-2">Wire Transfer Details</h3>
                       <ul className="space-y-2 text-sm text-gray-700">
+                        <li><span className="font-medium">Account Name:</span> SSN College of Engineering</li>
                         <li><span className="font-medium">Bank Account Number:</span> 158100710400045</li>
-                        <li><span className="font-medium">Bank Name:</span> Tamilnadu Mercantile Bank</li>
-                        <li><span className="font-medium">Bank Address:</span> No.3, Thiruvalluvar Salai, Thiruvanmiyur, Chennai, Tamil Nadu - 600041</li>
+                        <li><span className="font-medium">Bank Name:</span> Tamilnad Mercantile Bank Ltd</li>
+                        <li><span className="font-medium">Bank Address:</span> 3, Thiruvalluvar Salai, Thiruvanmiyur, Chennai, Tamil Nadu, India - 600041</li>
                         <li><span className="font-medium">SWIFT Code:</span> TMBLINBB</li>
                         <li><span className="font-medium">IFSC Code:</span> TMBL0000158</li>
+                        <li><span className="font-medium">MICR Code:</span> 600060010</li>
+                        <li><span className="font-medium">GST No:</span> 33AAATS2240Q1ZD</li>
                       </ul>
                       <p className="mt-3 text-sm text-gray-600">
-                        <span className="font-medium">Important:</span> Please mention "CGOM16 Registration [Your Name]" in the transaction reference.
+                        <span className="font-medium">Important:</span> Please mention “CGOM16 Registration – [Your Name]” in the transaction reference.
                       </p>
                     </div>
                   )}
@@ -366,7 +393,9 @@ const RegistrationForm = ({ handleIndex }) => {
                   {formData.paymentMethod === "Indian Online Payment" && (
                     <div className="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
                       <h3 className="font-semibold mb-2">Online Payment</h3>
-                      <p className="text-sm text-gray-700 mb-3">Use the secure payment link below to complete your registration in Indian Rupees:</p>
+                      <p className="text-sm text-gray-700 mb-3">
+                        Use the secure payment link below to complete your registration in Indian Rupees:
+                      </p>
                       <a 
                         href="https://rzp.io/rzp/CGOM16" 
                         target="_blank" 
@@ -378,6 +407,7 @@ const RegistrationForm = ({ handleIndex }) => {
                     </div>
                   )}
 
+                  {/* Transaction Reference */}
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Transaction ID/Reference Number *</label>
                     <input
@@ -391,6 +421,57 @@ const RegistrationForm = ({ handleIndex }) => {
                     />
                   </div>
 
+                  {/* Upload Payment Proof */}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Upload Your Payment / Transaction Proof *</label>
+                    <input
+                      type="file"
+                      name="paymentProof"
+                      accept=".pdf,.jpg,.jpeg,.png"
+                      onChange={handleFileUpload}
+                      required
+                      className="w-full border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#008066] focus:border-transparent"
+                    />
+                    <p className="text-xs text-gray-500 mt-1">Upload 1 supported file: PDF or image. Max 10 MB.</p>
+                  </div>
+
+                  {/* Date of Payment */}
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {/* Date of Payment */}
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Select the Date of Payment *</label>
+                      <input
+                        type="date"
+                        name="paymentDate"
+                        value={formData.paymentDate}
+                        onChange={handleChange}
+                        required
+                        className="w-full border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#008066] focus:border-transparent"
+                      />
+                    </div>
+
+                    {/* Amount Paid */}
+                    <div>
+                      <label className="block text-sm font-medium text-gray-700 mb-1">Amount Paid *</label>
+                      <input
+                        type="number"
+                        name="amountPaid"
+                        value={formData.amountPaid}
+                        onChange={handleChange}
+                        required
+                        className="w-full border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#008066] focus:border-transparent"
+                        placeholder="Enter the amount paid"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Confirmation message */}
+                  <p className="text-sm text-gray-700 bg-yellow-50 border border-yellow-200 p-3 rounded-md">
+                    Thank you for registering for the <span className="font-semibold">16th International Workshop on Crystal Growth of Organic Materials!</span><br />
+                    Your response has been recorded successfully. If you have uploaded the payment proof and entered the transaction details correctly, kindly select Complete Registration below.
+                  </p>
+
+                  {/* Navigation buttons */}
                   <div className="flex justify-between pt-4">
                     <button
                       type="button"
