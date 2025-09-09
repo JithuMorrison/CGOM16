@@ -16,7 +16,10 @@ const RegistrationForm = ({ handleIndex }) => {
     attendeeType: "General - Participation & Presentation",
     paymentMethod: "",
     transactionId: "",
-    registrationType: "Early Bird"
+    registrationType: "Early Bird",
+    paymentDate: "",
+    paymentAmount: "",
+    paymentProof: null
   });
 
   const [loading, setLoading] = useState(false);
