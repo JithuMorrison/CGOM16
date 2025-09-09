@@ -13,7 +13,7 @@ import {
   faQuestionCircle
 } from "@fortawesome/free-solid-svg-icons";
 
-const PresentationGuidelines = () => {
+const PresentationGuidelines = ({handleIndex}) => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans">
       {/* Hero Header */}
@@ -88,9 +88,10 @@ const PresentationGuidelines = () => {
                   Download Abstract Template
                 </a>
                 <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSf52wpiYUSzwzBYZkAVEJujcbom6Yyb59HoZsEDeYch6xqwLg/viewform"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  //href="https://docs.google.com/forms/d/e/1FAIpQLSf52wpiYUSzwzBYZkAVEJujcbom6Yyb59HoZsEDeYch6xqwLg/viewform"
+                  //target="_blank"
+                  //rel="noopener noreferrer"
+                  onClick={() => handleIndex(19)}
                   className="flex-1 inline-flex items-center justify-center px-6 py-3 border-2 border-teal-700 text-teal-700 rounded-lg hover:bg-teal-50 transition-all duration-200 font-semibold text-base tracking-wide text-center"
                 >
                   <FontAwesomeIcon icon={faUpload} className="mr-3" />

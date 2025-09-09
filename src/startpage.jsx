@@ -19,6 +19,7 @@ import VenueInformation from "./Information/VenueInformation";
 import Excursion from "./Information/Excursion";
 import { FiArrowUp, FiMapPin, FiMail } from "react-icons/fi";
 import PaymentInfo from "./Others/paymentinfo";
+import AbstractSubmissionForm from "./Others/AbstractForm";
 
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -609,11 +610,11 @@ const CGOM16 = () => {
             ) : currentIndex === 6 ? (
               <Pricing handleIndex={handleIndex} />
             ) : currentIndex === 7 ? (
-              <PresentationGuidelines />
+              <PresentationGuidelines handleIndex={handleIndex} />
             ) : currentIndex === 8 ? (
-              <PresentationGuidelines />
+              <PresentationGuidelines handleIndex={handleIndex} />
             ) : currentIndex === 9 ? (
-              <PresentationGuidelines />
+              <PresentationGuidelines handleIndex={handleIndex} />
             ) : currentIndex === 10 ? (
               <Transportation />
             ) : currentIndex === 11 ? (
@@ -630,8 +631,10 @@ const CGOM16 = () => {
               <ContactUs />
             ) : currentIndex === 17 ? (
               <PaymentInfo handleIndex={handleIndex} />
-            ) : (
+            ) : currentIndex === 18 ? (
               <RegistrationForm handleIndex={handleIndex} />
+            ) : (
+              <AbstractSubmissionForm handleIndex={handleIndex} />
             )}
           </motion.div>
         </AnimatePresence>
