@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { FiArrowLeft } from "react-icons/fi";
-import { db } from "../Firebase/firebaseinit";
+import { db, storage } from "../Firebase/firebaseinit";
 import { collection, addDoc } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const RegistrationForm = ({ handleIndex }) => {
   const [formData, setFormData] = useState({
@@ -23,6 +24,7 @@ const RegistrationForm = ({ handleIndex }) => {
   });
 
   const [loading, setLoading] = useState(false);
+  const [fileUploading, setFileUploading] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -31,14 +33,15 @@ const RegistrationForm = ({ handleIndex }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // inside RegistrationForm component
-  const handleFileUpload = (e) => {
+  // Handle file selection
+  const handleFileSelect = (e) => {
     const file = e.target.files[0];
 
     if (file) {
       // Validate file size (max 10 MB)
       if (file.size > 10 * 1024 * 1024) {
         alert("File size should not exceed 10 MB");
+        e.target.value = ""; // Reset file input
         return;
       }
 
@@ -46,28 +49,63 @@ const RegistrationForm = ({ handleIndex }) => {
       const allowedTypes = ["application/pdf", "image/jpeg", "image/jpg", "image/png"];
       if (!allowedTypes.includes(file.type)) {
         alert("Only PDF, JPG, JPEG, or PNG files are allowed");
+        e.target.value = ""; // Reset file input
         return;
       }
 
-      // Update state
+      // Store the file object for later upload during submission
       setFormData((prev) => ({
         ...prev,
-        paymentProof: "file"//file
+        paymentProof: file
       }));
+    }
+  };
+
+  // Upload file to Firebase Storage and return the download URL
+  const uploadFile = async (file) => {
+    if (!file) return null;
+    
+    try {
+      // Create a reference in Firebase Storage
+      const fileRef = ref(storage, `payment-proofs/${Date.now()}_${file.name}`);
+      
+      // Upload the file
+      await uploadBytes(fileRef, file);
+      
+      // Get the file's download URL
+      return fileRef.fullPath;
+    } catch (error) {
+      console.error("Error uploading file:", error);
+      throw new Error("Failed to upload file. Please try again.");
     }
   };
 
   // Submit to Firebase
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validate required fields
+    if (!formData.paymentProof) {
+      alert("Please upload your payment proof");
+      return;
+    }
+    
     setLoading(true);
     setSuccessMsg("");
 
     try {
+      // Upload file first
+      setFileUploading(true);
+      const fileUrl = await uploadFile(formData.paymentProof);
+      setFileUploading(false);
+      
+      // Submit form data with file URL
       await addDoc(collection(db, "registrations"), {
         ...formData,
+        paymentProof: fileUrl, // Replace file object with URL
         timestamp: new Date()
       });
+      
       setSuccessMsg("Registration successful! 🎉");
       setFormData({
         name: "",
@@ -81,7 +119,10 @@ const RegistrationForm = ({ handleIndex }) => {
         attendeeType: "General - Participation & Presentation",
         paymentMethod: "",
         transactionId: "",
-        registrationType: "Early Bird"
+        registrationType: "Early Bird",
+        paymentDate: "",
+        amountPaid: "",
+        paymentProof: null
       });
       setCurrentStep(1);
     } catch (err) {
@@ -89,6 +130,7 @@ const RegistrationForm = ({ handleIndex }) => {
       setSuccessMsg("❌ Error submitting form. Please try again.");
     }
     setLoading(false);
+    setFileUploading(false);
   };
 
   // Calculate fee based on selection
@@ -115,6 +157,21 @@ const RegistrationForm = ({ handleIndex }) => {
   };
 
   const nextStep = () => {
+    // Validate current step before proceeding
+    if (currentStep === 1) {
+      if (!formData.name || !formData.email || !formData.organization || 
+          !formData.address || !formData.country || !formData.state || 
+          !formData.zip || !formData.dietary) {
+        alert("Please fill all required fields");
+        return;
+      }
+    } else if (currentStep === 2) {
+      if (!formData.registrationType || !formData.attendeeType) {
+        alert("Please select registration and attendee types");
+        return;
+      }
+    }
+    
     setCurrentStep(currentStep + 1);
   };
 
@@ -385,7 +442,7 @@ const RegistrationForm = ({ handleIndex }) => {
                         <li><span className="font-medium">GST No:</span> 33AAATS2240Q1ZD</li>
                       </ul>
                       <p className="mt-3 text-sm text-gray-600">
-                        <span className="font-medium">Important:</span> Please mention “CGOM16 Registration – [Your Name]” in the transaction reference.
+                        <span className="font-medium">Important:</span> Please mention "CGOM16 Registration – [Your Name]" in the transaction reference.
                       </p>
                     </div>
                   )}
@@ -428,10 +485,15 @@ const RegistrationForm = ({ handleIndex }) => {
                       type="file"
                       name="paymentProof"
                       accept=".pdf,.jpg,.jpeg,.png"
-                      onChange={handleFileUpload}
+                      onChange={handleFileSelect}
                       required
                       className="w-full border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#008066] focus:border-transparent"
                     />
+                    {formData.paymentProof && (
+                      <p className="text-sm text-green-600 mt-2">
+                        File selected: {formData.paymentProof.name}
+                      </p>
+                    )}
                     <p className="text-xs text-gray-500 mt-1">Upload 1 supported file: PDF or image. Max 10 MB.</p>
                   </div>
 
@@ -482,10 +544,10 @@ const RegistrationForm = ({ handleIndex }) => {
                     </button>
                     <button
                       type="submit"
-                      disabled={loading}
+                      disabled={loading || fileUploading}
                       className="bg-[#008066] text-white px-6 py-2 rounded-md hover:bg-[#00664d] transition-colors disabled:opacity-50"
                     >
-                      {loading ? "Submitting..." : "Complete Registration"}
+                      {loading || fileUploading ? "Submitting..." : "Complete Registration"}
                     </button>
                   </div>
                 </section>
