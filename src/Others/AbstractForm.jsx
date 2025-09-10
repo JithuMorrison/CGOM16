@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { FiArrowLeft } from "react-icons/fi";
-import { db } from "../Firebase/firebaseinit";
+import { db, storage } from "../Firebase/firebaseinit";
 import { collection, addDoc } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const AbstractSubmissionForm = ({ handleIndex }) => {
   const [formData, setFormData] = useState({
@@ -23,6 +24,7 @@ const AbstractSubmissionForm = ({ handleIndex }) => {
   const [loading, setLoading] = useState(false);
   const [successMsg, setSuccessMsg] = useState("");
   const [currentStep, setCurrentStep] = useState(1);
+  const [fileUploading, setFileUploading] = useState(false);
 
   // Handle input changes
   const handleChange = (e) => {
@@ -33,34 +35,57 @@ const AbstractSubmissionForm = ({ handleIndex }) => {
     });
   };
 
-  // Handle file upload
-  const handleFileUpload = (e) => {
+  // Handle file selection
+  const handleFileSelect = (e) => {
     const file = e.target.files[0];
-
+    
     if (file) {
-      // Validate file size (max 10 MB)
+      // ✅ Validate file size (max 10 MB)
       if (file.size > 10 * 1024 * 1024) {
         alert("File size should not exceed 10 MB");
+        e.target.value = ""; // Reset file input
         return;
       }
 
-      // Validate file type (pdf, doc, docx)
+      // ✅ Validate file type (pdf, doc, docx, jpeg, png)
       const allowedTypes = [
-        "application/pdf", 
-        "application/msword", 
-        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        "application/pdf",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "image/jpeg",
+        "image/png"
       ];
-      
+
       if (!allowedTypes.includes(file.type)) {
-        alert("Only PDF, DOC, or DOCX files are allowed");
+        alert("Only PDF, DOC, DOCX, JPEG, or PNG files are allowed");
+        e.target.value = ""; // Reset file input
         return;
       }
 
-      // Update state
-      setFormData((prev) => ({
+      // Store the file object for later upload during submission
+      setFormData(prev => ({
         ...prev,
-        abstractFile: "file aah :("//file
+        abstractFile: file
       }));
+    }
+  };
+
+  // Upload file to Firebase Storage and return the download URL
+  const uploadFile = async (file) => {
+    if (!file) return null;
+    
+    try {
+      // Create a reference in Firebase Storage
+      const fileRef = ref(storage, `abstracts/${Date.now()}_${file.name}`);
+      
+      // Upload the file
+      await uploadBytes(fileRef, file);
+      
+      // Get the file's download URL
+      return fileRef.fullPath;
+    } catch (error) {
+      console.error("Error uploading file:", error);
+      throw new Error("Failed to upload file. Please try again.");
     }
   };
 
@@ -74,14 +99,28 @@ const AbstractSubmissionForm = ({ handleIndex }) => {
       return;
     }
     
+    // Validate file
+    if (!formData.abstractFile) {
+      alert("Please upload your abstract file");
+      return;
+    }
+    
     setLoading(true);
     setSuccessMsg("");
 
     try {
+      // Upload file first
+      setFileUploading(true);
+      const fileUrl = await uploadFile(formData.abstractFile);
+      setFileUploading(false);
+      
+      // Submit form data with file URL
       await addDoc(collection(db, "abstractSubmissions"), {
         ...formData,
+        abstractFile: fileUrl, // Replace file object with URL
         timestamp: new Date()
       });
+      
       setSuccessMsg("Abstract submitted successfully! 🎉");
       setFormData({
         name: "",
@@ -104,9 +143,25 @@ const AbstractSubmissionForm = ({ handleIndex }) => {
       setSuccessMsg("❌ Error submitting abstract. Please try again.");
     }
     setLoading(false);
+    setFileUploading(false);
   };
 
   const nextStep = () => {
+    // Validate current step before proceeding
+    if (currentStep === 1) {
+      if (!formData.name || !formData.email || !formData.mobile || 
+          !formData.institution || !formData.country || !formData.designation) {
+        alert("Please fill all required fields");
+        return;
+      }
+    } else if (currentStep === 2) {
+      if (!formData.title || !formData.authors || !formData.abstractText || 
+          !formData.keywords || !formData.presentationMode) {
+        alert("Please fill all required fields");
+        return;
+      }
+    }
+    
     setCurrentStep(currentStep + 1);
   };
 
@@ -378,17 +433,22 @@ const AbstractSubmissionForm = ({ handleIndex }) => {
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       Abstract File Upload *
                       <span className="text-xs font-normal text-gray-500 block mt-1">
-                        Allowed file types: .pdf, .doc, .docx | File name format: CGOM16_Abstract_PresenterName.pdf | Max size: 10 MB
+                        Allowed file types: .pdf, .doc, .docx, .jpg, .png | File name format: CGOM16_Abstract_PresenterName.pdf | Max size: 10 MB
                       </span>
                     </label>
                     <input
                       type="file"
                       name="abstractFile"
-                      accept=".pdf,.doc,.docx"
-                      onChange={handleFileUpload}
+                      accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                      onChange={handleFileSelect}
                       required
                       className="w-full border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#008066] focus:border-transparent"
                     />
+                    {formData.abstractFile && (
+                      <p className="text-sm text-green-600 mt-2">
+                        File selected: {formData.abstractFile.name}
+                      </p>
+                    )}
                   </div>
 
                   <div className="flex items-start">
@@ -424,10 +484,10 @@ const AbstractSubmissionForm = ({ handleIndex }) => {
                     </button>
                     <button
                       type="submit"
-                      disabled={loading}
+                      disabled={loading || fileUploading}
                       className="bg-[#008066] text-white px-6 py-2 rounded-md hover:bg-[#00664d] transition-colors disabled:opacity-50"
                     >
-                      {loading ? "Submitting..." : "Submit Abstract"}
+                      {loading || fileUploading ? "Submitting..." : "Submit Abstract"}
                     </button>
                   </div>
                 </section>
