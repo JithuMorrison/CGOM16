@@ -15,7 +15,7 @@ const ContactUs = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans -mb-20">
       {/* Hero Section with Parallax Effect */}
       <section className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/Extras/contactus.png')] bg-cover bg-center opacity-20"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
             Contact Us
