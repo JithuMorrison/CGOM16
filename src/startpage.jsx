@@ -51,9 +51,9 @@ const CGOM16 = () => {
 
 
   const images = [
-    'https://www.fodors.com/wp-content/uploads/2019/12/04_ChennaiArchitecture__GroupofMonuments_shutterstock_700441387-1600x1067.jpg',
-    'https://www.fodors.com/wp-content/uploads/2019/12/06_ChennaiArchitecture__Senatehouse_6.-Madras_University_Senate_House.jpg',
-    'https://qpuzzles.com.au/cdn/shop/files/Taj-Mahal-Panorama-QPuzzles-5599.jpg?v=1698087088'
+    '/Extras/temple.jpg',
+    '/Extras/building.jpg',
+    '/Extras/tajmahal.jpg'
   ];
 
   useEffect(() => {
