@@ -18,7 +18,7 @@ const PresentationGuidelines = ({handleIndex}) => {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans">
       {/* Hero Header */}
       <header className="relative bg-gradient-to-r from-teal-700 to-teal-900 py-20 overflow-hidden shadow-lg">
-        <div className="absolute inset-0 bg-[url('https://craftwithcartwright.co.uk/wp-content/uploads/2019/10/21-fantastic-blogging-tips-and-tricks-2.jpg')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/Extras/presentationguidelines.jpg')] bg-cover bg-center opacity-20"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
             Presentation Guidelines

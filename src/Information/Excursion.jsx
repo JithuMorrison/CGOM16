@@ -8,7 +8,7 @@ const Excursion = () => {
     <div className="min-h-screen bg-gray-100 font-sans">
       {/* Banner Section */}
       <div className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://cdn.pixabay.com/photo/2020/03/18/10/08/mountain-4943466_1280.jpg')] bg-cover bg-center opacity-30"></div>
+        <div className="absolute inset-0 bg-[url('/Extras/excursion.jpg')] bg-cover bg-center opacity-30"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
@@ -36,7 +36,7 @@ const Excursion = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <img 
-                  src="https://live.staticflickr.com/8766/28993903986_533ecef321_b.jpg" 
+                  src="/Extras/shoretemple.jpg" 
                   alt="Mahabalipuram Shore Temple" 
                   className="rounded-lg w-full h-[320px] object-cover"
                 />
@@ -74,7 +74,7 @@ const Excursion = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <img 
-                  src="https://img.staticmb.com/mbcontent/images/crop/uploads/2022/9/Marina-Beach_0_1200.jpg" 
+                  src="/Extras/marinabeach.jpg" 
                   alt="Marina Beach" 
                   className="rounded-lg w-full h-[295px] object-cover"
                 />

@@ -8,7 +8,7 @@ const Visa = () => {
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans">
       {/* Hero Banner */}
       <div className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1529070538774-1843cb3265df?ixlib=rb-4.0.3&auto=format&fit=crop&w=3000&q=80')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 bg-[url('/Extras/visa.jpg')] bg-cover bg-center opacity-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Visa Information for CGOM16
