@@ -604,7 +604,7 @@ const CGOM16 = () => {
             ) : currentIndex === 3 ? (
               <ImportantDates />
             ) : currentIndex === 4 ? (
-              <ConferenceHistory />
+              <ConferenceHistory scrollTo="conferenceHistory" />
             ) : currentIndex === 5 ? (
               <Program handleIndex={handleIndex} />
             ) : currentIndex === 6 ? (
