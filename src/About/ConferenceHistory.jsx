@@ -33,7 +33,7 @@ const ConferenceHistory = ({scrollTo}) => {
     const isMobile = window.innerWidth <= 768;
   
     if (scrollTo === 'conferenceHistory') {
-      scrollWithOffset(conferenceHistoryRef, isMobile ? 2525 : 1010); // scroll 120px above
+      scrollWithOffset(conferenceHistoryRef, isMobile ? 1700 : 1010); // scroll 120px above
     }
   }, [scrollTo]);
 
