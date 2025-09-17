@@ -109,25 +109,65 @@ const Pricing = ({ handleIndex }) => {
         </p>
       </div>
 
-      {/* Registration Section */}
-      <div className="text-center mt-12">
-        <h2 className="text-2xl font-bold text-gray-800">
-          Online Registration <span className="text-[#008066]">and Payment</span>
+      {/* Registration Options Section */}
+      <div className="max-w-4xl mx-auto mt-12 bg-white p-6 rounded-lg shadow-sm">
+        <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
+          Registration <span className="text-[#008066]">Options</span>
         </h2>
+        
+        <div className="bg-blue-50 p-4 rounded-lg mb-6">
+          <p className="text-blue-800 text-center">
+            You can register through our secure registration portal or via Google Forms. 
+            Both methods will lead to the same registration process.
+          </p>
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Registration Portal Option */}
+          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 text-center">
+            <div className="mb-4">
+              <svg className="w-12 h-12 mx-auto text-[#008066]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">Registration Portal</h3>
+            <p className="text-gray-600 mb-4">Our dedicated registration system for a seamless experience</p>
+            <button
+              className="w-full bg-[#008066] text-white px-6 py-3 rounded-lg shadow hover:bg-[#006652] transition-colors duration-300 font-semibold"
+              onClick={() => handleIndex(18)}
+            >
+              REGISTER NOW
+            </button>
+          </div>
+          
+          {/* Google Form Option */}
+          <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 text-center">
+            <div className="mb-4">
+              <svg className="w-12 h-12 mx-auto text-[#EA4335]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold text-gray-800 mb-2">Google Form Registration</h3>
+            <p className="text-gray-600 mb-4">Alternative registration method via Google Forms</p>
+            <button
+              className="w-full bg-[#EA4335] text-white px-6 py-3 rounded-lg shadow hover:bg-[#D33426] transition-colors duration-300 font-semibold"
+              onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScxj4U8ZHiR0DLnNbmn6AF-XeNNyUIt9O1EJAb3zUrBO60Xog/viewform', '_blank')}
+            >
+              REGISTER VIA GOOGLE FORM
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Payment Info Button */}
+      <div className="text-center mt-8">
         <button
-          className="mt-6 bg-[#008066] text-white px-8 py-3 rounded-lg shadow-lg hover:bg-[#006652] transition-colors duration-300 font-semibold"
-          //onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLScxj4U8ZHiR0DLnNbmn6AF-XeNNyUIt9O1EJAb3zUrBO60Xog/viewform', '_blank')}
-          onClick={() => handleIndex(18)}
+          className="bg-gray-700 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-gray-800 transition-colors duration-300 font-semibold"
+          onClick={() => handleIndex(17)}
         >
-          PROCEED TO REGISTRATION
+          PAYMENT INFORMATION
         </button>
       </div>
-      <button
-        className="mt-6 bg-[#008066] text-white px-8 py-3 rounded-lg shadow-lg hover:bg-[#006652] transition-colors duration-300 font-semibold"
-        onClick={() => handleIndex(17)}
-      >
-        PAYMENT INFO
-      </button>
     </div>
   );
 };
