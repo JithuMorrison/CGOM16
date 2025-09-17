@@ -29,17 +29,6 @@ const PresentationGuidelines = ({handleIndex}) => {
         </div>
       </header>
 
-      {/*<header className="bg-gradient-to-r from-teal-700 to-teal-900 py-12 shadow-lg">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Presentation Guidelines
-          </h1>
-          <p className="text-xl text-teal-100 max-w-3xl mx-auto">
-            Essential information to prepare and deliver your presentation effectively
-          </p>
-        </div>
-      </header>*/}
-
       {/* Main Content */}
       <main className="container mx-auto px-4 py-12 max-w-6xl">
         {/* Abstract Guidelines Card */}
@@ -97,6 +86,60 @@ const PresentationGuidelines = ({handleIndex}) => {
                   <FontAwesomeIcon icon={faUpload} className="mr-3" />
                   Submit Your Abstract
                 </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Abstract Submission Options */}
+        <section className="bg-white rounded-xl shadow-2xl overflow-hidden mb-10 transition-all hover:shadow-xl">
+          <div className="p-8">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+              Submit Your Abstract
+            </h2>
+            
+            <div className="bg-blue-50 p-4 rounded-lg mb-6">
+              <p className="text-blue-800 text-center">
+                You can submit your abstract through our secure submission portal or via Google Forms. 
+                Both methods are equally valid and will be processed by our team.
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Portal Submission Option */}
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 text-center">
+                <div className="mb-4">
+                  <svg className="w-12 h-12 mx-auto text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Submission Portal</h3>
+                <p className="text-gray-600 mb-4">Our dedicated abstract submission system</p>
+                <button
+                  className="w-full bg-teal-600 text-white px-6 py-3 rounded-lg shadow hover:bg-teal-700 transition-colors duration-300 font-semibold"
+                  onClick={() => handleIndex(19)}
+                >
+                  <FontAwesomeIcon icon={faUpload} className="mr-2" />
+                  SUBMIT VIA PORTAL
+                </button>
+              </div>
+              
+              {/* Google Form Option */}
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 text-center">
+                <div className="mb-4">
+                  <svg className="w-12 h-12 mx-auto text-[#EA4335]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">Google Form Submission</h3>
+                <p className="text-gray-600 mb-4">Alternative submission method via Google Forms</p>
+                <button
+                  className="w-full bg-[#EA4335] text-white px-6 py-3 rounded-lg shadow hover:bg-[#D33426] transition-colors duration-300 font-semibold"
+                  onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSf52wpiYUSzwzBYZkAVEJujcbom6Yyb59HoZsEDeYch6xqwLg/viewform', '_blank')}
+                >
+                  <FontAwesomeIcon icon={faUpload} className="mr-2" />
+                  SUBMIT VIA GOOGLE FORM
+                </button>
               </div>
             </div>
           </div>
