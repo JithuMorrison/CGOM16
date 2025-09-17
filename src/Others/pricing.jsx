@@ -110,7 +110,7 @@ const Pricing = ({ handleIndex }) => {
       </div>
 
       {/* Registration Options Section */}
-      <div className="max-w-4xl mx-auto mt-12 bg-white p-6 rounded-lg shadow-sm">
+      <div className="max-w-4xl mx-auto mt-5 bg-white p-6 rounded-lg shadow-sm">
         <h2 className="text-2xl font-bold text-gray-800 text-center mb-6">
           Registration <span className="text-[#008066]">Options</span>
         </h2>
@@ -162,7 +162,7 @@ const Pricing = ({ handleIndex }) => {
       {/* Payment Info Button */}
       <div className="text-center mt-8">
         <button
-          className="bg-gray-700 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-gray-800 transition-colors duration-300 font-semibold"
+          className="bg-blue-500 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition-colors duration-300 font-semibold"
           onClick={() => handleIndex(17)}
         >
           PAYMENT INFORMATION
