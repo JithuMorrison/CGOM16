@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
-const ImportantDates = () => {
+const ImportantDates = ({scrollTo}) => {
   const latestNews = [
     {
       date: "15 Oct 2025",
@@ -56,10 +56,28 @@ const ImportantDates = () => {
     }
   };
 
+  const conferenceHistoryRef = useRef(null);
+
+  useEffect(() => {
+      const scrollWithOffset = (ref, offset) => {
+        if (ref && ref.current) {
+          setTimeout(() => {
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+          }, 500);
+        }
+      };
+  
+      const isMobile = window.innerWidth <= 768;
+    
+      if (scrollTo === 'importantDates') {
+        scrollWithOffset(conferenceHistoryRef, isMobile ? 1700 : 1010); // scroll 120px above
+      }
+    }, [scrollTo]);
+
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-800 mb-12 text-center">
+        <h1 className="text-4xl font-bold text-gray-800 mb-12 text-center" ref={conferenceHistoryRef}>
           <span className="text-[#008066]">IMPORTANT</span> DATES
         </h1>
 

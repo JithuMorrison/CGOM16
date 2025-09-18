@@ -602,7 +602,7 @@ const CGOM16 = () => {
             ) : currentIndex === 2 ? (
               <Committee scrollTo="local" />
             ) : currentIndex === 3 ? (
-              <ImportantDates />
+              <ImportantDates scrollTo={"importantDates"} />
             ) : currentIndex === 4 ? (
               <ConferenceHistory scrollTo="conferenceHistory" />
             ) : currentIndex === 5 ? (
