@@ -56,7 +56,7 @@ const ImportantDates = ({scrollTo}) => {
     }
   };
 
-  const conferenceHistoryRef = useRef(null);
+  const importantDatesRef = useRef(null);
 
   useEffect(() => {
       const scrollWithOffset = (ref, offset) => {
@@ -70,14 +70,14 @@ const ImportantDates = ({scrollTo}) => {
       const isMobile = window.innerWidth <= 768;
     
       if (scrollTo === 'importantDates') {
-        scrollWithOffset(conferenceHistoryRef, isMobile ? 1700 : 1010); // scroll 120px above
+        scrollWithOffset(importantDatesRef, isMobile ? 1700 : 1010); // scroll 120px above
       }
     }, [scrollTo]);
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-gray-800 mb-12 text-center" ref={conferenceHistoryRef}>
+        <h1 className="text-4xl font-bold text-gray-800 mb-12 text-center" ref={importantDatesRef}>
           <span className="text-[#008066]">IMPORTANT</span> DATES
         </h1>
 
