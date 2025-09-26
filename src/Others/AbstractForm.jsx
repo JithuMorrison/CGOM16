@@ -29,6 +29,12 @@ const AbstractSubmissionForm = ({ handleIndex }) => {
   // Handle input changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+
+    if (name === "abstractText") {
+      const words = value.trim().split(/\s+/).filter(Boolean); // count non-empty words
+      if (words.length > 250) return; // stop typing if over 250 words
+    }
+
     setFormData({ 
       ...formData, 
       [name]: type === "checkbox" ? checked : value 
@@ -345,7 +351,7 @@ const AbstractSubmissionForm = ({ handleIndex }) => {
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       Abstract Text *
                       <span className="text-xs font-normal text-gray-500 block mt-1">
-                        Maximum 600 words. Avoid figures or images
+                        Maximum 250 words. Avoid figures or images
                       </span>
                     </label>
                     <textarea
@@ -356,6 +362,9 @@ const AbstractSubmissionForm = ({ handleIndex }) => {
                       rows={8}
                       className="w-full border border-gray-300 p-3 rounded-md focus:ring-2 focus:ring-[#008066] focus:border-transparent"
                     />
+                    <p className="text-xs text-gray-500 mt-1">
+                      {formData.abstractText.trim().split(/\s+/).filter(Boolean).length}/250 words
+                    </p>
                   </div>
 
                   <div>
