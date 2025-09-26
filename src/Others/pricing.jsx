@@ -13,7 +13,7 @@ const Pricing = ({ handleIndex }) => {
           the registration fee, excluding transaction charges.
         </p>
         <p className="text-sm text-gray-500 mt-4">
-          **Online registration system will open in January 2024
+          **Online registration system will open in January 2026
         </p>
       </div>
 
@@ -29,7 +29,7 @@ const Pricing = ({ handleIndex }) => {
             <p className="text-gray-500 text-sm mt-1">Participation + Presentation</p>
             <p className="text-3xl font-bold text-[#008066] mt-4">$350</p>
             <div className="mt-4 text-sm text-gray-600">
-              <p>Deadline: May 4, 2024</p>
+              <p>Deadline: May 4, 2026</p>
             </div>
           </div>
         </div>
@@ -44,7 +44,7 @@ const Pricing = ({ handleIndex }) => {
             <p className="text-gray-500 text-sm mt-1">Participation Only</p>
             <p className="text-3xl font-bold text-[#008066] mt-4">$300</p>
             <div className="mt-4 text-sm text-gray-600">
-              <p>Deadline: May 4, 2024</p>
+              <p>Deadline: May 4, 2026</p>
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@ const Pricing = ({ handleIndex }) => {
             <p className="text-gray-500 text-sm mt-1">Participation + Presentation</p>
             <p className="text-3xl font-bold text-orange-500 mt-4">$450</p>
             <div className="mt-4 text-sm text-gray-600">
-              <p>Deadline: May 4, 2024</p>
+              <p>Deadline: May 4, 2026</p>
             </div>
           </div>
         </div>
@@ -74,7 +74,7 @@ const Pricing = ({ handleIndex }) => {
             <p className="text-gray-500 text-sm mt-1">Participation Only</p>
             <p className="text-3xl font-bold text-orange-500 mt-4">$400</p>
             <div className="mt-4 text-sm text-gray-600">
-              <p>Deadline: May 4, 2024</p>
+              <p>Deadline: May 4, 2026</p>
             </div>
           </div>
         </div>
@@ -90,7 +90,7 @@ const Pricing = ({ handleIndex }) => {
           </div>
           <div className="ml-3">
             <p className="text-sm text-yellow-700">
-              <span className="font-bold">Note:</span> After the Early Bird deadline (May 4, 2024), an additional $100 will be charged to all registration types.
+              <span className="font-bold">Note:</span> After the Early Bird deadline (May 4, 2026), an additional $100 will be charged to all registration types.
             </p>
           </div>
         </div>
