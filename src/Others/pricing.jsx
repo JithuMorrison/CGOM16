@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 const Pricing = ({ handleIndex, scrollTo }) => {
 
-  const importantDatesRef = useRef(null);
+  const registrationRef = useRef(null);
   
     useEffect(() => {
         const scrollWithOffset = (ref, offset) => {
@@ -16,7 +16,7 @@ const Pricing = ({ handleIndex, scrollTo }) => {
         const isMobile = window.innerWidth <= 768;
       
         if (scrollTo === 'registration') {
-          scrollWithOffset(importantDatesRef, isMobile ? 1700 : 1010); // scroll 120px above
+          scrollWithOffset(registrationRef, isMobile ? 1670 : 1010); // scroll 120px above
         }
       }, [scrollTo]);
 
@@ -24,7 +24,7 @@ const Pricing = ({ handleIndex, scrollTo }) => {
     <div className="p-4 md:p-8 bg-gray-50 min-h-screen">
       {/* Information Section */}
       <div className="text-center max-w-4xl mx-auto mb-8 bg-white p-6 rounded-lg shadow-sm">
-        <h2 className="text-2xl font-bold text-gray-800 mb-4" ref={importantDatesRef}>Registration Fees</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4" ref={registrationRef}>Registration Fees</h2>
         <p className="text-lg text-gray-700">
           Please note that all transaction charges associated with payment
           have been included in the <span className="text-[#008066] font-semibold">registration fees</span> and
