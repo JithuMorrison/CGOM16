@@ -54,7 +54,7 @@ const PresentationGuidelines = ({handleIndex}) => {
                 <ul className="space-y-3 text-gray-700">
                   <li className="flex items-start">
                     <span className="text-teal-600 mr-2 mt-1">•</span>
-                    <span className="leading-relaxed text-justify text-center">Abstracts must be in English, limited to <span className="font-bold">600 words</span> plus <span className="font-bold">5 keywords</span>. The system will automatically format text in Times New Roman.</span>
+                    <span className="leading-relaxed text-justify text-center">Abstracts must be in English, limited to <span className="font-bold">250 words</span> plus <span className="font-bold">5 keywords</span>. The system will automatically format text in Times New Roman.</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-teal-600 mr-2 mt-1">•</span>
