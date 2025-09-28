@@ -608,7 +608,7 @@ const CGOM16 = () => {
             ) : currentIndex === 5 ? (
               <Program handleIndex={handleIndex} />
             ) : currentIndex === 6 ? (
-              <Pricing handleIndex={handleIndex} />
+              <Pricing handleIndex={handleIndex} scrollTo="registration" />
             ) : currentIndex === 7 ? (
               <PresentationGuidelines handleIndex={handleIndex} />
             ) : currentIndex === 8 ? (
