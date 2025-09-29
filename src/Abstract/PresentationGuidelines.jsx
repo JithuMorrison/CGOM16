@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { 
   faBullhorn, 
@@ -13,14 +13,33 @@ import {
   faQuestionCircle
 } from "@fortawesome/free-solid-svg-icons";
 
-const PresentationGuidelines = ({handleIndex}) => {
+const PresentationGuidelines = ({handleIndex, scrollTo}) => {
+
+  const registrationRef = useRef(null);
+    
+  useEffect(() => {
+      const scrollWithOffset = (ref, offset) => {
+        if (ref && ref.current) {
+          setTimeout(() => {
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+          }, 500);
+        }
+      };
+  
+      const isMobile = window.innerWidth <= 768;
+    
+      if (scrollTo === 'registration') {
+        scrollWithOffset(registrationRef, isMobile ? 1670 : 1010); // scroll 120px above
+      }
+    }, [scrollTo]);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans">
       {/* Hero Header */}
       <header className="relative bg-gradient-to-r from-teal-700 to-teal-900 py-20 overflow-hidden shadow-lg">
         <div className="absolute inset-0 bg-[url('/Extras/presentationguidelines.jpg')] bg-cover bg-center opacity-20"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg" ref={registrationRef}>
             Presentation Guidelines
           </h1>
           <p className="text-xl text-teal-100 max-w-3xl mx-auto">
