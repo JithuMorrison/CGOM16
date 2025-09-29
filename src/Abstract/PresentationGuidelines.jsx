@@ -15,7 +15,7 @@ import {
 
 const PresentationGuidelines = ({handleIndex, scrollTo}) => {
 
-  const registrationRef = useRef(null);
+  const abstractRef = useRef(null);
     
   useEffect(() => {
       const scrollWithOffset = (ref, offset) => {
@@ -28,8 +28,8 @@ const PresentationGuidelines = ({handleIndex, scrollTo}) => {
   
       const isMobile = window.innerWidth <= 768;
     
-      if (scrollTo === 'registration') {
-        scrollWithOffset(registrationRef, isMobile ? 1670 : 1010); // scroll 120px above
+      if (scrollTo === 'abstract') {
+        scrollWithOffset(abstractRef, isMobile ? 1660 : 980); // scroll 120px above
       }
     }, [scrollTo]);
 
@@ -39,7 +39,7 @@ const PresentationGuidelines = ({handleIndex, scrollTo}) => {
       <header className="relative bg-gradient-to-r from-teal-700 to-teal-900 py-20 overflow-hidden shadow-lg">
         <div className="absolute inset-0 bg-[url('/Extras/presentationguidelines.jpg')] bg-cover bg-center opacity-20"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg" ref={registrationRef}>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg" ref={abstractRef}>
             Presentation Guidelines
           </h1>
           <p className="text-xl text-teal-100 max-w-3xl mx-auto">
