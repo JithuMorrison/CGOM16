@@ -5,7 +5,7 @@ const Committee = ({ scrollTo }) => {
         { name: "Adrian Flood", institution: "Vidyasirimedhi Institute of Science and Technology, Thailand" },
         { name: "Allen S. Myerson", institution: "MIT, U.S.A." },
         { name: "Allison Lewis", institution: "University of Cape Town, South Africa" },
-        { name: "Ann Chow", institution: "University of Cambridge, Singapore" },
+        { name: "Ann Chow", institution: "Institute of Sustainability for Chemicals, Energy and Environment, Singapore" },
         { name: "Ashwin Rajagopalan", institution: "University of Manchester, UK" },
         { name: "B N Thorat", institution: "ICT, India" },
         { name: "Brian Glenn", institution: "University of Florida, USA" },
