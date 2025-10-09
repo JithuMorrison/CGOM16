@@ -5,7 +5,7 @@ import { faPlane, faTrain, faTaxi, faBus, faMapMarkerAlt, faHotel } from '@forta
 
 const Transportation = ({ scrollTo }) => {
 
-  const registrationRef = useRef(null);
+  const transportRef = useRef(null);
     
   useEffect(() => {
       const scrollWithOffset = (ref, offset) => {
@@ -19,7 +19,7 @@ const Transportation = ({ scrollTo }) => {
       const isMobile = window.innerWidth <= 768;
     
       if (scrollTo === 'transport') {
-        scrollWithOffset(registrationRef, isMobile ? 1670 : 1010); // scroll 120px above
+        scrollWithOffset(transportRef, isMobile ? 1670 : 1010); // scroll 120px above
       }
     }, [scrollTo]);
 
@@ -29,7 +29,7 @@ const Transportation = ({ scrollTo }) => {
       <div className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/Extras/transportation.jpg')] bg-cover bg-center opacity-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg" ref={registrationRef}>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg" ref={transportRef}>
             Transportation
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
