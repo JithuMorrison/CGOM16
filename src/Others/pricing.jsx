@@ -4,21 +4,21 @@ const Pricing = ({ handleIndex, scrollTo }) => {
 
   const registrationRef = useRef(null);
   
-    useEffect(() => {
-        const scrollWithOffset = (ref, offset) => {
-          if (ref && ref.current) {
-            setTimeout(() => {
-              window.scrollTo({ top: offset, behavior: 'smooth' });
-            }, 500);
-          }
-        };
-    
-        const isMobile = window.innerWidth <= 768;
-      
-        if (scrollTo === 'registration') {
-          scrollWithOffset(registrationRef, isMobile ? 1670 : 1010); // scroll 120px above
+  useEffect(() => {
+      const scrollWithOffset = (ref, offset) => {
+        if (ref && ref.current) {
+          setTimeout(() => {
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+          }, 500);
         }
-      }, [scrollTo]);
+      };
+  
+      const isMobile = window.innerWidth <= 768;
+    
+      if (scrollTo === 'registration') {
+        scrollWithOffset(registrationRef, isMobile ? 1670 : 1010); // scroll 120px above
+      }
+    }, [scrollTo]);
 
   return (
     <div className="p-4 md:p-8 bg-gray-50 min-h-screen">
