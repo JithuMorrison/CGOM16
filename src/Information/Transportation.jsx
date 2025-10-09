@@ -19,7 +19,7 @@ const Transportation = ({ scrollTo }) => {
       const isMobile = window.innerWidth <= 768;
     
       if (scrollTo === 'transport') {
-        scrollWithOffset(transportRef, isMobile ? 1670 : 1010); // scroll 120px above
+        scrollWithOffset(transportRef, isMobile ? 1650 : 980); // scroll 120px above
       }
     }, [scrollTo]);
 
