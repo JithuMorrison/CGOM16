@@ -5,7 +5,7 @@ import { faMapMarkerAlt, faUniversity, faCity } from '@fortawesome/free-solid-sv
 
 const VenueInformation = ({ scrollTo }) => {
 
-  const transportRef = useRef(null);
+  const venueRef = useRef(null);
       
   useEffect(() => {
       const scrollWithOffset = (ref, offset) => {
@@ -18,8 +18,8 @@ const VenueInformation = ({ scrollTo }) => {
   
       const isMobile = window.innerWidth <= 768;
     
-      if (scrollTo === 'transport') {
-        scrollWithOffset(transportRef, isMobile ? 1650 : 980); // scroll 120px above
+      if (scrollTo === 'venue') {
+        scrollWithOffset(venueRef, isMobile ? 1650 : 980); // scroll 120px above
       }
     }, [scrollTo]);
 
@@ -29,7 +29,7 @@ const VenueInformation = ({ scrollTo }) => {
       <div className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/Extras/venueinfo.jpg')] bg-cover bg-center opacity-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg mb-4" ref={transportRef}>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg mb-4" ref={venueRef}>
             Venue Information
           </h1>
           <p className="text-xl text-blue-100">
