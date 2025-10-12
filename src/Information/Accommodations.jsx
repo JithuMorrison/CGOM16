@@ -1,16 +1,35 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHotel, faUtensils, faGlassCheers } from '@fortawesome/free-solid-svg-icons';
 
-const Accommodations = () => {
+const Accommodations = ({ scrollTo }) => {
+
+  const venueRef = useRef(null);
+        
+  useEffect(() => {
+      const scrollWithOffset = (ref, offset) => {
+        if (ref && ref.current) {
+          setTimeout(() => {
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+          }, 500);
+        }
+      };
+  
+      const isMobile = window.innerWidth <= 768;
+    
+      if (scrollTo === 'venue') {
+        scrollWithOffset(venueRef, isMobile ? 1650 : 980); // scroll 120px above
+      }
+    }, [scrollTo]);
+
   return (
     <div className="min-h-screen bg-gray-100 font-sans">
       {/* Banner Section */}
       <div className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/Extras/accomodation.jpg')] bg-cover bg-center opacity-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg" ref={venueRef}>
             Accommodations
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
