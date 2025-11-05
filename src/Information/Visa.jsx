@@ -3,14 +3,33 @@ import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPassport, faFileAlt, faGlobe, faDownload, faFilePdf, faFileWord } from '@fortawesome/free-solid-svg-icons';
 
-const Visa = () => {
+const Visa = ({ scrollTo }) => {
+
+  const accomRef = useRef(null);
+          
+  useEffect(() => {
+      const scrollWithOffset = (ref, offset) => {
+        if (ref && ref.current) {
+          setTimeout(() => {
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+          }, 500);
+        }
+      };
+  
+      const isMobile = window.innerWidth <= 768;
+    
+      if (scrollTo === 'accomodate') {
+        scrollWithOffset(accomRef, isMobile ? 1650 : 980); // scroll 120px above
+      }
+    }, [scrollTo]);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans">
       {/* Hero Banner */}
       <div className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/Extras/visa.jpg')] bg-cover bg-center opacity-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4" ref={accomRef}>
             Visa Information for CGOM16
           </h1>
           <p className="text-xl text-blue-100">
