@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPassport, faFileAlt, faGlobe, faDownload, faFilePdf, faFileWord } from '@fortawesome/free-solid-svg-icons';
