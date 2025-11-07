@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMapMarkerAlt, faCalendarAlt, faTicketAlt } from '@fortawesome/free-solid-svg-icons';
 
-const Excursion = () => {
+const Excursion = ({ scrollTo }) => {
+
+  const visaRef = useRef(null);
+            
+  useEffect(() => {
+      const scrollWithOffset = (ref, offset) => {
+        if (ref && ref.current) {
+          setTimeout(() => {
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+          }, 500);
+        }
+      };
+  
+      const isMobile = window.innerWidth <= 768;
+    
+      if (scrollTo === 'visa') {
+        scrollWithOffset(visaRef, isMobile ? 1650 : 980); // scroll 120px above
+      }
+    }, [scrollTo]);
+
   return (
     <div className="min-h-screen bg-gray-100 font-sans">
       {/* Banner Section */}
