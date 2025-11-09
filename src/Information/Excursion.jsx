@@ -5,7 +5,7 @@ import { faMapMarkerAlt, faCalendarAlt, faTicketAlt } from '@fortawesome/free-so
 
 const Excursion = ({ scrollTo }) => {
 
-  const visaRef = useRef(null);
+  const excurRef = useRef(null);
             
   useEffect(() => {
       const scrollWithOffset = (ref, offset) => {
@@ -19,7 +19,7 @@ const Excursion = ({ scrollTo }) => {
       const isMobile = window.innerWidth <= 768;
     
       if (scrollTo === 'excur') {
-        scrollWithOffset(visaRef, isMobile ? 1650 : 980); // scroll 120px above
+        scrollWithOffset(excurRef, isMobile ? 1650 : 980); // scroll 120px above
       }
     }, [scrollTo]);
 
@@ -30,7 +30,7 @@ const Excursion = ({ scrollTo }) => {
         <div className="absolute inset-0 bg-[url('/Extras/excursion.jpg')] bg-cover bg-center opacity-30"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg" ref={visaRef}>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg" ref={excurRef}>
             Excursion
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
