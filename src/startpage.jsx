@@ -626,7 +626,7 @@ const CGOM16 = () => {
             ) : currentIndex === 14 ? (
               <Excursion scrollTo="excur" />
             ) : currentIndex === 15 ? (
-              <Exhibition />
+              <Exhibition scrollTo="exhib" />
             ) : currentIndex === 16 ? (
               <ContactUs />
             ) : currentIndex === 17 ? (
