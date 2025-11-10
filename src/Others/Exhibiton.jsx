@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faEnvelope, 
@@ -13,7 +13,26 @@ import {
   faQuestionCircle
 } from '@fortawesome/free-solid-svg-icons';
 
-const Exhibition = () => {
+const Exhibition = ({ scrollTo }) => {
+
+  const excurRef = useRef(null);
+              
+  useEffect(() => {
+      const scrollWithOffset = (ref, offset) => {
+        if (ref && ref.current) {
+          setTimeout(() => {
+            window.scrollTo({ top: offset, behavior: 'smooth' });
+          }, 500);
+        }
+      };
+  
+      const isMobile = window.innerWidth <= 768;
+    
+      if (scrollTo === 'excur') {
+        scrollWithOffset(excurRef, isMobile ? 1650 : 980); // scroll 120px above
+      }
+    }, [scrollTo]);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 font-sans">
       {/* Hero Header */}
