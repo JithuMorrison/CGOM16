@@ -25,7 +25,7 @@ const ContactUs = ({ scrollTo }) => {
 
     const isMobile = window.innerWidth <= 768;
   
-    if (scrollTo === 'exhib') {
+    if (scrollTo === 'contact') {
       scrollWithOffset(exhibRef, isMobile ? 1650 : 980); // scroll 120px above
     }
   }, [scrollTo]);
