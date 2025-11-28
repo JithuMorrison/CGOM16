@@ -20,6 +20,8 @@ import Excursion from "./Information/Excursion";
 import { FiArrowUp, FiMapPin, FiMail } from "react-icons/fi";
 import PaymentInfo from "./Others/paymentinfo";
 import AbstractSubmissionForm from "./Others/AbstractForm";
+import { faTwitter, faFacebookSquare, faLinkedin, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const CGOM16 = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -701,16 +703,16 @@ const CGOM16 = () => {
                 
                 {/* Social Icons */}
                 <div className="flex space-x-4 mt-4 mx-auto">
-                  {['twitter', 'facebook', 'linkedin', 'instagram'].map((social) => (
+                  {Object.entries({'twitter':faTwitter, 'facebook':faFacebookSquare, 'linkedin':faLinkedin, 'instagram':faInstagram}).map(([name, icon]) => (
                     <motion.a
-                      key={social}
+                      key={name}
                       href="#"
                       className="text-gray-500 hover:text-blue-600 transition-colors"
                       whileHover={{ y: -2 }}
                       whileTap={{ scale: 0.9 }}
                     >
-                      <span className="sr-only">{social}</span>
-                      <i className={`fab fa-${social} text-xl`}></i>
+                      <span className="sr-only">{name}</span>
+                      <FontAwesomeIcon icon={icon} className="text-xl" />
                     </motion.a>
                   ))}
                 </div>
