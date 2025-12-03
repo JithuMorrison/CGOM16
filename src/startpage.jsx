@@ -844,6 +844,9 @@ const CGOM16 = () => {
               <p className="mt-2">
                 Made with ❤️ by SSN College of Engineering
               </p>
+              <p className="text-center text-gray-500 mt-2">
+                Developed by <span className="font-semibold">Jithu Morrison S</span> and <span className="font-semibold">Ravindran V</span>
+              </p>
             </motion.div>
           </div>
         </motion.footer>
