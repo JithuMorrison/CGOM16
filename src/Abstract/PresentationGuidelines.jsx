@@ -143,14 +143,14 @@ const PresentationGuidelines = ({handleIndex, scrollTo}) => {
               </div> */}
               
               {/* Google Form Option //Red-[#EA4335]//hover:[#D33426]*/}
-              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 text-center">
+              <div className="bg-gray-50 p-6 rounded-lg border border-gray-200 text-center mx-auto">
                 <div className="mb-4">
                   <svg className="w-12 h-12 mx-auto text-teal-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">Google Form Submission</h3>
-                <p className="text-gray-600 mb-4"> Submission method via Google Forms</p>
+                <p className="text-gray-600 mb-4"> Proceed with abstract submission via Google Forms</p>
                 <button
                   className="w-full bg-teal-600 text-white px-6 py-3 rounded-lg shadow hover:bg-teal-700 transition-colors duration-300 font-semibold"
                   onClick={() => window.open('https://docs.google.com/forms/d/e/1FAIpQLSf52wpiYUSzwzBYZkAVEJujcbom6Yyb59HoZsEDeYch6xqwLg/viewform', '_blank')}
