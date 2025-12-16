@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { FiArrowLeft } from "react-icons/fi";
-import { db, storage } from "../Firebase/firebaseinit";
-import { collection, addDoc } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+//import { db, storage } from "../Firebase/firebaseinit";
+//import { collection, addDoc } from "firebase/firestore";
+//import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const AbstractSubmissionForm = ({ handleIndex }) => {
   const [formData, setFormData] = useState({
@@ -77,23 +77,23 @@ const AbstractSubmissionForm = ({ handleIndex }) => {
   };
 
   // Upload file to Firebase Storage and return the download URL
-  const uploadFile = async (file) => {
-    if (!file) return null;
+  // const uploadFile = async (file) => {
+  //   if (!file) return null;
     
-    try {
-      // Create a reference in Firebase Storage
-      const fileRef = ref(storage, `abstracts/${Date.now()}_${file.name}`);
+  //   try {
+  //     // Create a reference in Firebase Storage
+  //     const fileRef = ref(storage, `abstracts/${Date.now()}_${file.name}`);
       
-      // Upload the file
-      await uploadBytes(fileRef, file);
+  //     // Upload the file
+  //     await uploadBytes(fileRef, file);
       
-      // Get the file's download URL
-      return fileRef.fullPath;
-    } catch (error) {
-      console.error("Error uploading file:", error);
-      throw new Error("Failed to upload file. Please try again.");
-    }
-  };
+  //     // Get the file's download URL
+  //     return fileRef.fullPath;
+  //   } catch (error) {
+  //     console.error("Error uploading file:", error);
+  //     throw new Error("Failed to upload file. Please try again.");
+  //   }
+  // };
 
   // Submit to Firebase
   const handleSubmit = async (e) => {
@@ -116,16 +116,16 @@ const AbstractSubmissionForm = ({ handleIndex }) => {
 
     try {
       // Upload file first
-      setFileUploading(true);
-      const fileUrl = await uploadFile(formData.abstractFile);
-      setFileUploading(false);
+      // setFileUploading(true);
+      // const fileUrl = await uploadFile(formData.abstractFile);
+      // setFileUploading(false);
       
-      // Submit form data with file URL
-      await addDoc(collection(db, "abstractSubmissions"), {
-        ...formData,
-        abstractFile: fileUrl, // Replace file object with URL
-        timestamp: new Date()
-      });
+      // // Submit form data with file URL
+      // await addDoc(collection(db, "abstractSubmissions"), {
+      //   ...formData,
+      //   abstractFile: fileUrl, // Replace file object with URL
+      //   timestamp: new Date()
+      // });
       
       setSuccessMsg("Abstract submitted successfully! 🎉");
       setFormData({
