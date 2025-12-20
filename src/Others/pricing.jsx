@@ -136,8 +136,7 @@ const Pricing = ({ handleIndex, scrollTo }) => {
         
         <div className="bg-blue-50 p-4 rounded-lg mb-6">
           <p className="text-blue-800 text-center">
-            You can register by filling out the Google Form provided. All submissions will be processed by our team.
-            
+            To register, please complete the provided Google Form. Your registration will be confirmed after submission.
           </p>
         </div>
         
