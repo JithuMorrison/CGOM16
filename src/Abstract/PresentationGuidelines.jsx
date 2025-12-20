@@ -119,7 +119,7 @@ const PresentationGuidelines = ({handleIndex, scrollTo}) => {
             
             <div className="bg-blue-50 p-4 rounded-lg mb-6">
               <p className="text-blue-800 text-center">
-                You can submit your abstract via Google Forms. All submissions will be processed by our team.
+                Abstract submissions are accepted via Google Forms and will be reviewed upon submission.
               </p>
             </div>
             
