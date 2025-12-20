@@ -93,7 +93,7 @@ const Committee = ({ scrollTo }) => {
           <li className="flex justify-between items-center">
             <span className="font-bold text-gray-700">PATRON</span>
             <div className="flex flex-col text-right">
-              <span className="font-medium">Dr. Kala Vijayakumar</span>
+              <span className="font-medium">Mr. Sundar Mahalingam</span>
               <span className="text-gray-600 text-sm">SSN Institutions, Chennai, India</span>
             </div>
           </li>
