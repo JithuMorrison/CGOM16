@@ -1,7 +1,18 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapMarkerAlt, faUniversity, faCity } from '@fortawesome/free-solid-svg-icons';
+import { 
+  faMapMarkerAlt, 
+  faUniversity, 
+  faCity, 
+  faTaxi, 
+  faTrain, 
+  faBus, 
+  faPhone, 
+  faDownload,
+  faClock,
+  faRupeeSign
+} from '@fortawesome/free-solid-svg-icons';
 
 const VenueInformation = ({ scrollTo }) => {
 
@@ -19,7 +30,7 @@ const VenueInformation = ({ scrollTo }) => {
       const isMobile = window.innerWidth <= 768;
     
       if (scrollTo === 'venue') {
-        scrollWithOffset(venueRef, isMobile ? 1650 : 980); // scroll 120px above
+        scrollWithOffset(venueRef, isMobile ? 1650 : 980);
       }
     }, [scrollTo]);
 
@@ -29,11 +40,11 @@ const VenueInformation = ({ scrollTo }) => {
       <div className="relative bg-gradient-to-r from-blue-700 to-blue-900 py-20 overflow-hidden">
         <div className="absolute inset-0 bg-[url('/Extras/venueinfo.jpg')] bg-cover bg-center opacity-20"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg mb-4" ref={venueRef}>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg" ref={venueRef}>
             Venue Information
           </h1>
           <p className="text-xl text-blue-100">
-            SSN College of Engineering, Chennai
+            Sri Sivasubramaniya Nadar College of Engineering, Kalavakkam, Chennai
           </p>
         </div>
       </div>
@@ -51,6 +62,9 @@ const VenueInformation = ({ scrollTo }) => {
             <h2 className="text-2xl font-bold text-gray-900">SSN College of Engineering</h2>
           </div>
           <div className="prose max-w-none text-gray-600 space-y-4">
+            <p className="text-lg">
+              <strong>Sri Sivasubramaniya Nadar College of Engineering, Kalavakkam, Chennai, India — 603110</strong>
+            </p>
             <p>
               SSN College of Engineering, established in 1996, is one of India's premier engineering institutions.
               Located in a serene 250-acre campus, SSN provides world-class facilities for academic excellence and research.
@@ -73,6 +87,94 @@ const VenueInformation = ({ scrollTo }) => {
           </div>
         </motion.div>
 
+        {/* How to Reach Us Section */}
+        <motion.div 
+          className="bg-white rounded-lg shadow-lg p-8 mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+        >
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">HOW TO REACH US</h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* By Cab Option */}
+            <div className="border rounded-lg p-6 bg-blue-50">
+              <div className="flex items-center mb-4">
+                <FontAwesomeIcon icon={faTaxi} className="text-2xl text-blue-600 mr-3" />
+                <h3 className="text-xl font-semibold text-blue-800">By Cab</h3>
+              </div>
+              <p className="text-gray-700 mb-2"><span className="font-medium">Route:</span> Direct and Comfortable</p>
+              <div className="flex items-center mb-2">
+                <FontAwesomeIcon icon={faRupeeSign} className="text-gray-600 w-5" />
+                <p className="text-gray-700 ml-2"><span className="font-medium">Cost:</span> 800 INR (approx.)</p>
+              </div>
+              <div className="flex items-center mb-4">
+                <FontAwesomeIcon icon={faClock} className="text-gray-600 w-5" />
+                <p className="text-gray-700 ml-2"><span className="font-medium">Duration:</span> 1 Hour (approx.)</p>
+              </div>
+              <div className="mt-2 p-3 bg-white rounded-lg">
+                <p className="font-medium text-gray-800">Chennai International Airport (MAA)</p>
+                <p className="text-sm text-gray-600">↓</p>
+                <p className="font-medium text-gray-800">Cab Booking (OLA/UBER)</p>
+                <p className="text-sm text-gray-600">↓</p>
+                <p className="font-medium text-gray-800">Destination: SSN College of Engineering</p>
+              </div>
+            </div>
+
+            {/* By Train + Bus Option */}
+            <div className="border rounded-lg p-6 bg-green-50">
+              <div className="flex items-center mb-4">
+                <FontAwesomeIcon icon={faTrain} className="text-2xl text-green-600 mr-3" />
+                <h3 className="text-xl font-semibold text-green-800">By Train + Bus</h3>
+              </div>
+              <p className="text-gray-700 mb-2"><span className="font-medium">Route:</span> Low cost option</p>
+              <div className="flex items-center mb-2">
+                <FontAwesomeIcon icon={faRupeeSign} className="text-gray-600 w-5" />
+                <p className="text-gray-700 ml-2"><span className="font-medium">Cost:</span> 60 INR (approx.)</p>
+              </div>
+              <div className="flex items-center mb-4">
+                <FontAwesomeIcon icon={faClock} className="text-gray-600 w-5" />
+                <p className="text-gray-700 ml-2"><span className="font-medium">Duration:</span> 3 Hour (approx.)</p>
+              </div>
+              <div className="mt-2 p-3 bg-white rounded-lg">
+                <p className="font-medium text-gray-800">Chennai International Airport (MAA)</p>
+                <p className="text-sm text-gray-600">↓</p>
+                <p className="font-medium text-gray-800">Trisulam Railway Station</p>
+                <p className="text-sm text-gray-600">↓</p>
+                <p className="font-medium text-gray-800">Tambaram Station</p>
+                <p className="text-sm text-gray-600">↓</p>
+                <p className="font-medium text-gray-800">Bus no.: 515, 515B, 515M</p>
+                <p className="text-sm text-gray-600">↓</p>
+                <p className="font-medium text-gray-800">Destination: SSN College of Engineering</p>
+              </div>
+            </div>
+          </div>
+
+          {/* College Bus Service Announcement */}
+          <div className="mt-8 p-6 bg-yellow-50 rounded-lg border border-yellow-200">
+            <h3 className="text-lg font-semibold text-yellow-800 mb-3">Announcement:</h3>
+            <p className="text-gray-700">
+              Transportation to the SSN campus can also be arranged through the college bus service. 
+              The institution operates its own bus facility, and upon prior request, a bus can be arranged 
+              at a specific time to pick up visitors from designated locations. This service provides a 
+              convenient and organized mode of travel directly to the campus, particularly for guests or 
+              participants arriving for CGOM'16 events.
+            </p>
+          </div>
+
+          {/* Contact Information */}
+          <div className="mt-6 p-4 bg-gray-100 rounded-lg">
+            <h3 className="font-semibold text-gray-800 mb-3 flex items-center">
+              <FontAwesomeIcon icon={faPhone} className="mr-2 text-blue-600" />
+              Contact:
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <p className="text-gray-700"><span className="font-medium">Dr. P. Rajesh:</span> +91 9445 434893</p>
+              <p className="text-gray-700"><span className="font-medium">Mr. R. Praveen Joshwa:</span> +91 8220 497699</p>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Location Information */}
         <motion.div 
           className="bg-white rounded-lg shadow-lg p-8 mb-8"
@@ -88,7 +190,7 @@ const VenueInformation = ({ scrollTo }) => {
             <p>SSN College of Engineering is located in Kalavakkam, Chennai, Tamil Nadu, India.</p>
             <div className="mt-4">
               <h3 className="font-semibold text-lg text-blue-800">Address</h3>
-              <p>Old Mahabalipuram Road (OMR),<br />Kalavakkam, Chennai - 603110,<br />Tamil Nadu, India</p>
+              <p className="text-lg">Sri Sivasubramaniya Nadar College of Engineering,<br />Old Mahabalipuram Road (OMR),<br />Kalavakkam, Chennai - 603110,<br />Tamil Nadu, India</p>
             </div>
             <div className="mt-6">
               <div className="aspect-w-16 aspect-h-9">
@@ -103,6 +205,26 @@ const VenueInformation = ({ scrollTo }) => {
                 ></iframe>
               </div>
             </div>
+          </div>
+        </motion.div>
+
+        {/* Downloads Section */}
+        <motion.div 
+          className="bg-white rounded-lg shadow-lg p-8 mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Conference Documents</h2>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/Docs/CGOM16_Venue.docx"
+              download="CGOM16_Venue_Information.docx"
+              className="flex-1 inline-flex items-center justify-center px-6 py-3 bg-teal-700 text-white rounded-lg hover:bg-teal-800 transition-all duration-200 shadow-md hover:shadow-lg font-semibold text-base tracking-wide text-center"
+            >
+              <FontAwesomeIcon icon={faDownload} className="mr-3" />
+              Download Venue Information
+            </a>
           </div>
         </motion.div>
 
