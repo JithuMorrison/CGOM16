@@ -9,7 +9,7 @@ import PresentationGuidelines from "./Abstract/PresentationGuidelines";
 import ContactUs from "./Others/ContactUs";
 import ConferenceHistory from "./About/ConferenceHistory";
 import Transportation from "./Information/Transportation";
-import { FiChevronDown } from "react-icons/fi";
+import { FiChevronDown, FiX, FiAlertTriangle } from "react-icons/fi";
 import { motion, AnimatePresence } from "framer-motion";
 import SponsorModal from "./Others/SponsorModal";
 import Exhibition from "./Others/Exhibiton";
@@ -30,6 +30,8 @@ const CGOM16 = () => {
   const [showScroll, setShowScroll] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showSponsor, setShowSponsor] = useState(false);
+  // State for important announcement modal
+  const [showImportantAnnouncement, setShowImportantAnnouncement] = useState(true);
   const [dropdownOpen, setDropdownOpen] = useState({ 
     about: false, 
     abstract: false, 
@@ -65,6 +67,20 @@ const CGOM16 = () => {
     };
   }, [showSponsor]);
 
+  // Close announcement modal on ESC key
+  useEffect(() => {
+    if (!showImportantAnnouncement) return;
+    const handleEsc = (e) => {
+      if (e.key === 'Escape') setShowImportantAnnouncement(false);
+    };
+    window.addEventListener('keydown', handleEsc);
+    // Prevent background scroll when modal is open
+    document.body.style.overflow = 'hidden';
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+      document.body.style.overflow = '';
+    };
+  }, [showImportantAnnouncement]);
 
   const images = [
     '/Extras/temple.jpg',
@@ -214,6 +230,34 @@ const CGOM16 = () => {
     }
   };
 
+  // Announcement modal variants
+  const announcementModalVariants = {
+    hidden: { opacity: 0, scale: 0.9, y: 20 },
+    visible: { 
+      opacity: 1, 
+      scale: 1, 
+      y: 0,
+      transition: { 
+        type: "spring", 
+        stiffness: 300, 
+        damping: 25,
+        delay: 0.1
+      }
+    },
+    exit: { 
+      opacity: 0, 
+      scale: 0.9, 
+      y: 20,
+      transition: { duration: 0.2 }
+    }
+  };
+
+  const overlayVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+    exit: { opacity: 0 }
+  };
+
   return (
     <motion.div 
       className="min-h-screen bg-gray-100"
@@ -221,6 +265,81 @@ const CGOM16 = () => {
       animate="visible"
       variants={containerVariants}
     >
+      {/* Important Announcement Modal */}
+      <AnimatePresence>
+        {showImportantAnnouncement && (
+          <motion.div
+            className="fixed inset-0 flex items-center justify-center z-[100] p-4"
+            variants={overlayVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            style={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
+            onClick={() => setShowImportantAnnouncement(false)}
+          >
+            <motion.div
+              className="relative max-w-2xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden"
+              variants={announcementModalVariants}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header with gradient background */}
+              <div className="bg-gradient-to-r from-orange-600 to-orange-700 px-6 py-4 flex justify-between items-center">
+                <div className="flex items-center space-x-3">
+                  <FiAlertTriangle className="text-white text-2xl" />
+                  <h2 className="text-white text-xl font-bold">Important Announcement</h2>
+                </div>
+                <button
+                  onClick={() => setShowImportantAnnouncement(false)}
+                  className="text-white hover:text-orange-200 transition-colors"
+                  aria-label="Close announcement"
+                >
+                  <FiX className="text-2xl" />
+                </button>
+              </div>
+              
+              {/* Content */}
+              <div className="p-6 md:p-8">
+                <div className="bg-orange-50 border-l-4 border-orange-600 p-4 mb-6 rounded-r-lg">
+                  <p className="text-orange-800 font-medium">
+                    <span className="font-bold">POSTPONEMENT NOTICE</span> — CGOM 16
+                  </p>
+                </div>
+                
+                <div className="space-y-4 text-gray-700">
+                  <p className="leading-relaxed">
+                    We regret to inform all delegates and participants that <span className="font-semibold">CGOM 16</span> has been postponed due to prevailing global uncertainties affecting international travel and participation.
+                  </p>
+                  
+                  <p className="leading-relaxed">
+                    In light of the current situation, and to ensure the travel convenience and meaningful engagement of all attendees, this decision has been made after careful consideration.
+                  </p>
+                  
+                  <div className="bg-gray-50 p-4 rounded-lg my-4 border border-gray-200">
+                    <p className="leading-relaxed text-gray-800">
+                      We sincerely appreciate your understanding and continued support. Revised dates and further details will be communicated in due course of time.
+                    </p>
+                  </div>
+                  
+                  <div className="flex justify-center pt-4">
+                    <button
+                      onClick={() => setShowImportantAnnouncement(false)}
+                      className="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
+                    >
+                      I Understand
+                    </button>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Footer note */}
+              <div className="bg-gray-50 px-6 py-3 text-center text-xs text-gray-500 border-t">
+                This announcement is effective immediately. Please check back for updates.
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <motion.div 
         className="lg:hidden fixed top-0 left-0 right-0 bg-white shadow-lg z-50"
         initial={{ y: -100 }}
@@ -793,7 +912,7 @@ const CGOM16 = () => {
                 </address>
               </motion.div>
 
-              {/* Newsletter */}
+              {/* Conference Info */}
               <motion.div 
                 className="space-y-4"
                 variants={itemVariants}
@@ -814,29 +933,6 @@ const CGOM16 = () => {
                 </div>
               </motion.div>
             </div>
-            {/*<h4 className="text-lg font-semibold text-gray-800 border-b pb-2 border-gray-200">
-                  Stay Updated
-                </h4>
-                <p className="text-gray-600 text-sm">
-                  Subscribe to receive conference updates and important announcements.
-                </p>
-                <form className="mt-2 space-y-3">
-                  <input
-                    type="email"
-                    placeholder="Your email address"
-                    className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  />
-                  <motion.button
-                    type="submit"
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-lg transition-colors duration-200"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    Subscribe
-                  </motion.button>
-                </form>
-              </motion.div>
-            </div>*/}
 
             {/* Copyright */}
             <motion.div 
